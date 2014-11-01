@@ -7,6 +7,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+\DeclareMathOperator*{\argmin}{arg\,min}
+
 % Include other packages here, before hyperref.
 
 % If you comment hyperref and then uncomment it, you should delete
@@ -42,6 +44,11 @@ First line of institution2 address\\
 {\tt\small secondauthor@i2.org}
 }
 
+
+
+
+
+
 \maketitle
 \thispagestyle{empty}
 
@@ -61,17 +68,70 @@ First line of institution2 address\\
 Done by Mr. Uhl, including related work?
 
 \section{Test data generation}
-TODO: Thomas
+We want to investigate the effects of having pre-compressed data falsely assumed as raw data in compression experiments. This means, a pre-compressed image $I_p$ is compressed a second time, hence we denote this process as \emph{double-compression} resulting in an image $I_d$. If a truly uncompressed image $I_u$, which was read directly from the sensor, is compressed, we denote this as \emph{single-compression} resulting in $I_s$.
+
+\subsection{Compression scheme}
+ Since experiments are typically carried out on data bases with more than one image, we denote $I_u^{(i)}, I_p^{(i)}, I_s^{(i)}, I_d^{(i)} \in \mathbb{R}^{w \times h}$ as the $i^{th}$ image with width $w$ and height $h$ in the particular data bases. Furthermore, we denote $s(F) \in \mathbb{N}$ with $F \sim{I \in \mathbb{R}^{w \times h}}$ as a function that returns the file size of the file $F$ storing an image $I \in \mathbb{R}^{w \times h} $. Since common compression algorithms employ lossless compression method on the pixel data before writing to a file, $F$ is loosely linked to the contained pixel data $I$. For simplicity, we denote $s(I)$ as the file size of the file $F$ encoding the pixel values of an image $I$. $c_{m}(I, q)$ with $q \in \mathbb{N}$ defines the compression function, which compresses an image $I$ using the quality parameter $q$ with a certain method $m$. In terms of this paper we use the values $m \in \{jpg, jxr, j2k\}$, where 
+\begin{itemize}
+	\item $jpg$ corresponds to the well-known (ISO/IEC IS 10918-1) DCT-based image compression method \cite{jpg},
+	\item $j2k$ corresponds to the wavelet-based image compression standard (ISO/IEC IS 15444-1), which can operate at higher compression ratios \cite{j2k} and
+	\item $jxr$ corresponds to a compression standard based on Microsoft’s HD Photo is known to produce higher quality than JPEG, but provides faster conversion than JPEG 2000, as specified in (ISO/IEC IS 29199-2) \cite{jxr}.  
+\end{itemize}
+
+%TODO: Consider: Do I have to specify which methods we used (Matlab JxrEncApp) to come up with the images? As it is a standard, this shouldn't be necessary, because everything operates the same anyway?!
+
+For rating the effectiveness of a compression of an image $I$, we define the compression ratio $cr$ between an uncompressed image $I_u$ and a compressed image $I_c$ as 
+\begin{equation}
+cr(I_u, I_c) = \frac{s(I_u)}{s(I_c)} \quad \text{with} \quad I_c \in \{I_d, I_s\}
+\end{equation}
+
+For the later described experiments, images are compressed to meet an arbitrary but fixed target compression ratio $cr_t \in \mathbb{R}$. All three compression methods take one parameter $q \in \mathbb{N}$ only, which controls the image quality but not the file size of the output image. Hence it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ is usually not met exactly, but a parameter optimization can be done, so that $cr_t \approxeq cr^{(i)}$. We propose the following algorithm to compress a data set of uncompressed images $I_u$ with a particular method m to meet a certain compression ratio $cr_t := \gamma$ with $\gamma \in \mathbb{R}$ , e.g. $cr_t := 50$ in a way that the compression ratio of each image is met as close as possible. This process is illustrated in Fig. \ref{fig:comprScheme}.
+
+\begin{figure}[h]
+	\begin{center}
+		
+	\includegraphics[width=0.7\linewidth]{img/comprScheme}
+\end{center}
+	\caption{Basic compression principle to obtain two images achieving approximately the same target compression ratio $cr_t$ from an uncompressed image $I_u^{(i)}$ using a particular compression method $m$.One image, $I_s^{(i)}$, is compressed in a single step while the other, $I_d^{(i)}$, uses a pre-compression and a final compression step. Note the pre-compression step is always a $jpg$-compression, while the final compression step uses the same method $m$ as used in the single-compression.}
+	\label{fig:comprScheme}
+	
+\end{figure}
+
+\begin{enumerate}
+	\item Compute the single compressed image $I_s^{(i)}$ with method $m$ such that $cr(I_u^{(i)}, I_s^{(i)}) \approx cr_t$. The optimal quality parameter $q_s^{(i)}$ is computed for each image by solving
+	\begin{eqnarray}
+	\small
+	s_t^{(i)} = \frac{s(I_u^{(i)})}{cr_t} \\
+		q_s^{(i)} = \underset{q}{argmin}|s(c_m(I_u^{(i)},q)) - s_t^{(i)}|,
+	\end{eqnarray} where $s_t^{(i)}$ is the desired file size for matching the target compression ratio $cr_t$ exactly. This is implemented by iteratively searching for the quality parameter $q$ that produces the closest compression ratio $cr(I_u, I_c)$ to the compression ratio $cr_t$. 
+	\item The single compressed images $I_s^{(i)}$ with method $m$ are then computed with the found optimal parameters as
+	\begin{equation}
+	I_s^{(i)} = c_m(I_u^{(i)}, q_s{(i)})
+	\end{equation}
+	
+	\item Compute a pre-compressed image $I_p^{(i)}$, which represents the images in a potentially pre-compressed data base in other experiments. This is done using $jpg$-method \cite{jpg} with an arbitrary but fixed quality parameter $q_p$. Note that images of one data base may have significant variation in terms of file-sizes.
+	
+	\item Now, find a quality parameter $q_d^{(i)}$ that allows to compress the pre-compressed image $I_p^{(i)}$ a second time, such that the resulting double-compressed image $I_d^{(i)}$ has the same file size as the single compressed image $I_s^{(i)}$, i.e. $s(I_s^{(i)}) \approxeq s(I_d^{(i)})$. Such a quality parameter can be found by 
+	\begin{equation}
+	\small
+		q_d^{(i)} = \underset{q}{argmin}|s(c_m(I_p^{(i)},q)) - s(I_s^{(i)})| \quad \forall s(I_s^{(i)}) \geq s(I_d^{(i)})
+	\end{equation}
+	
+	The condition $s(I_s^{(i)}) \geq s(I_d^{(i)})$ is of special importance to establish fair and defined conditions, since it is very likely that the size cannot be equalized due to the limited universe of the quality parameters of the used compression methods $m$.
+	
+	\item The double-compressed images $I_p^{(i)}$ are then computed from the pre-compressed images with the found optimal parameters as
+	\begin{equation}
+		I_d^{(i)} = c_m(I_p^{(i)}, q_d{(i)})
+	\end{equation}
+	
+\end{enumerate}
+
+\subsection{Used data base}
+
+
 \begin{itemize}
  \item Used Database is IITD, because Manual Groundtruth available, as in \cite{severeCompression}
- \item Describe the used methods and implementations
-  \begin{itemize}
-  \item JPG
-  \item JXR
-  \item JP2k
-  \end{itemize}
- \item Describe the process of single- and double compression
- \item Per-Image quality
+
  \item Analyze Database and provide quality measures (accuracy, stddev, ...)
  \item Argue that this data base is sufficient
 \end{itemize}
