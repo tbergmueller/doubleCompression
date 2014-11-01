@@ -21,12 +21,13 @@
 \def\icbPaperID{****} % *** Enter the IJCB Paper ID here
 \def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
 
+
 % Pages are numbered in submission mode, and unnumbered in camera-ready
 \ificbfinal\pagestyle{empty}\fi
 \begin{document}
 
 %%%%%%%%% TITLE
-\title{\LaTeX\ Author Guidelines for ICB 2015 Proceedings [Based on CVPR]}
+\title{Effects of using pre-compressed data for compression studies in iris recognition}
 
 \author{First Author\\
 Institution1\\
@@ -67,11 +68,9 @@ First line of institution2 address\\
 \section{Introduction}
 Done by Mr. Uhl, including related work?
 
-\section{Test data generation}
-We want to investigate the effects of having pre-compressed data falsely assumed as raw data in compression experiments. This means, a pre-compressed image $I_p$ is compressed a second time, hence we denote this process as \emph{double-compression} resulting in an image $I_d$. If a truly uncompressed image $I_u$, which was read directly from the sensor, is compressed, we denote this as \emph{single-compression} resulting in $I_s$.
-
-\subsection{Compression scheme}
- Since experiments are typically carried out on data bases with more than one image, we denote $I_u^{(i)}, I_p^{(i)}, I_s^{(i)}, I_d^{(i)} \in \mathbb{R}^{w \times h}$ as the $i^{th}$ image with width $w$ and height $h$ in the particular data bases. Furthermore, we denote $s(F) \in \mathbb{N}$ with $F \sim{I \in \mathbb{R}^{w \times h}}$ as a function that returns the file size of the file $F$ storing an image $I \in \mathbb{R}^{w \times h} $. Since common compression algorithms employ lossless compression method on the pixel data before writing to a file, $F$ is loosely linked to the contained pixel data $I$. For simplicity, we denote $s(I)$ as the file size of the file $F$ encoding the pixel values of an image $I$. $c_{m}(I, q)$ with $q \in \mathbb{N}$ defines the compression function, which compresses an image $I$ using the quality parameter $q$ with a certain method $m$. In terms of this paper we use the values $m \in \{jpg, jxr, j2k\}$, where 
+\section{Test data generation and compression scheme}
+\label{section:comprScheme}
+We want to investigate the effects of having pre-compressed data falsely assumed as raw data in compression experiments. This means, a pre-compressed image $I_p$ is compressed a second time, hence we denote this process as \emph{double-compression} resulting in an image $I_d$. If a truly uncompressed image $I_u$, which was read directly from the sensor, is compressed, we denote this as \emph{single-compression} resulting in $I_s$. Since experiments are typically carried out on a data base with more than one image, we denote $I_u^{(i)}, I_p^{(i)}, I_s^{(i)}, I_d^{(i)} \in \mathbb{R}^{w \times h}$ as the $i^{th}$ image with width $w$ and height $h$ in the particular data bases. Furthermore, we denote $s(F) \in \mathbb{N}$ with $F \sim{I \in \mathbb{R}^{w \times h}}$ as a function that returns the file size of the file $F$ storing an image $I \in \mathbb{R}^{w \times h} $. Since common compression algorithms employ lossless compression method on the pixel data before writing to a file, $F$ is loosely linked to the contained pixel data $I$. For simplicity, we denote $s(I)$ as the file size of the file $F$ encoding the pixel values of an image $I$. $c_{m}(I, q)$ with $q \in \mathbb{N}$ defines the compression function, which compresses an image $I$ using the quality parameter $q$ with a certain method $m$. In terms of this paper we use the values $m \in \{jpg, jxr, j2k\}$, where 
 \begin{itemize}
 	\item $jpg$ corresponds to the well-known (ISO/IEC IS 10918-1) DCT-based image compression method \cite{jpg},
 	\item $j2k$ corresponds to the wavelet-based image compression standard (ISO/IEC IS 15444-1), which can operate at higher compression ratios \cite{j2k} and
@@ -126,23 +125,28 @@ For the later described experiments, images are compressed to meet an arbitrary 
 	
 \end{enumerate}
 
-\subsection{Used data base}
+\section{Experimental setup}
+Although there are several iris data sets around, few available in uncompressed format. We use the IITD Iris data base\footnote{IITD Iris Database version 1.0, http://www4.comp.polyu.edu.hk/\textasciitilde csajaykr/IITD/Database\_Iris.htm}. The main reason for this is the availability of a segmentation ground truth created by an expert, which was recently introduced by Rathgeb \etal in \cite{severeCompression}. They also proposes segmentation error results compareable to those we defined in %TODO equations. 
+We want to point out that although it is claimed that the data base is in uncompressed BMP format (backed by \cite{severeCompression}), visual evaluation suggests there are slight block artefacts contained, potentially employed by compression. %TODO Can we write it this way? Does this void the complete results?!
+
+We use the scheme introduced in section \ref{section:comprScheme} and compress the data for the following set of target compression ratios:
+\begin{equation}
+cr_t \in \{5,10,15,20,25,30,35,40,50,60,75\}
+\end{equation}
+For each of these target compression ratios $cr_t$, the pre-compression step in double-compression mode is carried out with the quality parameters
+\begin{equation}
+q_p \in \{100, 85, 75, 70\}
+\end{equation} 
+in order to simulate different levels of pre-compression. Each of these combinations is used to compress with the introduced $jpg$, $j2k$ and $jxr$ methods. This results in a total of 165 data sets with 2240 images each.
+
+\textbf{TODO: Statistics of compression accuracy (mean) and stddev}.
+
+This test data set is used to test six implementations of iris recognition algorithms available in the University of Salzburg Iris Toolbox USIT \cite{rathgeb}.
 
 
-\begin{itemize}
- \item Used Database is IITD, because Manual Groundtruth available, as in \cite{severeCompression}
 
- \item Analyze Database and provide quality measures (accuracy, stddev, ...)
- \item Argue that this data base is sufficient
-\end{itemize}
-
-
-
-
-
-
-\section{Evaluation methods}
-Introduction: Thomas
+\section{Evaluation}
+ Besides assessing the image quality with fully-referenced metrics, we investigate the behaviour of segmentation error rate and the system's EER in respect to the compression ratio.
 
 
 \subsection{Full-referenced quality metrics}
@@ -158,7 +162,7 @@ Todo Lefteris:
 \subsection{Segmentation error rates}
 TODO TB:
 \begin{itemize}
- \item Calculate CR's in bpp
+ \item Transform CR's in bpp
  \item Check whether our method is the same as E1 and/or E2 from this paper: \cite{severeCompression}
  \item If not, impl. E1, is E2 also necessary?
  \item Compare referenced to non-referenced
