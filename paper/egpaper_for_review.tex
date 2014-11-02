@@ -161,23 +161,42 @@ Todo Lefteris:
 \end{itemize}
 
 \subsection{Segmentation error rates}
-The impact on iris segmentation, focused on the single- and double-compression related differences, is measured by a mean segmentation error rate, which corresponds to the suggested E1 error rate in the Noisy Iris Challenge Evaluation - Part I (NICE.I), which is also used in \cite{severeCompression}. We define the segmentation error rate of one image $I$ as
+The segmentation of an iris image is by nature a critical part in the process. We investigate the differences of single- and double compression as well as the aspects of using an absolute reference, e.g. a ground truth, or a relative one, e.g. the segmentation of the uncompressed images $I_u$.
+The segmentation accuracy is rated by the mean segmentation error rate, which corresponds to the suggested E1 error rate in the Noisy Iris Challenge Evaluation - Part I (NICE.I), also used in \cite{severeCompression}. We define the segmentation error rate $ser$ of a single image $I$ as
 \begin{equation}
-ser(R,S) = \overline{R \oplus S} \quad with \quad R,S \in \{0,1\}^{w \times h},
-\end{equation} where R is the binarized reference segmentation image and S the binarized segmentation result of the same image $I \in \mathbb{R}^{w \times h}$. The segmentation process of an image $I$ is denoted as $seg(I) \in \{0,1\}^{w \times h}$. Due to multiple images in a data base, the mean segmentation error rate $mser$ is computed from $K$ images. In this experiment, we compute error rates for the single- and double compressed images $I_c \in {I_s, I_d}$. We define the absolute mean segmentation error $mser_{abs}$ in respect to the ground truth $SGT$ from \cite{severeCompression} and the relative mean segmentation error $mser_{rel}$ in respect to the segmentation of the uncompressed images $I_u$, i.e. 
+ser(R,S) = \overline{R \oplus S} \in [0,1]\quad with \quad R,S \in \{0,1\}^{w \times h},
+\end{equation} where $R$ is the binarized reference segmentation and $S$ the binarized segmentation result of the same image $I$. The mean value of the pixel-wise exclusive-or is the percentage of pixels different in the segmented image $S$ in respect to the reference $R$. Due to multiple images in a data base, the mean segmentation error $mser$ is computed from $K$ images. In this experiment, we compute error rates for the single- and double compressed images $I_c \in {I_s, I_d}$. We define the absolute mean segmentation error $mser_{abs}$ in respect to the ground truth $SGT$ from \cite{severeCompression} and the relative mean segmentation error $mser_{rel}$ in respect to the segmentation of the uncompressed images $I_u$. By denoting the segmentation process of an image $I$ as $seg(I) \in \{0,1\}^{w \times h}$ we have
 \begin{eqnarray}
-mser_{abs} = \frac{1}{K}\sum_{k=1}^{K}seg(SGT^{(k)},seg(I_c^{(k)})) \\
-mser_{rel} = \frac{1}{K}\sum_{k=1}^{K}seg(seg(I_u^{(k)}),seg(I_c^{(k)}))
+mser_{abs} = \frac{1}{K}\sum_{k=1}^{K}ser(SGT^{(k)},seg(I_c^{(k)})) \\
+mser_{rel} = \frac{1}{K}\sum_{k=1}^{K}ser(seg(I_u^{(k)}),seg(I_c^{(k)}))
 \end{eqnarray}
+
+The absolute segmentation error rate, hence also the development in respect to compression ratio can be considered to be optimal because of the available ground truth. However, for most data bases no such ground truth is available. therefore we evaluate if a corresponding conclusion can be withdrawn from the relative segmentation error $mser_{rel}$ as well. The benefit of such a relation is that the $mser_{rel}$ can be computed for any arbitrary data set easily. 
+
+\begin{figure}[h]
+	\begin{center}
+		
+	\includegraphics[width=\linewidth]{img/segResults}
+\end{center}
+	\caption{Relative segmentation results with CAHT on $jpg$-compressed (a) and WAHET on $jxr$-compressed data (b). The bottom line shows the absolute segmentation results with the same methods in (c) and (d) respectively.}
+	\label{fig:segResults}
+	
+\end{figure}
+
+The experiments were carried out for CAHT and WAHET segmentation. From comparison of graphs with $mser_{abs}$ and $mser_{rel}$, as shown in Figure \ref{fig:segResults}, we observe
+
+\begin{itemize}
+ \item there is no significant difference of using single-compressed or double-compressed for medium compression ratios, i.e. $ 20 \leq cr_t \leq 50 $,
+ \item there is a difference for small compression ratios, i.e. $cr_t < 20$, and large compression ratios, i.e. $cr_t > 50$. However, there is no trend in segmentation accuracy observeable, when investigating the difference between the single- or the double-compressed images and% TODO rephrase
+ \item the comparison of $mser_{rel}$ and $mser_{abs}$ indicate that in most cases both metrics show the same behaviour, especially for medium and large compression ratios, i.e. $cr_t > 20$. For the WAHET segmentation, however, the results obtained with $jxr$ and $j2k$ compressed data contradict this observation. Hence, in a general case a ground truth is indeed needed to investigate the impact of compression on iris segmentation algorithms. Since this was concluded from two segmentation methods only, further investigation is necessary for this aspect.
+\end{itemize}
+
+
 
 
 TODO TB:
 \begin{itemize}
- \item Transform CR's in bpp
- \item Check whether our method is the same as E1 and/or E2 from this paper: \cite{severeCompression}
- \item If not, impl. E1, is E2 also necessary?
- \item Compare referenced to non-referenced
- \item Comparision
+ \item Transform CR's in bpp, compare to \cite{severeCompression}
  \item Can we probably use their data to draw longer graphs
  \item Results and Findings of this evaluation
 \end{itemize}
