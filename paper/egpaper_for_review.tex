@@ -28,7 +28,7 @@
 \begin{document}
 
 %%%%%%%%% TITLE
-\title{Effects of using pre-compressed data for compression studies in iris recognition}
+\title{Recompression effects in iris recognition}
 
 \author{First Author\\
 Institution1\\
@@ -165,7 +165,7 @@ For rating an image §I§'s compression effectiveness, we define the compression
 cr(I_u, I_c) = \frac{s(I_u)}{s(I_c)} \quad \text{with} \quad I_c \in \{I_r, I_s\}
 \end{equation}
 
-For the later described experiments, images are compressed to a target compression ratio $cr_t \in \mathbb{R}$. All three compression methods take one parameter $q \in \mathbb{N}$ only, which controls the image quality but not the file size of the output image. Hence it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ cannot be achieved exactly, but a parameter optimization can be done, so that $cr_t \approxeq cr(I_u^{(k)}, I_c^{(k)})$. We propose an algorithm to compress a data set of $K$ uncompressed images $I_u$ using a particular method $m$ to achieve a certain compression ratio $cr_t := \gamma$ with $\gamma \in \mathbb{R}$ , e.g. $cr_t := 50$ in a way that the compression ratio of each image is met as close as possible. This process, illustrated in Fig. \ref{fig:comprScheme}, is defined as
+For the later described experiments, images are compressed to a target compression ratio $cr_t \in \mathbb{R}$. However, only the JPEG 2000 \cite{j2k} allows to specify a compression ratio controlling the file size (excluding file headers). The other two compression methods take a quality parameter $q \in \mathbb{N}$ only, which controls the quality but not the file size of the output image. Hence it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ cannot be achieved exactly, but a parameter optimization can be done, so that $cr_t \approxeq cr(I_u^{(k)}, I_c^{(k)})$. We propose an algorithm to compress a data set of $K$ uncompressed images $I_u$ using a particular method $m$ to achieve a certain compression ratio $cr_t := \gamma$ with $\gamma \in \mathbb{R}$ , e.g. $cr_t := 50$ in a way that the compression ratio of each image is met as close as possible. This process, illustrated in Fig. \ref{fig:comprScheme}, is defined as
 
 \begin{figure}[h]
 	\begin{center}
