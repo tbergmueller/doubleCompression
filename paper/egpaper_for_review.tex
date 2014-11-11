@@ -325,6 +325,7 @@ The following four graph distance metrics were investigated in order to find a s
 
 Although the spearman’s rank correlation coefficient is a standard and powerful tool in order to determine the correlation between two graphs, this coefficient especially points out the overall trend of two graphs by using a monotonic function. Figure \ref{fig:corrSRCCproblem} shows one specific example of our dataset where the SRCC results in a high linear relationship since both graphs are close to monotonic functions. However, clearly both graphs are showing a significant difference in terms of a point-wise comparison (e.g. the Euclidean distance).
 
+% Make a bit smaller, grid lines, B/W graph. Probably there are better examples, I'd give one hear that correlates really good, althoug spearman is bad and an opposite example. I suggest a few from our test data later.
 \begin{figure}[h]
 	\begin{center}
 		
@@ -337,6 +338,7 @@ Although the spearman’s rank correlation coefficient is a standard and powerfu
 
 Since the measurement of the similarity of two curves is always also a subjective task and every human would rate two graphs in a different manner, we decided to use a mean opinion score (MOS) of one-hundred randomly chosen pairs of curves from our dataset in order to determine the distance which is closest to (our) human perception. Table \ref{tab:resultsMOS} shows the five different available categories for assessing the perceptual similarity.
 
+% Table is not necessary, since clear. If we have not enough space (which I presume), remove this table
 \begin{table}[ht]
 \newcommand\T{\rule{0pt}{3.2ex}}
 \newcommand\B{\rule[-1.8ex]{0pt}{0pt}}
@@ -361,7 +363,8 @@ Since the measurement of the similarity of two curves is always also a subjectiv
 \label{tab:resultsMOS}
 \end{table}
 
-Later, the average of this subjective scores of three different people were then used to determine the distance metric with the smallest distance to the MOS. By the experiment with the one-hundred randomly chosen graphs, dynamic time warping (DTW) resulted in the smallest distance. 
+Later, the average of this subjective scores of three different people % TODO: Point out that these people are the authors of the paper, hence experts
+were then used to determine the distance metric with the smallest distance to the MOS. By the experiment with the one-hundred randomly chosen graphs, dynamic time warping (DTW) resulted in the smallest distance. 
 
 TODO: Showing distances of all four metrics (e.g. in a Table)
 
