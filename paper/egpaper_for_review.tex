@@ -195,6 +195,7 @@ This process, illustrated in Fig. \ref{fig:comprScheme}, employs
 	\begin{equation}
 	\small
 	q_r^{(k)} = \underset{q \in \mathbb{N}}{argmin}|s(c_m(I_p^{(k)},q)) - s(I_s^{(k)})| \quad \forall s(I_s^{(k)}) \geq s(I_r^{(k)})
+	\label{equ:recomp}
 	\end{equation}
 	
 	The condition $s(I_s^{(k)}) \geq s(I_r^{(k)})$ is of importance to establish fair conditions, since it is very likely that the file sizes $s(I_s^{(k)}), s(I_r^{(k)})$  cannot be equalized due to the limited universe of the quality parameters of the used compression methods $m$. The recompressed images $I_r^{(k)}$ are then computed from the pre-compressed images $I_p^{(k)}$ with the found optimal parameters $q_r$ as
@@ -386,6 +387,80 @@ TODO: Martin
 \label{section:conclusion}
 TODO: Martin 
 
+\section{Rise of concerns: Faulty data generation, TB}
+\label{section:riseOfConcerns}
+I just wanted to tackle one todo in section \ref{section:exSetup}, namely computing the man accuracy of the methods introduced in \ref{section:comprScheme}. These methods were already proof-read and confirmed by Mr. Salman, hence I can rule out any interpretation errors on the functionality of Mr. Salman's compression scheme at my side here.
+
+Now, the first thing I did was to record all the file sizes generated with Mr. Salman's Matlab-scripts. For this reason, I iterated over all the files and wrote CSV-File with the structure shown in table \ref{tab:filesizes}. 
+
+\begin{table}
+\begin{tabular}{l|l|l|l|l}
+	$cr_t$&$q_p$&s($I_u$)&s($I_s$)& s($I_r$) \\
+\hline
+	5&100&230454&29602&9780 \\
+	5&85&230454&29602&9773 \\
+	5&75&230454&29602&9744 \\ 
+	5&70&230454&29602&9759 \\
+	5&100&230454&30648&10194 \\ 
+	5&85&230454&30648&10179 \\
+	5&75&230454&30648&10153 \\
+	5&70&230454&30648&10180 \\
+	5&100&230454&30885&10239 \\
+	5&85&230454&30885&10228 \\
+	5&75&230454&30885&10204 \\
+	5&70&230454&30885&10212 \\
+	5&100&230454&31329&10355 \\
+	5&85&230454&31329&10355 \\
+	5&75&230454&31329&10315 \\
+	5&70&230454&31329&10329 \\
+	5&100&230454&31572&10424 \\ 
+	5&85&230454&31572&10418 \\
+	5&75&230454&31572&10398 \\
+	5&70&230454&31572&10399 \\
+	5&100&230454&27755&8711 \\
+\end{tabular}
+\vspace{2mm}
+\caption{The first couple entries in the CSV-file recording the file sizes of single- and recompressed images for \emph{jpg}-method. One can already see that file sizes differ up to 30 \%, regardless which quality $q_p$ was used for the pre-compression step.}
+\label{tab:filesizes}
+\end{table}
+
+
+
+The first natural thing was to check, if the condition $s(I_s^{(k)}) \geq s(I_r^{(k)})$, as in equation (\ref{equ:recomp}) is true for all files, hence simply checking if for every entry in the table the file size of the single compressed image $I_s$ is not less than the file size of the recompressed image $I_r$. Figure \ref{fig:errRates} reveals that for \emph{jpg}-compressed data it works almost correctly. E.g. "only" 29 out of 98560 images violated the condition. Nevertheless, this proves that the implementation of the compression algorithm is faulty. When we look at the plot of the JPEG2000-compressed images we see a different picture. Up to 66 \% violate the condition here and for a lot of compression ratio the value ranges around 0.5, hence close to random! This clearly suggests the compression method used here is heavily unreliable.
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{img/conditionViolation_j2k.jpg}
+	\includegraphics[width=\linewidth]{img/conditionViolation_jpg.jpg}
+	
+	\label{fig:errRates}
+	\caption{Rates of image-pairs violating the "always smaller" condition as in equation (\ref{equ:recomp}). The top image shows the \emph{j2k} compressed images, where the $q$-parameter controls the compression ratio directly. The top image shows the rate of violating images in the \emph{jpg}-compressed data set.}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{img/suspiciousDatasets.jpg}
+	\label{fig:suspicious}
+	\caption{Data set entries of \emph{jpg}-compression. One can clearly see that in some cases the most right and in some the second most right values are greater.}
+\end{figure}
+
+
+The next thing was, that I had a look on how accurate the target compression ratio $cr_t$ is met by the compressed images. To be honest, I'm not quite sure which observation here is worse. Let's start with JPG, as illustrated in figure \ref{fig:jpgStrange}. Here we observe that it seems for compression ratios < 35 the fitness of the single- and recompressed images are more or less random. It gets better with increasing compression ratios. Furthermore, there are outliers observable, where e.g. a target compression ratio $cr_t=5$ produces a $cr(I_r,I_u)=45$, which is clearly far from any reasonable tolerance. Once again, such outliers are a clear indication of faulty implementation rather than limited accuracy in setting the quality parameters $q$. One such outlier can also be seen in table \ref{tab:filesizes}, last row I believe.
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{img/jpg_plots.jpg}
+	\label{fig:jpgStrange}
+	\caption{JPG-method: Distribution (scatter plot) of recompressed images $cr(I_r, I_u)$ over target compression ratio $cr_t$ (top) and compression ratios of the single and recompressed images (bottom). Used pre-compression was with $q_p=100$. }
+\end{figure}
+
+A bit more entertaining effect can be observed from the scatter plot of JPEG2000-generated data in figure \ref{fig:j2kStrange}. Here the implementation clips the compression ratio somehow at around 50, meaning larger compression ratios, such as $cr_t=75$ somehow obtain almost every time a compression ratio clamped at 50. However, there are some sparse outliers, that obtain a compression ratio as would have been expected - so it is cleary possible to compress images that far, but the implementation decides in the vast majority of the cases otherwise.
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{img/j2k_plots.jpg}
+	\label{fig:j2kStrange}
+	\caption{JPG2000-method: Distribution (scatter plot) of recompressed images $cr(I_r, I_u)$ over target compression ratio $cr_t$ (top) and compression ratios of the single and recompressed images (bottom). Used pre-compression was with $q_p=100$. }
+\end{figure}
+
+
+At this point I stopped investigating the issue, meaning I haven't computed anything for JXR, because I was a little upset already $;-)$
 
 {\small
 \bibliographystyle{ieee}
