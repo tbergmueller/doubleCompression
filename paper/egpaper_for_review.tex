@@ -79,29 +79,28 @@ raises the need for efficient means to store such data. The
 International Organization for Standardization (ISO)
 specifies iris biometric data to be recorded and stored in (raw)
 image form (ISO/IEC FDIS 19794-6), rather than in extracted
-templates (e.g. iris-codes). On the one hand, such
+templates (e.g. iris-codes). Such
 deployments benefit from future improvements (e.g. in
 feature extraction stage) which can be easily incorporated
-without re-enrollment of registered users. On the other hand,
-since biometric templates may depend on patent-registered
-algorithms, databases of raw images enable more
+without re-enrollment of registered users. Since biometric templates may depend on patent-registered
+algorithms, databases of raw images also enable more
 interoperability and vendor neutrality \cite{Rathgeb12e}. These facts
 motivate detailed investigations and optimisations of image
 compression on iris biometrics in order to provide an efficient
-storage and rapid transmission of biometric records.
+storage and rapid transmission of raw biometric records.
 Furthermore, the application of low-powered mobile sensors
 for image acquisition, e.g. mobile phones, raises the need for
 reducing the amount of transmitted data.
 
 The certainly most relevant standard for compressing
 image data relevant in biometric systems is the ISO/IEC
-19794 standard on Biometric Data Interchange Formats
+19794 standard on Biometric Data Interchange Formats,
 where in the most recently published version (ISO/IEC FDIS
 19794-6), only JPEG2000 is included for lossy compression.
 JPEG2000 has also been recommended for various
 application scenarios and standardised iris images (IREX
-records) by the NIST Iris Exchange  (IREX
-\url{http://iris.nist.gov/irex/}) program. The ANSI/NIST-ITL
+records) by the NIST Iris Exchange\footnote{IREX
+\url{http://iris.nist.gov/irex/}} program. The ANSI/NIST-ITL
 1-2011 standard on ``Data Format for the Interchange of
 Fingerprint, Facial \& Other Biometric Information'' (former
 ANSI/NIST-ITL 1-2007) also supports only JPEG2000 for
@@ -109,28 +108,24 @@ applications tolerating lossy compression.
 
 As a consequence, according to the importance of this issue, many studies comparing and optimising lossy compression techniques for iris imagery 
 may be found in the literature. Since the CASIA iris datasets have been very popular among researchers ever since their establishment,
-many papers dealing with compression have been relying the (extended) CASIA V1.0 dataset, including also first IREX investigations 
+many papers dealing with compression have been relying on the (extended) CASIA V1.0 dataset, including also first IREX investigations 
 \cite{BRakshit07a,BIves08a,Matschitsch07a,Haemmerle09a,Konrad09a} (apart from other examples using the ICE 2005 dataset 
 % noch V1: BIves05a,Konrad09b,Kostmajer09a,BRakshit06a,
 \cite{BDaugman08a,BIves10a}).
 	
-	However, since it has been pointed out \cite{BPhilips07a} that the CASIA V1.0 dataset exhibits manipulated pupil areas and should therefore not 
-	be used any further in experimentation, compression researchers moved to other (and more recent, more challenging etc.) datasets, e.g. 
+However, since it has been pointed out \cite{BPhilips07a} that the CASIA V1.0 dataset exhibits manipulated pupil areas and should therefore not be used any further in experimentation, compression researchers moved to other (and more recent, more challenging etc.) datasets, e.g. 
 	the CASIA V3.0 \cite{Horvath11b,Rathgeb12e}, 
-	the CASIA V4.0 \cite{BTuba12a}, the Bath \cite{BIves08a,BPardamean12a}, and the UBIRIS.v1 \cite{Haemmerle09a,BCarneiro11a} datasets, respectively.
-	While the images of CASIA V1.0 and ICE 2005 are given in uncompressed format, images in CASIA V3.0, CASIA V4.0, UBIRIS and Bath datasets are
-	provided as JPEG (the first three) or JPEG2000 (the latter) lossy compressed data, respectively. Therefore, any compression experiments conducted
-	on these datasets operate on pre-compressed data. 
+	the CASIA V4.0 \cite{BTuba12a}, the Bath \cite{BIves08a,BPardamean12a}, and the UBIRIS.v1 \cite{Haemmerle09a,BCarneiro11a} datasets.
+	While the images of CASIA V1.0 and ICE 2005 are given in uncompressed format, images in CASIA V3.0, CASIA V4.0, UBIRIS and Bath datasets are provided as JPEG (the first three) or JPEG2000 (the latter) lossy compressed data. Therefore, any compression experiments conducted on these datasets operate on pre-compressed data. 
 	
 	This fact has not been ignored entirely -- for example, in \cite{Rathgeb12e}, preparatory JPEG compression experiments with uncompressed data reveal that 
-	slighly pre-compressed data leads to better recognition performance due to denoising effects and thus experiments with pre-compressed data are assessed to
+	slightly pre-compressed data leads to better recognition performance due to denoising effects. Thus experiments with pre-compressed data are assessed to
 	be unproblematic. The same argument is used for JPEG2000 pre-compressed data \cite{BPardamean12a} based on the results in \cite{BIves08a}.
-	However, eventual artifacts resulting from recompression effects are not accounted for in these considerations. Recompression artifacts arise in case
-	data is compressed twice (or multiple times) with lossy compression schemes, where artifacts from the first compression step (termed pre-compression)
-	are aggravated by the second compression step.
+	However, eventual artifacts resulting from recompression effects are not accounted for in these considerations. Recompression artifacts arise in cases where	data is compressed twice (or multiple times) with lossy compression schemes, i.e. where artifacts from the first compression step (termed pre-compression)
+	are aggravated or exploited by the second compression step.
 	
-	Two different types of such effects may be distinguished: First, intra-recompression, where the same compression scheme is used several times, whereas
-	in inter-recompression different codecs are used in the different compression steps. For example, using JPEG pre-compressed data and applying
+	Two different types of such effects may be distinguished: First, \emph{intra-recompression}, where the same compression scheme is used several times, whereas
+	in \emph{inter-recompression} different methods are used in the different compression steps. For example, using JPEG pre-compressed data and applying
 	JPEG XR and JPEG2000 \cite{Horvath11b} or JPEG2000 and fractal compression \cite{BCarneiro11a} is eventually prone to inter-recompression
 	artifacts, while the application of JPEG to JPEG pre-compressed data \cite{BTuba12a,Rathgeb12e} can be prone to intra-recompression artifacts.
 	
@@ -141,12 +136,12 @@ many papers dealing with compression have been relying the (extended) CASIA V1.0
 	suggested for JPEG, reducing recompression artifacts considerably \cite{Bauschke03a}. Recently, the identification of images which underwent 
 	JPEG double compression (i.e. JPEG intra-recompression) has been a hot topic in image forensics \cite{Sencar12a}.
 	
-	Taking all these facts together, it gets clear, that recompression artifacts may impact experimental results with respect to biometric recognition
+	Taking all these facts together, it gets clear that recompression artifacts may impact experimental results with respect to biometric recognition
 	performance, an issue, that has been neglected so far. In this paper, we systematically investigate eventual intra- and inter-recompression effects 
 	in an experimental study
 	for iris recognition. Given the importance of JPEG in the area (as the CASIA V3.0/V4.0 and UBIRIS.v1 datasets are only available in this format), we 
 	focus on JPEG pre-compressed data. In our experiments, we compare iris recognition, iris segmentation, and general purpose image quality metrics applied
-	to single compressed vs. recompressed (i.e. JPEG pre-compressed) iris image data. In Section 2, we ...... 
+	to single compressed vs. recompressed (i.e. JPEG pre-compressed) iris image data. In Section \ref{section:comprScheme}, we discuss the aspects relevant when generating single and recompressed data. Taking these aspects under consideration, data for experimental evaluation is generated as described in section \ref{section:exSetup}. In section \ref{section:eval} carry out experiments, which are compared in section \ref{section:results}. From the experiments' individual and comparison results, we withdraw a conclusion in section \ref{section:conclusion}.
 	
 
 \section{Test data generation and compression scheme}
@@ -207,6 +202,7 @@ For the later described experiments, images are compressed to a target compressi
 \end{enumerate}
 
 \section{Experimental setup}
+\label{section:exSetup}
 Although there are several iris data sets around, few are available in uncompressed format. We use the IITD Iris data base\footnote{IITD Iris Database version 1.0, http://www4.comp.polyu.edu.hk/\textasciitilde csajaykr/IITD/Database\_Iris.htm}. The main reason for this is the availability of a segmentation ground truth created by an expert, which was recently introduced by Rathgeb \etal in \cite{severeCompression}. The $k^{th}$ image of this segmentation ground truth data set is subsequently denoted as $SGT^{(k)}$. They also propose segmentation error results compareable to those we define in equation (\ref{equ:mserabs}).
 We want to point out that according to information by the authors the images stored as uncompressed bitmap format are already JPEG-compressed with 100\% quality. Although this is the case, using this data set was necessary due to the available ground truth, for reasons discussed in section \ref{section:ser}. Futhermore, the IITD is -contrary to others, i.e. the Notre Dame data base, captured under favourable conditions, which allows for a very low EER, which is necessary to distinguish between noise and recompression-effects in a changing EER. 
 
@@ -224,10 +220,9 @@ in order to simulate different levels of pre-compression. Each of these combinat
 
 This test data set is used to test six implementations of iris recognition algorithms available in the University of Salzburg Iris Toolbox USIT \cite{rathgeb}. 
 
-%TODO should we discuss used methods, i.e. GIMP for converting from JXR to PNG?
-
 
 \section{Evaluation}
+\label{section:eval}
  Besides assessing the image quality with fully-referenced metrics, we investigate the behaviour of segmentation error rate and the system's EER in respect to the compression ratio.
 
 
@@ -310,6 +305,7 @@ TODO TB
 
 
 \section{Results}
+\label{section:results}
 Besides evaluating the segmentation error rate, the system’s EER and the general purpose quality metrics by itself, also the correlation between these three metrics was analyzed. More precisely, we computed the correlation between the quality metrics with the segmentation error rate ($mser_{rel}$) as well as with the EER. Furthermore, we investigated also the correlation between $mser_{rel}$ and $mser_{abs}$.
 Since our standard choice, the Spearman’s rank correlation coefficient, did not well represent the subjective opinions of the paper’s authors for different graphs of the dataset, four different methods of comparing curves were considered. These methods will be explained in the next section.
 
@@ -383,6 +379,7 @@ TODO: Martin
 
 
 \section{Conclusion}
+\label{section:conclusion}
 TODO: Martin 
 
 
