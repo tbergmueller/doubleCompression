@@ -146,7 +146,8 @@ However, since it has been pointed out \cite{BPhilips07a} that the CASIA V1.0 da
 
 \section{Test data generation and compression scheme}
 \label{section:comprScheme}
-We investigate whether using already pre-compressed data as a basis for image compression performance rating in iris biometric systems produces a different outcame than if truly uncompressed data has been used for the same rating process. Using pre-compressed data, this means when compression is applied, a pre-compressed image $I_p$ is compressed a second time, hence we denote this process as \emph{recompression} resulting in an image $I_r$. When compressing a truly uncompressed image $I_u$, which was read directly from the sensor, we denote this as \emph{single-compression} with a resulting image $I_s$. Since experiments are typically carried out on a data set with more than one image, we denote $I_u^{(k)}, I_p^{(k)}, I_s^{(k)}, I_r^{(k)} \in \mathbb{R}^{w \times h}$ as the $k^{th}$ image with width $w$ and height $h$ in the particular data sets. Furthermore, we denote $s(F) \in \mathbb{N}$ with $F \sim{I \in \mathbb{R}^{w \times h}}$ as a function that returns the file size of the file $F$ storing an image $I \in \mathbb{R}^{w \times h} $. Since common lossy compression algorithms also employ lossless compression methods on the pixel data before writing to a file, $F$ is loosely linked to the contained pixel data $I$. For simplicity, we denote $s(I)$ as the file size of the file $F$ encoding the pixel values of an image $I$. $c_{m}(I, q)$ with $q \in \mathbb{N}$ defines the compression of an image $I$ with a particular method $m$ using the quality parameter $p$. In terms of this paper we use the values $m \in \{jpg, jxr, j2k\}$, where 
+As dicussed, we're interested to investigate whether it makes a difference if truly uncompressed data or pre-compressed data is used in experiments rating an iris recognition system and its segmentation. 
+Using pre-compressed data in such experiments means a pre-compressed image $I_p$ is compressed a second time resulting in an image $I_r$. As discussed, we denote this process as \emph{recompression}. When compressing a truly uncompressed image $I_u$, which was read directly from the sensor, we denote this as \emph{single-compression} with a resulting image $I_s$. Since experiments are typically carried out on a data set with more than one image, we denote $I_u^{(k)}, I_p^{(k)}, I_s^{(k)}, I_r^{(k)} \in \mathbb{R}^{w \times h}$ as the $k^{th}$ image with width $w$ and height $h$ in the particular data sets. Furthermore, we define $s(F) \in \mathbb{N}$ with $F \sim{I \in \mathbb{R}^{w \times h}}$ as a function that returns the file size of the file $F$ storing an image $I \in \mathbb{R}^{w \times h} $. Since common lossy compression algorithms also employ lossless compression methods, e.g. run-length encoding, before writing to a file, $F$ is loosely linked to the pixel data, namely the image, $I$. For simplicity, we denote $s(I)$ as the file size of the file $F$ encoding the pixel values of an image $I$. $c_{m}(I, q)$ with $q \in \mathbb{N}$ describes the process of compressing an image $I$ using a particular method $m$ parametrized with the quality parameter $p$. In terms of this paper we use the values $m \in \{jpg, jxr, j2k\}$, where 
 \begin{itemize}
 	\item $jpg$ corresponds to the well-known (ISO/IEC IS 10918-1) DCT-based image compression method \cite{jpg},
 	\item $j2k$ corresponds to the wavelet-based image compression standard (ISO/IEC IS 15444-1), which can operate at higher compression ratios \cite{j2k} and
@@ -155,62 +156,65 @@ We investigate whether using already pre-compressed data as a basis for image co
 
 %TODO: Consider: Do I have to specify which methods we used (Matlab JxrEncApp) to come up with the images? As it is a standard, this shouldn't be necessary, because everything operates the same anyway?!
 
-For rating an image §I§'s compression effectiveness, we define the compression ratio $cr$ between an uncompressed image $I_u$ and a compressed image $I_c$ as 
+For rating an image $I$'s compression effectiveness, we define the compression ratio $cr$ between an uncompressed image $I_u$ and a compressed image $I_c$ as 
 \begin{equation}
 cr(I_u, I_c) = \frac{s(I_u)}{s(I_c)} \quad \text{with} \quad I_c \in \{I_r, I_s\}
 \end{equation}
 
-For the later described experiments, images are compressed to a target compression ratio $cr_t \in \mathbb{R}$. However, only the JPEG 2000 \cite{j2k} allows to specify a compression ratio controlling the file size (excluding file headers). The other two compression methods take a quality parameter $q \in \mathbb{N}$ only, which controls the quality but not the file size of the output image. Hence it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ cannot be achieved exactly, but a parameter optimization can be done, so that $cr_t \approxeq cr(I_u^{(k)}, I_c^{(k)})$. We propose an algorithm to compress a data set of $K$ uncompressed images $I_u$ using a particular method $m$ to achieve a certain compression ratio $cr_t := \gamma$ with $\gamma \in \mathbb{R}$ , e.g. $cr_t := 50$ in a way that the compression ratio of each image is met as close as possible. This process, illustrated in Fig. \ref{fig:comprScheme}, is defined as
+For the later described experiments, images are compressed to a target compression ratio $cr_t \in \mathbb{R}$. However, only the \emph{j2k} compression standard \cite{j2k} allows to specify a target compression ratio $cr_t$ directly via parameter $q$. Hence this is the only method where we can control the file size $s(I_c)$ directly. The other two compression methods take a quality parameter $q \in \mathbb{N}$ only, which controls the quality but not the file size of the output image $I_c$. Therefore it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ cannot be achieved exactly in any case. However, parameter optimization can be done, such that $cr_t \approxeq cr(I_u^{(k)}, I_c^{(k)})$. We propose an algorithm to compress a set of $K$ uncompressed images $I_u$ using a particular method $m$ to achieve a certain compression ratio $cr_t$ in a way that the compression ratio of each image is met as close as possible.
+
 
 \begin{figure}[h]
 	\begin{center}
 		
-	\includegraphics[width=0.7\linewidth]{img/comprScheme}
-\end{center}
+		\includegraphics[width=0.7\linewidth]{img/comprScheme}
+	\end{center}
 	\caption{Basic compression principle to obtain two images achieving approximately the same target compression ratio $cr_t$ from an uncompressed image $I_u^{(k)}$ using a particular compression method $m$. One image, $I_s^{(k)}$, is compressed in a single step while the other, $I_r^{(k)}$, uses a pre-compression and a final compression step. Note the pre-compression step is always a $jpg$-compression, while the final compression step uses the same method $m$ as used in the single-compression.}
 	\label{fig:comprScheme}
 	
 \end{figure}
 
+This process, illustrated in Fig. \ref{fig:comprScheme}, employs
 \begin{enumerate}
-	\item Compute the single-compressed image $I_s^{(k)}$ with method $m$ such that $cr(I_u^{(k)}, I_s^{(k)}) \approx cr_t$. The optimal quality parameter $q_s^{(k)}$ is computed for each image separately by solving
+	\item Compute the single-compressed image $I_s^{(k)}$ with method $m$ such that $cr(I_u^{(k)}, I_s^{(k)}) \approx cr_t$. The optimal quality parameter $q_s^{(k)}$ is computed for each image separately by
 	\begin{eqnarray}
 	\small
 	s_t^{(k)} = \frac{s(I_u^{(k)})}{cr_t} \\
-		q_s^{(k)} = \underset{q \in \mathbb{N}}{argmin}|s(c_m(I_u^{(k)},q)) - s_t^{(k)}|,
-	\end{eqnarray} where $s_t^{(k)}$ is the file size to meet the target compression ratio $cr_t$. This is implemented by iteratively searching for the quality parameter $q$ that results in the compression ratio $cr(I_u, I_c)$ closest to $cr_t$. 
-	\item The single compressed images $I_s^{(k)}$ with method $m$ are then computed with the found optimal parameters as
+	q_s^{(k)} = \underset{q \in \mathbb{N}}{argmin}|s(c_m(I_u^{(k)},q)) - s_t^{(k)}|,
+	\end{eqnarray} where $s_t^{(k)}$ is the file size exactly meeting the target compression ratio $cr_t$. This is implemented by iteratively searching the quality parameter $q$ that results in the closest achievable compression ratio $cr(I_u, I_c)$. The single compressed images $I_s^{(k)}$ using method $m$ are computed with the optimal parameters $ q_s^{(k)}$ as
 	\begin{equation}
 	I_s^{(k)} = c_m(I_u^{(k)}, q_s^{(k)})
 	\end{equation}
 	
-	\item Compute a pre-compressed image $I_p^{(k)}$ representing images in pre-compressed data set. This is done using $jpg$-method \cite{jpg} with an arbitrary but fixed quality parameter $q_p$. Note that pre-compressed images of one data set may have significant varying file sizes depending on the image's content.
+	\item Compute a pre-compressed image $I_p^{(k)}$ representing images in pre-compressed data set using $jpg$-method \cite{jpg} with an arbitrary but fixed quality parameter $q_p$, i.e. 
+	\begin{equation}
+		I_p^{(k)} = c_{jpg}(I_u^{(k)}, q_p)
+	\end{equation}
 	
-	\item Now, find a quality parameter $q_d^{(k)}$ that allows to compress the pre-compressed image $I_p^{(k)}$ a second time, such that the resulting recompressed image $I_r^{(k)}$ has the same file size as the single-compressed image $I_s^{(k)}$, i.e. $s(I_s^{(k)}) \approxeq s(I_r^{(k)})$. Such a quality parameter can be found by optimizing
+	\item Now, find a quality parameter $q_d^{(k)}$ that allows to compress the pre-compressed image $I_p^{(k)}$ a second time, such that the resulting recompressed image $I_r^{(k)}$ has the same file size as the single-compressed image $I_s^{(k)}$, i.e. $s(I_s^{(k)}) \approxeq s(I_r^{(k)})$. Such a quality parameter $q_r^{(k)}$ can be found by optimizing
 	\begin{equation}
 	\small
-		q_d^{(k)} = \underset{q \in \mathbb{N}}{argmin}|s(c_m(I_p^{(k)},q)) - s(I_s^{(k)})| \quad \forall s(I_s^{(k)}) \geq s(I_r^{(k)})
+	q_r^{(k)} = \underset{q \in \mathbb{N}}{argmin}|s(c_m(I_p^{(k)},q)) - s(I_s^{(k)})| \quad \forall s(I_s^{(k)}) \geq s(I_r^{(k)})
 	\end{equation}
 	
-	The condition $s(I_s^{(k)}) \geq s(I_r^{(k)})$ is of importance to establish fair conditions, since it is very likely that the size cannot be equalized due to the limited universe of the quality parameters of the used compression methods $m$.
-	
-	\item The recompressed images $I_r^{(k)}$ are then computed from the pre-compressed images $I_p^{(k)}$ with the found optimal parameters as
+	The condition $s(I_s^{(k)}) \geq s(I_r^{(k)})$ is of importance to establish fair conditions, since it is very likely that the file sizes $s(I_s^{(k)}), s(I_r^{(k)})$  cannot be equalized due to the limited universe of the quality parameters of the used compression methods $m$. The recompressed images $I_r^{(k)}$ are then computed from the pre-compressed images $I_p^{(k)}$ with the found optimal parameters $q_r$ as
 	\begin{equation}
-		I_r^{(k)} = c_m(I_p^{(k)}, q_d^{(k)})
+	I_r^{(k)} = c_m(I_p^{(k)}, q_r^{(k)})
 	\end{equation}
-	
 \end{enumerate}
+
+Using data sets generated with the described method, we can investigate the impact of recompression artifacts, contained in single compressed images $I_r$, in comparison to images $I_s$ which  containing artifacts of a single compression only.
 
 \section{Experimental setup}
 \label{section:exSetup}
-Although there are several iris data sets around, few are available in uncompressed format. We use the IITD Iris data base\footnote{IITD Iris Database version 1.0, http://www4.comp.polyu.edu.hk/\textasciitilde csajaykr/IITD/Database\_Iris.htm}. The main reason for this is the availability of a segmentation ground truth created by an expert, which was recently introduced by Rathgeb \etal in \cite{severeCompression}. The $k^{th}$ image of this segmentation ground truth data set is subsequently denoted as $SGT^{(k)}$. They also propose segmentation error results compareable to those we define in equation (\ref{equ:mserabs}).
-We want to point out that according to information by the authors the images stored as uncompressed bitmap format are already JPEG-compressed with 100\% quality. Although this is the case, using this data set was necessary due to the available ground truth, for reasons discussed in section \ref{section:ser}. Futhermore, the IITD is -contrary to others, i.e. the Notre Dame data base, captured under favourable conditions, which allows for a very low EER, which is necessary to distinguish between noise and recompression-effects in a changing EER. 
+Although there are several iris data sets around, few are available in uncompressed format. We use the IITD Iris data base\footnote{IITD Iris Database version 1.0, www4.comp.polyu.edu.hk/\textasciitilde csajaykr/IITD/Database\_Iris.htm}. The main reason for this is the availability of a segmentation ground truth created by an expert, which was recently introduced by Rathgeb \etal in \cite{severeCompression}. The $k^{th}$ image of this segmentation ground truth data set is subsequently denoted as $SGT^{(k)}$. They also propose segmentation error results compareable to those we define in equation (\ref{equ:mserabs}).
+We want to point out that according to information by the IITD iris data base's authors, the images stored in uncompressed bitmap format are already JPEG-compressed with 100\% quality by the sensor. Although this is the case, using this data set was necessary due to the available ground truth, for reasons discussed in section \ref{section:ser}. Futhermore, the IITD -- contrary to others, e.g. the ND-IRIS-0405 iris image dataset \cite{Bowyer_thend-iris-0405}-- is captured under favourable conditions, which allows for a very low EER, which is necessary to distinguish between noise and recompression-effects when observing changes in the EER. 
 
-We use the scheme introduced in section \ref{section:comprScheme} and compress the data for the following set of target compression ratios:
+We use the scheme introduced in section \ref{section:comprScheme} to compress obtain data sets with target compression ratios
 \begin{equation}
-cr_t \in \{5,10,15,20,25,30,35,40,50,60,75\}
+cr_t \in \{5,10,15,20,25,30,35,40,50,60,75\}.
 \end{equation}
-For each of these target compression ratios $cr_t$, the pre-compression step in recompression mode is carried out with the quality parameters
+For each of these target compression ratios $cr_t$, the pre-compression step in recompression mode is carried out with quality parameters
 \begin{equation}
 q_p \in \{100, 85, 75, 70\}
 \end{equation} 
