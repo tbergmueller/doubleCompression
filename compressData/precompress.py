@@ -69,12 +69,13 @@ def findOptimalSize(srcFile, upperBorderValue, method):
     if method == "jpg":
        minQ = 1
        maxQ = 100
-    if method == "jxr":
-       minQ = 1
-       maxQ = 255
     else:
-        print "ERROR: Invalid method " + method
-        exit(-1)
+        if method == "jxr":
+           minQ = 1
+           maxQ = 255
+        else:
+            print "ERROR: Invalid method: " + method
+            exit(-1)
 
     bestSingleQ = actuallyFind(srcFile, maxSize, method, minQ, maxQ)
 
@@ -88,15 +89,16 @@ preCompFolder=dstFolder + "../precompress/";
 
 methods=['jxr']
 qp=[70,75,80,100]
-#crs=[15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]
-crs = [20]
+crs=[15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]
+#crs = [20]
 #shutil.rmtree(preCompFolder, 1)
 #precompress(srcFolder, preCompFolder, qp)
 
-shutil.rmtree(dstFolder, 1)
+
 
 
 for m in methods:
+    shutil.rmtree(dstFolder + "/method_" + m , 1)
     for crt in crs:
         singleFolderName = dstFolder + "/method_" + m + "/single/cr" + str(crt)+ "/"
         compress.mkdir_p(singleFolderName)
@@ -110,16 +112,16 @@ for m in methods:
                 continue
 
             ssize = os.path.getsize(srcFolder + "/" + f) / crt
-
             bestQ = findOptimalSize(srcFolder + "/" + f, ssize, m)
 
 
             #write single compressed file
             singleFile = compress.compress(srcFolder + f, singleFolderName + f, m, bestQ)
-            print f + " bestQ: " + str(bestQ)
-
             singleSize = os.path.getsize(singleFile)
-            print singleSize
+            print "method " + m + " and CR=" + str(crt) + " .... " + f + " bestQ: " + str(bestQ) + " s(Is)=" + str(singleSize)
+
+
+
 
             for q in qp:
                 inFile = preCompFolder + "/quality" + str(q) + "/" + f.replace(".bmp", ".jpg");
