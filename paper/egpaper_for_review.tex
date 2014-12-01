@@ -292,40 +292,55 @@ mser_{abs} = \frac{1}{K}\sum_{k=1}^{K}ser(SGT^{(k)},seg(I_c^{(k)})) \label{equ:m
 mser_{rel} = \frac{1}{K}\sum_{k=1}^{K}ser(seg(I_u^{(k)}),seg(I_c^{(k)})) \label{equ:mserrel} \\
 \end{eqnarray}
 
-The absolute segmentation error rate, hence also the development in respect to compression ratio can be considered to be optimal because of the available ground truth. However, for most data bases no such ground truth is available. therefore we evaluate if a corresponding conclusion can be withdrawn from the relative segmentation error $mser_{rel}$ as well. The benefit of such a relation is that the $mser_{rel}$ can be computed for any arbitrary data set easily. 
+The absolute segmentation error rate, hence also the development in respect to compression ratio can be considered to be optimal because of the available ground truth. However, for most data bases no such ground truth is available. Therefore we evaluate if a corresponding conclusion can be withdrawn from the relative segmentation error $mser_{rel}$ as well. The benefit of such a relation is that the $mser_{rel}$ can be computed for any arbitrary data set easily. 
 
 \begin{figure}[h]
 	\begin{center}
 		
-	\includegraphics[width=\linewidth]{img/segResults}
+	\includegraphics[width=0.49\linewidth]{img/mser/jpeg_wahet}
+	\includegraphics[width=0.49\linewidth]{img/mser/abs_mser_wahet_jpeg}
+	
 \end{center}
-	\caption{Top: Relative segmentation results with CAHT on $jpg$-compressed (a) and WAHET on $jxr$-compressed data (b). Bottom: Absolute segmentation results (c) and (d) with the same methods as in (a) and (b).}
+	\caption{Top: Relative (left) and absolute (right) segmentation results with WAHET on $jpg$-compressed data. Note that the $mser_{abs}$ is generally higher than $mser_{rel}$, because the tested algorithms ignore eyelids, but they are considered in the expert ground truth \cite{severeCompression}.}
 	\label{fig:segResults}
 	
 \end{figure}
 
-The data set described in section \ref{section:exSetup} is used to test the two iris segmentation algorithms, Contrast-adjusted Hough Transform (CAHT) and Weighted Adaptive Hough and Ellipsopolar Transform (WAHET), from the USIT Framework v1.0.3\footnote{as available at \url{http://wavelab.at/sources/} \cite{rathgeb}}. From the graphs in Figure \ref{fig:segResults} we observe that
+The data set described in section \ref{section:exSetup} is used to test the two iris segmentation algorithms, Contrast-adjusted Hough Transform (CAHT) and Weighted Adaptive Hough and Ellipsopolar Transform (WAHET), from the USIT Framework v1.0.3\footnote{as available at \url{http://wavelab.at/sources/} \cite{rathgeb}}. From figure \ref{fig:segResults} we observe that
 
+\begin{enumerate}
+ \item there is no significant difference between segmentation errors of single- and recompressed data for small and medium compression ratios, i.e. $ cr_t \leq 50 $.  \label{noDiff}
+ \item For large compression ratios, i.e. $cr_t > 50$ , segmentation errors tend to be lower for single-compressed data  $I_s$ compared to recompressed data $I_r$. Thus here it makes a difference whether pre-compressed or uncompressed data has been used. \label{yesDiff} 
+ 
+ \item Comparing $mser_{rel}$ and $mser_{abs}$ indicates that in most cases both metrics show the same trends, especially for medium and large compression ratios, i.e. $cr_t > 30$. For the WAHET segmentation, however, the results obtained with $jxr$ and $j2k$ compressed data limit this observation to large compression ratios, since there is a difference to be observed for $cr_t \leq 30$ in fig. \ref{fig:segResults}. Hence, for low compression ratios a ground truth is needed to reliably rate a compression method's performace on iris segmentation. \label{gtForLow}
+ 
+ \item Despite that, for larger compression ratios a strong correlation between $mser_{rel}$ and $mser_{abs}$ is observed in all experiments. Therefore, there is no need for an expert-generated ground truth in this range. However, we do not see a method to establish a numerical relation, e.g. a linear transformation, between $mser_{rel}$ and $mser_{abs}$. \label{gtNoHigh}
+ 
+ \item While \emph{jxr} shows generally a linear growth in segmentation error rate, \emph{jpg} has exponential characteristics. This implies that segmentation algorithms, e.g. WAHET, might perform better with a certain extent of compression artifacts in the image. We expect this is due to the fact that compression artifacts are strongest near the edges, hence artifacts enhance the image to a certain extent for edge-detection based segmentation algorithms. \label{exponentialGrowth}
+ 
+ 
+ \item Not surprisingly, \emph{jxr} outperforms \emph{jpg} in all settings and is therefore superior. \label{bestMethods}
+\end{enumerate}
+
+From \ref{noDiff} and \ref{yesDiff} we conclude, that for experiments studying severe image compression, e.g. \cite{BDaugman08a, severeCompression}, results cannot be considered entirely reliable when a pre-compressed data set has been used. Many studies resort back to precompressed data sets for the sake of ground truth availability. From \ref{gtNoHigh} we know that for large compression ratios, i.e. $cr_t > 50$, there is no difference in the progress of $mser_{rel}$ and $mser_{abs}$. Since this is (from \ref{yesDiff}) exactly the range, where using single- or recompressed data has an impact, we propose - based on observations \ref{gtForLow} and \ref{gtNoHigh} - to bench-mark compression algorithms in respect to iris segmentation by using 
 \begin{itemize}
- \item there is no significant difference in segmenting single-compressed or recompressed images for medium compression ratios, i.e. $ 20 \leq cr_t \leq 50 $,
- \item there is a difference for small compression ratios, i.e. $cr_t < 20$, and large compression ratios, i.e. $cr_t > 50$. However, there is no trend in segmentation accuracy observeable, when investigating the difference between the single- or the reompressed images and% TODO rephrase
- \item the $mser_{abs}$ is generally higher than $mser_{rel}$, because the segmentation algorithms ignore eyelids, yet are considered in the expert ground truth \cite{severeCompression}.
- \item Comparing $mser_{rel}$ and $mser_{abs}$ indicates that in most cases both metrics show the same characteristics, especially for medium and large compression ratios, i.e. $cr_t > 20$. For the WAHET segmentation, however, the results obtained with $jxr$ and $j2k$ compressed data contradict this observation. Hence, in a general case a ground truth is indeed needed to investigate the impact of compression on iris segmentation algorithms. Since this was concluded from two segmentation methods only, further investigation is necessary for this aspect.
+	\item uncompressed data sets rated with relative measures, such as the $mser_{rel}$, equ. (\ref{equ:mserrel}), for severe compression, i.e. $cr_t > 50$ and
+	\item pre-compressed data sets\footnote{If absolutely necessary because of ground-truth availability, of course uncompressed data is preferred} with absolute measures, such as $mser_{abs}$, equ. (\ref{equ:mserabs}), for medium and light compression, i.e. $cr_t \leq 50$.
 \end{itemize}
+Furthermore, from observations \ref{exponentialGrowth} and \ref{bestMethods} we suggest to compress the iris images with TODO
 
 
-
-
-TODO TB:
-\begin{itemize}
- \item Transform CR's in bpp, compare to \cite{severeCompression}
-\end{itemize}
+%TODO TB:
+%\begin{itemize}
+% \item Transform CR's in bpp, compare to \cite{severeCompression}
+%\end{itemize}
 
 
 
 \section{Results}
 \label{section:results}
-Besides evaluating the segmentation error rate, the system’s EER and the general purpose quality metrics by itself, also the correlation between these three metrics was analyzed. More precisely, we computed the correlation between the quality metrics with the segmentation error rate ($mser_{rel}$) as well as with the EER. Furthermore, we investigated also the correlation between $mser_{rel}$ and $mser_{abs}$.
+Besides evaluating the segmentation error rate and the general purpose quality measures independently, their correlation is analyzed. Furthermore, we explicitly investigate the correlation between $mser_{rel}$ and $mser_{abs}$ to back up the observations in section \ref{section:ser}.
+
 Since our standard choice, the Spearman’s rank correlation coefficient, did not well represent the subjective opinions of the paper’s authors for different graphs of the dataset, four different methods of comparing curves were considered. These methods will be explained in the next section.
 
 
@@ -390,7 +405,7 @@ Therefore, besides the standard choice of SRCC, DTW was used for investigating t
 TODO: Martin:
 Provide sensible correlation results and analyse
 
-\subsubsection{Quality metrics vs. segmentation error/EER}
+\subsubsection{Quality metrics vs. segmentation error}
 TODO: Martin
 
 \subsubsection{Segmentation error: relative vs. absolute}
