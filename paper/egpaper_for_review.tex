@@ -340,18 +340,8 @@ Furthermore, from observations \ref{exponentialGrowth} and \ref{bestMethods} we 
 \section{Results}
 \label{section:results}
 Besides evaluating the segmentation error rate and the general purpose quality measures independently, their correlation is analyzed. Furthermore, we explicitly investigate the correlation between $mser_{rel}$ and $mser_{abs}$ to back up the observations in section \ref{section:ser}.
+Since our standard choice, the Spearman’s rank correlation coefficient, did not well represent the subjective opinions of the paper’s authors for different graphs of the dataset, we used Dynamic Time Warping (DTW) as a second correlation metric.
 
-Since our standard choice, the Spearman’s rank correlation coefficient, did not well represent the subjective opinions of the paper’s authors for different graphs of the dataset, four different methods of comparing curves were considered. These methods will be explained in the next section.
-
-
-\subsection{Different graph distance metrics}
-The following four graph distance metrics were investigated in order to find a suitable correlation method:
-\begin{itemize}
-\item Spearman’s rank correlation coefficient (SRCC)
-\item Euclidean distance (ED)
-\item Area between two curves (ABTC)
-\item Dynamic Time Warping (DTW)
-\end{itemize}
 
 Although the spearman’s rank correlation coefficient is a standard and powerful tool in order to determine the correlation between two graphs, this coefficient especially points out the overall trend of two graphs by using a monotonic function. Figure \ref{fig:corrSRCCproblem} shows one specific example of our dataset where the SRCC results in a high linear relationship since both graphs are close to monotonic functions. However, clearly both graphs are showing a significant difference in terms of a point-wise comparison (e.g. the Euclidean distance).
 
@@ -365,41 +355,6 @@ Although the spearman’s rank correlation coefficient is a standard and powerfu
 	\label{fig:corrSRCCproblem}
 	
 \end{figure}
-
-Since the measurement of the similarity of two curves is always also a subjective task and every human would rate two graphs in a different manner, we decided to use a mean opinion score (MOS) of one-hundred randomly chosen pairs of curves from our dataset in order to determine the distance which is closest to (our) human perception. Table \ref{tab:resultsMOS} shows the five different available categories for assessing the perceptual similarity.
-
-% Table is not necessary, since clear. If we have not enough space (which I presume), remove this table
-\begin{table}[ht]
-\newcommand\T{\rule{0pt}{3.2ex}}
-\newcommand\B{\rule[-1.8ex]{0pt}{0pt}}
-\begin{center}
-\begin{tabular}{| c | l |}
-  \hline
-  {\bf Category (score)} \T \B & {\bf Description} \\
-  \hline
-  1 & very similar \\
-  \hline
-  2 & similar \\
-  \hline
-  3 & intermediate \\
-  \hline
-  4 & not very similar \\
-  \hline
-  5 & not similar at all \\
-  \hline
-\end{tabular}
-\end{center}
-\caption{This table is showing the five different similarity categories used for creating the MOS}
-\label{tab:resultsMOS}
-\end{table}
-
-Later, the average of this subjective scores of three different people % TODO: Point out that these people are the authors of the paper, hence experts
-were then used to determine the distance metric with the smallest distance to the MOS. By the experiment with the one-hundred randomly chosen graphs, dynamic time warping (DTW) resulted in the smallest distance. 
-
-TODO: Showing distances of all four metrics (e.g. in a Table)
-
-Therefore, besides the standard choice of SRCC, DTW was used for investigating the correlation. 
-
 
 \subsection{Correlation of Evaluation methods}
 TODO: Martin:
