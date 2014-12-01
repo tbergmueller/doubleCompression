@@ -24,32 +24,39 @@ def actuallyFind(srcFile, maxSize, method, minQ, maxQ):
     if method == 'jpg':
         tmpFile = "tmp.jpg"
 
-        qprobe = int(math.ceil((minQ + maxQ) / 2))
+        qprobe = int(math.ceil((minQ + maxQ) / 2.0))
 
         if qprobe == minQ or qprobe == maxQ:
             return qprobe # optimal parameter
        # print qprobe
         compress.saveAsJPG(srcFile, tmpFile, qprobe)
-        curSize = os.path.getsize(tmpFile);
+        curSize = os.path.getsize(tmpFile)
 
-        if curSize > maxSize:
-           return actuallyFind(srcFile,maxSize,method,minQ,qprobe)
+        if curSize < maxSize:
+           return actuallyFind(srcFile,maxSize,method,qprobe,maxQ)
         else:
-            return actuallyFind(srcFile,maxSize,method,qprobe,maxQ)
+            return actuallyFind(srcFile,maxSize,method,minQ,qprobe)
 
-    if method == 'jxr':
-        tmpFile = "tmp.jxr"
+    if method == 'jxr' or method == "jp2":
+        tmpFile = "tmp." + method
+        qprobe = int(math.ceil((minQ + maxQ) / 2.0))
 
-        qprobe = int(math.ceil((minQ + maxQ) / 2))
+        if (maxQ - minQ) <= 1:                              # termination condition
+            curSize = os.path.getsize(tmpFile)
 
-        if qprobe == minQ or qprobe == maxQ:
-            if os.path.getsize(tmpFile) > maxSize:
-                return qprobe + 1
-            else:
-                return qprobe # optimal parameter
-       # print qprobe
-        compress.saveAsJXR(srcFile, tmpFile, qprobe)
-        curSize = os.path.getsize(tmpFile);
+            while curSize > maxSize:
+                qprobe += 1
+                compress.compress(srcFile, tmpFile, method, qprobe)
+                curSize = os.path.getsize(tmpFile)
+                #print str(qprobe)
+
+           # print "Detailed " + str(curSize) + " probe " + str(qprobe)
+            return qprobe # optimal parameter
+
+
+        compress.compress(srcFile, tmpFile, method, qprobe)
+        curSize = os.path.getsize(tmpFile)
+
 
         if curSize > maxSize:
            return actuallyFind(srcFile,maxSize,method,qprobe,maxQ)
@@ -74,11 +81,17 @@ def findOptimalSize(srcFile, upperBorderValue, method):
            minQ = 1
            maxQ = 255
         else:
-            print "ERROR: Invalid method: " + method
-            exit(-1)
+            if method=="jp2":
+                minQ = 1
+                maxQ = 100
+            else:
+                print "ERROR: Invalid method: " + method
+                exit(-1)
+
 
     bestSingleQ = actuallyFind(srcFile, maxSize, method, minQ, maxQ)
 
+    #print "best is " + str(bestSingleQ)
     return bestSingleQ
 
 
@@ -87,18 +100,18 @@ srcFolder="/home/tbergmueller/dev/mm/databases/iitd/"
 dstFolder="/home/tbergmueller/dev/mm/databases_compressed/iitd/"
 preCompFolder=dstFolder + "../precompress/";
 
-methods=['jxr']
+methods=['jp2']
 qp=[70,75,80,100]
-crs=[15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]
+#crs=[15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75]
+crs=[65, 70, 75]
 #crs = [20]
 #shutil.rmtree(preCompFolder, 1)
 #precompress(srcFolder, preCompFolder, qp)
 
 
 
-
 for m in methods:
-    shutil.rmtree(dstFolder + "/method_" + m , 1)
+    #shutil.rmtree(dstFolder + "/method_" + m , 1)
     for crt in crs:
         singleFolderName = dstFolder + "/method_" + m + "/single/cr" + str(crt)+ "/"
         compress.mkdir_p(singleFolderName)
@@ -121,13 +134,21 @@ for m in methods:
             print "method " + m + " and CR=" + str(crt) + " .... " + f + " bestQ: " + str(bestQ) + " s(Is)=" + str(singleSize)
 
 
-
-
             for q in qp:
                 inFile = preCompFolder + "/quality" + str(q) + "/" + f.replace(".bmp", ".jpg");
                 outFile = dstFolder + "/method_" + m + "/double/cr" + str(crt) + "/quality" + str(q) + "/" + f
 
                 bestQ = findOptimalSize(inFile, singleSize, m)
+                #print bestQ
+                writtenFile = compress.compress(inFile, outFile, m, bestQ)
 
-                compress.compress(inFile,outFile, m, bestQ)
+                curSize = os.path.getsize(writtenFile)
+                #print "size is " + str(curSize)
 
+                if curSize > singleSize:
+                    print "ERROR: Violating condition"
+                   # exit(-1)
+
+
+
+                #print writtenFile + " .... " + str(os.path.getsize(writtenFile))

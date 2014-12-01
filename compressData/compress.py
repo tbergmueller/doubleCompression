@@ -14,7 +14,7 @@ def saveAsJ2k(srcFile, path, q):
 
     outfile =  path.replace(os.path.splitext(path)[1], ".jp2")
 
-    img.save(outfile, 'JPEG2000', quality_mode="rates", quality_layers=[50], )
+    img.save(outfile, 'JPEG2000', quality_mode="rates", quality_layers=[q], )
     return outfile
 
 
@@ -23,14 +23,15 @@ def saveAsJXR(srcFile, path, q):
     if os.path.splitext(srcFile)[1] == ".jpg":
         img = Image.open(srcFile)
         img.save("hugo.bmp")
-
-    srcFile = "hugo.bmp"
+        srcFile = "hugo.bmp"
 
     outfile = path.replace(os.path.splitext(path)[1], ".jxr")
     command = "./JxrEncApp -i " + srcFile + " -o " + outfile + " -q " + str(q)
 
     status = subprocess.call(command.split(), shell=False)
     return outfile
+
+
 
 def compress(srcFile, path, method, q):
     if method == "jpg":
