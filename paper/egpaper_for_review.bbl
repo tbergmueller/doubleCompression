@@ -1,8 +1,156 @@
-\begin{thebibliography}{1}\itemsep=-1pt
+\begin{thebibliography}{10}\itemsep=-1pt
+
+\bibitem{Bauschke03a}
+H.~Bauschke, C.~Hamilton, M.~Macklem, J.~S. McMichael, and N.~Steward.
+\newblock Recompression of jpeg images by requantization.
+\newblock {\em IEEE Transactions on Image Processing}, 12(7):843--849, 2003.
+
+\bibitem{Bowyer_thend-iris-0405}
+K.~W. Bowyer and P.~J. Flynn.
+\newblock The nd-iris-0405 iris image dataset.
+\newblock Technical report.
+
+\bibitem{BBurge13a}
+M.~Burge and K.~Bowyer, editors.
+\newblock {\em Handbook of Iris Recognition}.
+\newblock 2013.
+
+\bibitem{BCarneiro11a}
+M.~Carneiro, A.~Veiga, E.~Flores, and G.~Carrijo.
+\newblock Solutions for iris segmentation.
+\newblock In Z.~Riaz, editor, {\em Biometric Systems, Design and Applications},
+  pages 111--128. InTech, 2011.
+
+\bibitem{Chan92a}
+S.~Chan.
+\newblock Recompression of still images.
+\newblock Technical Report 21068, Computing Laboratory, University of Kent, UK,
+  1992.
+
+\bibitem{BDaugman08a}
+J.~Daugman and C.~Downing.
+\newblock Effect of severe image compression on iris recognition performance.
+\newblock {\em IEEE Transactions on Information Forensics and Security}, 3,
+  2008.
+
+\bibitem{Haemmerle09a}
+J.~H\"ammerle-Uhl, C.~Pr\"ahauser, T.~Starzacher, and A.~Uhl.
+\newblock Improving compressed iris recognition accuracy using {JPEG2000 RoI}
+  coding.
+\newblock In M.~Tistarelli and M.~Nixon, editors, {\em Proceedings of the 3rd
+  International Conference on Biometrics 2009 (ICB'09)}, volume 5558 of {\em
+  LNCS}, pages 1102--1111. Springer Verlag, 2009.
+
+\bibitem{Horvath11b}
+K.~Horvath, H.~St\"ogner, and A.~Uhl.
+\newblock Effects of {JPEG XR} compression settings on iris recognition
+  systems.
+\newblock In P.~Real, D.~Diaz-Pernil, H.~Molina-Abril, A.~Berciano, and
+  W.~Kropatsch, editors, {\em Proceedings of the 14th International Conference
+  on Computer Analysis of Images and Patterns (CAIP 2011)}, volume 6855 of {\em
+  LNCS}, pages 73--80. Springer Verlag, 2011.
+
+\bibitem{jpg}
+{I.O. for Standardization}.
+\newblock {ISO/IEC IS 10918-1. Digital compression and coding of
+  continuous-tone still images: Requirements and guidelines}, {1994}.
+
+\bibitem{j2k}
+{I.O. for Standardization}.
+\newblock {ISO/IEC IS 15444-1. Information technology – JPEG 2000 image
+  coding system: Core coding system}, {2004}.
+
+\bibitem{jxr}
+{I.O. for Standardization}.
+\newblock {ISO/IEC IS 29199-2. Information technology – JPEG XR image coding
+  system – Part 2: Image coding speciﬁcation}, {2012}.
+
+\bibitem{BIves10a}
+R.~W. Ives, D.~Bishop, Y.~Du, and C.~Belcher.
+\newblock Iris recognition: The consequences of image compression.
+\newblock {\em EURASIP Journal of Advances in Signal Processing}, 2010:Article
+  ID 680845, doi:10.1155/2010/680845, 2010.
+
+\bibitem{BIves08a}
+R.~W. Ives, R.~P. Broussard, L.~R. Kennell, and D.~L. Soldan.
+\newblock Effects of image compression on iris recognition system performance.
+\newblock {\em Journal of Electronic Imaging}, 17:011015,
+  doi:10.1117/1.2891313, 2008.
+
+\bibitem{Konrad09a}
+M.~Konrad, H.~St\"ogner, and A.~Uhl.
+\newblock Custom design of {JPEG} quantization tables for compressing iris
+  polar images to improve recognition accuracy.
+\newblock In M.~Tistarelli and M.~Nixon, editors, {\em Proceedings of the 3rd
+  International Conference on Biometrics 2009 (ICB'09)}, volume 5558 of {\em
+  LNCS}, pages 1091--1101. Springer Verlag, 2009.
+
+\bibitem{Kumar11a}
+B.~Kumar and G.~Karpagam.
+\newblock An empirical analysis of requantization errors for recompressed jpeg
+  images.
+\newblock {\em International Journal of Engineering Science and Technology},
+  3(12):8519--8527, 2011.
+
+\bibitem{Matschitsch07a}
+S.~Matschitsch, M.~Tschinder, and A.~Uhl.
+\newblock Comparison of compression algorithms' impact on iris recognition
+  accuracy.
+\newblock In S.-W. Lee and S.~Li, editors, {\em Proceedings of the 2nd
+  International Conference on Biometrics 2007 (ICB'07)}, volume 4642 of {\em
+  LNCS}, pages 232--241. Springer Verlag, 2007.
+
+\bibitem{BPardamean12a}
+B.~Pardamean and I.~Christiani.
+\newblock Comparatative evaluation of iris recognition performance.
+\newblock {\em International Journal of Mathematical Models and Methods in
+  Applied Sciences}, 6(2):332--339, 2012.
+
+\bibitem{Pennebaker93a}
+W.~Pennebaker and J.~Mitchell.
+\newblock {\em {JPEG} -- {S}till image compression standard}.
+\newblock Van Nostrand Reinhold, New York, 1993.
+
+\bibitem{BPhilips07a}
+P.~Philips, K.~Bowyer, and P.~Flynn.
+\newblock {Comments on the CASIA version 1.0 iris data set}.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  29(10):1869--1870, Oct. 2007.
+
+\bibitem{BRakshit07a}
+S.~Rakshit and D.~Monro.
+\newblock An evaluation of image sampling and compression for human iris
+  recognition.
+\newblock {\em IEEE Transactions on Information Forensics and Security},
+  2(3):605--612, 2007.
+
+\bibitem{rathgeb}
+C.~Rathgeb, A.~Uhl, and P.~Wild.
+\newblock {\em Iris Recognition: From Segmentation to Template Security}.
+\newblock Springer, New York, 2012.
+
+\bibitem{Rathgeb12e}
+C.~Rathgeb, A.~Uhl, and P.~Wild.
+\newblock {\em Iris Recognition: From Segmentation to Template Security},
+  volume~59 of {\em Advances in Information Security}.
+\newblock Springer Verlag, 2013.
 
 \bibitem{severeCompression}
 C.~Rathgeb, A.~Uhl, and P.~Wild.
 \newblock Effects of severe image compression on iris segmentation performance.
 \newblock In {\em IJCB 2014}, September 2014.
+
+\bibitem{Sencar12a}
+H.~Sencar and N.~M. (Eds.).
+\newblock {\em Digital Image Forensics: There is more to a picture than meets
+  the eye}.
+\newblock Springer Verlag, 2012.
+
+\bibitem{BTuba12a}
+A.~Tuba, J.~Arezina, and R.~Jovanovic.
+\newblock Software framework for testing {JPEG} quantization tables for iris
+  recognition.
+\newblock In {\em Applied Mathematics in Electrical and Computer Engineering},
+  pages 417--422, 2012.
 
 \end{thebibliography}
