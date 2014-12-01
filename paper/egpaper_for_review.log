@@ -1,14 +1,23 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2014.7.7)  27 OCT 2014 16:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.11.3)  1 DEC 2014 19:01
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
 **egpaper_for_review.tex
-(./egpaper_for_review.tex
+
+("C:\Users\Martin\Documents\Studium\FH Salzburg\Master - AISP\2. Semester\Multi
+media Formats\Project\doubleCompression\paper\egpaper_for_review.tex"
 LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 78 languages loaded.
-(/usr/share/texmf/tex/latex/base/article.cls
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf/tex/latex/base/size10.clo
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -22,20 +31,25 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (./icb.sty (./eso-pic.sty
+)
+("C:\Users\Martin\Documents\Studium\FH Salzburg\Master - AISP\2. Semester\Multi
+media Formats\Project\doubleCompression\paper\icb.sty"
+("C:\Users\Martin\Documents\Studium\FH Salzburg\Master - AISP\2. Semester\Multi
+media Formats\Project\doubleCompression\paper\eso-pic.sty"
 Package: eso-pic 2002/11/16 v1.1b eso-pic (RN)
 
-(./icb_eso.sty
+("C:\Users\Martin\Documents\Studium\FH Salzburg\Master - AISP\2. Semester\Multi
+media Formats\Project\doubleCompression\paper\icb_eso.sty"
 
 LaTeX Warning: You have requested package `eso-pic',
                but the package provides `everyshi'.
 
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-) (/usr/share/texmf/tex/latex/graphics/keyval.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 ))
-(/usr/share/texmf/tex/latex/tools/xspace.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
 icb 8.5 x 11-Inch Proceedings Style `icb.sty'.
@@ -51,33 +65,33 @@ icb 8.5 x 11-Inch Proceedings Style `icb.sty'.
 \cv@tot=\count89
 \cv@tmpc@=\count90
 \cv@tmpc=\count91
-) (/usr/share/texmf/tex/latex/psnfss/times.sty
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf/tex/latex/graphics/graphics.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf/tex/latex/graphics/trig.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texmf/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texmf/tex/generic/oberdiek/infwarerr.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texmf/tex/generic/oberdiek/ltxcmds.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count92
@@ -88,24 +102,72 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \epsfxsize=\dimen108
 \epsfysize=\dimen109
 )
-(/usr/share/texmf/tex/latex/amsmath/amsmath.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf/tex/latex/amsmath/amstext.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texmf/tex/latex/amsmath/amsgen.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen110
 ))
-(/usr/share/texmf/tex/latex/amsmath/amsbsy.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen111
 )
-(/usr/share/texmf/tex/latex/amsmath/amsopn.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count93
@@ -146,45 +208,49 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (./egpaper_for_review.aux)
-\openout1 = `egpaper_for_review.aux'.
+))
+("C:\Users\Martin\Documents\Studium\FH Salzburg\Master - AISP\2. Semester\Multi
+media Formats\Project\doubleCompression\paper\egpaper_for_review.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 29.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 24.
-
-(/usr/share/texmf/tex/latex/psnfss/ot1ptm.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ABD: EveryShipout initializing macros
-(/usr/share/texmf/tex/latex/graphics/color.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(/usr/share/texmf/tex/latex/latexconfig/color.cfg
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(/usr/share/texmf/tex/context/base/supp-pdf.mkii
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen119
@@ -197,110 +263,287 @@ Package color Info: Driver file: pdftex.def on input line 130.
 \MPnumerator=\count109
 \makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks21
-) (/usr/share/texmf/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(/usr/share/texmf/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texmf/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texmf/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/share/texmf/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/share/texmf/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/share/texmf/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/share/texmf/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/share/texmf/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/share/texmf/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
-LaTeX Font Info:    Try loading font information for U+msa on input line 45.
-
-(/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
+LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+LaTeX Font Info:    Try loading font information for U+msb on input line 55.
 
-(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 66.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 104.
 
-(/usr/share/texmf/tex/latex/psnfss/omsptm.fd
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 127.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 127.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+]
+Underfull \hbox (badness 1152) in paragraph at lines 128--132
+[]\OT1/ptm/m/n/10 Two dif-fer-ent types of such ef-fects may be dis-tin-
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 154.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ∂ in font ptmr7t!
- (./egpaper_for_review.bbl
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 154.
+
+Underfull \hbox (badness 1946) in paragraph at lines 154--155
+[]$\OML/cmm/m/it/10 jpg$ \OT1/ptm/m/n/10 cor-re-sponds to the well-known (ISO/I
+EC IS
+ []
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+<img/comprScheme.png, id=11, 939.51pt x 978.65625pt>
+File: img/comprScheme.png Graphic file (type png)
+ <use img/comprScheme.png>
+Package pdftex.def Info: img/comprScheme.png used on input line 172.
+(pdftex.def)             Requested size: 165.99443pt x 172.91005pt.
+
+[2]
+Underfull \hbox (badness 2781) in paragraph at lines 181--182
+[]\OT1/ptm/m/n/10 Compute the single-compressed im-age $\OML/cmm/m/it/10 I[]$ \
+OT1/ptm/m/n/10 with
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 183.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 198.
+
+
+Overfull \hbox (13.09053pt too wide) detected at line 201
+\OML/cmm/m/it/9 q[] \OT1/cmr/m/n/9 = []\OMS/cmsy/m/n/9 j\OML/cmm/m/it/9 s\OT1/c
+mr/m/n/9 (\OML/cmm/m/it/9 c[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 I[]; q\OT1/cmr/m/n
+/9 )) \OMS/cmsy/m/n/9   \OML/cmm/m/it/9 s\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 I[]\OT
+1/cmr/m/n/9 )\OMS/cmsy/m/n/9 j 8\OML/cmm/m/it/9 s\OT1/cmr/m/n/9 (\OML/cmm/m/it/
+9 I[]\OT1/cmr/m/n/9 ) \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 s\OT1/cmr/m/n/9 (\OML/c
+mm/m/it/9 I[]\OT1/cmr/m/n/9 )
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <> on input line 201.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
+(Font)              size <5> substituted on input line 201.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 201.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 201.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
+(Font)              size <5> substituted on input line 201.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
+(Font)              size <5> substituted on input line 201.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
+(Font)              size <5> substituted on input line 201.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
+(Font)              size <5> substituted on input line 201.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 201.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 201.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--213
+[][]\OT1/ptm/m/n/8 IITD Iris Database ver-sion 1.0,
+ []
+
+[3 <C:/Users/Martin/Documents/Studium/FH Salzburg/Master - AISP/2. Semester/Mul
+timedia Formats/Project/doubleCompression/paper/img/comprScheme.png>]
+Package epstopdf Info: Source file: <img/jpgData.eps>
+(epstopdf)                    date: 2014-12-01 18:43:53
+(epstopdf)                    size: 1610157 bytes
+(epstopdf)             Output file: <img/jpgData-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-12-01 18:49:47
+(epstopdf)                    size: 1311613 bytes
+(epstopdf)             Command: <epstopdf --outfile=img/jpgData-eps-converted-t
+o.pdf img/jpgData.eps>
+(epstopdf)             \includegraphics on input line 229.
+Package epstopdf Info: Output file is already uptodate.
+
+<img/jpgData-eps-converted-to.pdf, id=34, 449.68pt x 338.26375pt>
+File: img/jpgData-eps-converted-to.pdf Graphic file (type pdf)
+
+<use img/jpgData-eps-converted-to.pdf>
+Package pdftex.def Info: img/jpgData-eps-converted-to.pdf used on input line 22
+9.
+(pdftex.def)             Requested size: 106.71045pt x 80.27136pt.
+Package epstopdf Info: Source file: <img/jxrData.eps>
+(epstopdf)                    date: 2014-12-01 18:43:53
+(epstopdf)                    size: 1610157 bytes
+(epstopdf)             Output file: <img/jxrData-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-12-01 18:49:50
+(epstopdf)                    size: 1401613 bytes
+(epstopdf)             Command: <epstopdf --outfile=img/jxrData-eps-converted-t
+o.pdf img/jxrData.eps>
+(epstopdf)             \includegraphics on input line 230.
+Package epstopdf Info: Output file is already uptodate.
+
+<img/jxrData-eps-converted-to.pdf, id=35, 449.68pt x 338.26375pt>
+File: img/jxrData-eps-converted-to.pdf Graphic file (type pdf)
+
+<use img/jxrData-eps-converted-to.pdf>
+Package pdftex.def Info: img/jxrData-eps-converted-to.pdf used on input line 23
+0.
+(pdftex.def)             Requested size: 106.71045pt x 80.27136pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 1.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 236.
 
-(/usr/share/texmf/tex/latex/psnfss/ot1phv.fd
-File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
-) [1{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}
+Underfull \hbox (badness 7151) in paragraph at lines 255--256
+[]\OT1/ptm/m/n/10 Besides as-sess-ing the im-age qual-ity with fully-
+ []
 
+<img/segMasks/gt.png, id=36, 321.2pt x 240.9pt>
+File: img/segMasks/gt.png Graphic file (type png)
+ <use img/segMasks/gt.png>
+Package pdftex.def Info: img/segMasks/gt.png used on input line 275.
+(pdftex.def)             Requested size: 71.1415pt x 53.3547pt.
 
-]) [2
+<img/segMasks/jpg_caht_q100_cr5.png, id=37, 321.2pt x 240.9pt>
+File: img/segMasks/jpg_caht_q100_cr5.png Graphic file (type png)
 
-] (./egpaper_for_review.aux) ) 
+<use img/segMasks/jpg_caht_q100_cr5.png>
+Package pdftex.def Info: img/segMasks/jpg_caht_q100_cr5.png used on input line 
+276.
+(pdftex.def)             Requested size: 71.1415pt x 53.3547pt.
+
+<img/segMasks/jpg_wahet_q100_cr5.png, id=38, 321.2pt x 240.9pt>
+File: img/segMasks/jpg_wahet_q100_cr5.png Graphic file (type png)
+
+<use img/segMasks/jpg_wahet_q100_cr5.png>
+Package pdftex.def Info: img/segMasks/jpg_wahet_q100_cr5.png used on input line
+ 277.
+(pdftex.def)             Requested size: 71.1415pt x 53.3547pt.
+ [4 <C:/Users/Martin/Documents/Studium/FH Salzburg/Master - AISP/2. Semester/Mu
+ltimedia Formats/Project/doubleCompression/paper/img/jpgData-eps-converted-to.p
+df> <C:/Users/Martin/Documents/Studium/FH Salzburg/Master - AISP/2. Semester/Mu
+ltimedia Formats/Project/doubleCompression/paper/img/jxrData-eps-converted-to.p
+df> <C:/Users/Martin/Documents/Studium/FH Salzburg/Master - AISP/2. Semester/Mu
+ltimedia Formats/Project/doubleCompression/paper/img/segMasks/gt.png> <C:/Users
+/Martin/Documents/Studium/FH Salzburg/Master - AISP/2. Semester/Multimedia Form
+ats/Project/doubleCompression/paper/img/segMasks/jpg_caht_q100_cr5.png (PNG cop
+y)> <C:/Users/Martin/Documents/Studium/FH Salzburg/Master - AISP/2. Semester/Mu
+ltimedia Formats/Project/doubleCompression/paper/img/segMasks/jpg_wahet_q100_cr
+5.png (PNG copy)>]
+<img/segResults.png, id=50, 3176.86874pt x 1809.76125pt>
+File: img/segResults.png Graphic file (type png)
+
+<use img/segResults.png>
+Package pdftex.def Info: img/segResults.png used on input line 301.
+(pdftex.def)             Requested size: 237.13594pt x 135.06348pt.
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+
+<img/corrSRCCproblem.png, id=51, 353.82187pt x 287.57437pt>
+File: img/corrSRCCproblem.png Graphic file (type png)
+
+<use img/corrSRCCproblem.png>
+Package pdftex.def Info: img/corrSRCCproblem.png used on input line 339.
+(pdftex.def)             Requested size: 237.13594pt x 192.73964pt.
+ [5 <C:/Users/Martin/Documents/Studium/FH Salzburg/Master - AISP/2. Semester/Mu
+ltimedia Formats/Project/doubleCompression/paper/img/segResults.png> <C:/Users/
+Martin/Documents/Studium/FH Salzburg/Master - AISP/2. Semester/Multimedia Forma
+ts/Project/doubleCompression/paper/img/corrSRCCproblem.png>]
+("C:\Users\Martin\Documents\Studium\FH Salzburg\Master - AISP\2. Semester\Multi
+media Formats\Project\doubleCompression\paper\egpaper_for_review.bbl"
+Underfull \hbox (badness 3312) in paragraph at lines 37--43
+\OT1/ptm/m/n/9 Im-prov-ing com-pressed iris recog-ni-tion ac-cu-racy us-ing
+ []
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+Missing character: There is no Ô in font ptmr7t!
+Missing character: There is no ¨ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+) [6]
+("C:\Users\Martin\Documents\Studium\FH Salzburg\Master - AISP\2. Semester\Multi
+media Formats\Project\doubleCompression\paper\egpaper_for_review.aux")
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 4.5pt have occurred.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2776 strings out of 493315
- 35697 string characters out of 6145894
- 103426 words of memory out of 5000000
- 6149 multiletter control sequences out of 15000+600000
- 32869 words of font info for 77 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 39i,9n,34p,266b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</u
-sr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/font
-s/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvr
-8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf/fon
-ts/type1/urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmri8a.p
-fb>
-Output written on egpaper_for_review.pdf (2 pages, 67096 bytes).
+ 2997 strings out of 493921
+ 41701 string characters out of 3147279
+ 105354 words of memory out of 3000000
+ 6186 multiletter control sequences out of 15000+200000
+ 40143 words of font info for 90 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 42i,10n,29p,1398b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
+sbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
+utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on egpaper_for_review.pdf (6 pages, 3306710 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
