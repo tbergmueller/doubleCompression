@@ -74,12 +74,12 @@ modalities, standardized by the International Civil Aviation
 Organization (ICAO) for use in future passports, and one of
 the technologies in the Unique Identification Authority of
 India's (UID) Aadhaar project to uniquely identify Indian
-citicens. However, the increasing market saturation of
+citicens. The increasing market saturation of
 biometric instead of conventional access control methods
 raises the need for efficient means to store such data. The
 International Organization for Standardization (ISO)
 specifies iris biometric data to be recorded and stored in (raw)
-image form (ISO/IEC FDIS 19794-6), rather than in extracted
+image form (ISO/IEC FDIS 19794-6) rather than in extracted
 templates (e.g. iris-codes). Such
 deployments benefit from future improvements (e.g. in
 feature extraction stage) which can be easily incorporated
@@ -114,7 +114,7 @@ many papers dealing with compression have been relying on the (extended) CASIA V
 % noch V1: BIves05a,Konrad09b,Kostmajer09a,BRakshit06a,
 \cite{BDaugman08a,BIves10a}).
 	
-However, since it has been pointed out \cite{BPhilips07a} that the CASIA V1.0 dataset exhibits manipulated pupil areas and should therefore not be used any further in experimentation, compression researchers moved to other (and more recent, more challenging etc.) datasets, e.g. 
+Since it has been pointed out \cite{BPhilips07a} that the CASIA V1.0 dataset exhibits manipulated pupil areas and should therefore not be used any further in experimentation, compression researchers moved to other (and more recent, more challenging etc.) datasets, e.g. 
 	the CASIA V3.0 \cite{Horvath11b,Rathgeb12e}, 
 	the CASIA V4.0 \cite{BTuba12a}, the Bath \cite{BIves08a,BPardamean12a}, and the UBIRIS.v1 \cite{Haemmerle09a,BCarneiro11a} datasets.
 	While the images of CASIA V1.0 and ICE 2005 are given in uncompressed format, images in CASIA V3.0, CASIA V4.0, UBIRIS and Bath datasets are provided as JPEG (the first three) or JPEG2000 (the latter) lossy compressed data. Therefore, any compression experiments conducted on these datasets operate on pre-compressed data. 
@@ -138,12 +138,10 @@ However, since it has been pointed out \cite{BPhilips07a} that the CASIA V1.0 da
 	JPEG double compression (i.e. JPEG intra-recompression) has been a hot topic in image forensics \cite{Sencar12a}.
 	
 	Taking all these facts together, it gets clear that recompression artifacts may impact experimental results with respect to biometric recognition
-	performance, an issue, that has been neglected so far. \cite{severeCompression, BDaugman08a} conclude that data reduction, i.e. compression, has the highest impact on the segmentation step of an iris recognition system because of segmentation errors.
+	performance, an issue, that has been neglected so far. As discussed, ISO/IEC FDIS 19794-6 requires storing biometric data as raw images, hence all components of a biometric system are affected when operating with compressed data. As we investigate the recompression issue by studying impact on an iris recognition system, the influence on segmentation and texture extraction as well as feature extraction, i.e. iris code computation, has to be evaluated. \cite{severeCompression, BDaugman08a} suggest that data reduction has the highest impact on the iris segmentation. Since segmentation is also the first step in the pipeline, this potentially effects the performance of later steps as well and is therefore of particular importance. 
 	
-	In this paper, we systematically investigate eventual intra- and inter-recompression effects 
-	in an experimental study for iris segmentation. Given the importance of JPEG in the area (as the CASIA V3.0/V4.0 and UBIRIS.v1 datasets are only available in this format), we 
-	focus on JPEG pre-compressed data. In our experiments, we compare iris recognition, iris segmentation, and general purpose image quality metrics applied
-	to single compressed vs. recompressed (i.e. JPEG pre-compressed) iris image data. In Section \ref{section:comprScheme}, we discuss the aspects relevant when generating single and recompressed data. Under these aspects, data for experimental evaluation is generated as described in section \ref{section:exSetup}. Section \ref{section:eval} lists several experiments and their results, which are compared in section \ref{section:results}. From the experiments' individual and comparison results, we withdraw a conclusion in section \ref{section:conclusion}.
+	We systematically investigate eventual intra- and inter-recompression effects in an experimental study for iris segmentation. Given the importance of JPEG in the area (as the CASIA V3.0/V4.0 and UBIRIS.v1 datasets are only available in this format), we focus on JPEG pre-compressed data. In our experiments, we compare iris segmentation and general purpose image quality metrics applied
+	to single compressed vs. recompressed (i.e. JPEG pre-compressed) iris image data. In Section \ref{section:comprScheme}, we discuss the aspects relevant when generating single- and recompressed data. Under these aspects, data for experimental evaluation is generated as described in section \ref{section:exSetup}. Section \ref{section:eval} describes and lists results of several experiments, which are compared in section \ref{section:results}. From the experiments' individual and comparison results, we withdraw a conclusion in section \ref{section:conclusion}.
 	
 
 \section{Compression scheme}
@@ -163,7 +161,7 @@ For rating an image $I$'s compression effectiveness, we define the compression r
 cr(I_u, I_c) = \frac{s(I_u)}{s(I_c)} \quad \text{with} \quad I_c \in \{I_r, I_s\}
 \end{equation}
 
-For the later described experiments, images are compressed to a target compression ratio $cr_t \in \mathbb{R}$. However, only the \emph{j2k} compression standard \cite{j2k} allows to specify a target compression ratio $cr_t$ directly via parameter $q$. Hence this is the only method where we can control the file size $s(I_c)$ directly. The other two compression methods take a quality parameter $q \in \mathbb{N}$ only, which controls the quality but not the file size of the output image $I_c$. Therefore it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ cannot be achieved exactly in any case. However, parameter optimization can be done, such that $cr_t \approxeq cr(I_u^{(k)}, I_c^{(k)})$. We propose an algorithm to compress a set of $K$ uncompressed images $I_u$ using a particular method $m$ to achieve a certain compression ratio $cr_t$ in a way that the compression ratio of each image is met as close as possible.
+For the later described experiments, images are compressed to a target compression ratio $cr_t \in \mathbb{R}$. However, only the \emph{j2k} compression standard \cite{j2k} allows to specify a target compression ratio $cr_t$ directly via parameter $q$. Hence this is the only method where we can control the file size $s(I_c)$ directly. The other two compression methods take a quality parameter $q \in \mathbb{N}$ only, which controls the quality but not the file size of the output image $I_c$. Therefore it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ cannot be achieved exactly in any case. However, parameter optimisation can be done, such that $cr_t \approxeq cr(I_u^{(k)}, I_c^{(k)})$. We propose an algorithm to compress a set of $K$ uncompressed images $I_u$ using a particular method $m$ to achieve a certain compression ratio $cr_t$ in a way that the compression ratio of each image is met as close as possible.
 
 
 \begin{figure}[h]
@@ -193,7 +191,7 @@ This process, illustrated in Fig. \ref{fig:comprScheme}, employs
 		I_p^{(k)} = c_{jpg}(I_u^{(k)}, q_p)
 	\end{equation}
 	
-	\item Now, find a quality parameter $q_d^{(k)}$ that allows to compress the pre-compressed image $I_p^{(k)}$ a second time, such that the resulting recompressed image $I_r^{(k)}$ has the same file size as the single-compressed image $I_s^{(k)}$, i.e. $s(I_s^{(k)}) \approxeq s(I_r^{(k)})$. Such a quality parameter $q_r^{(k)}$ can be found by optimizing
+	\item Now, find a quality parameter $q_d^{(k)}$ that allows to compress the pre-compressed image $I_p^{(k)}$ a second time, such that the resulting recompressed image $I_r^{(k)}$ has the same file size as the single-compressed image $I_s^{(k)}$, i.e. $s(I_s^{(k)}) \approxeq s(I_r^{(k)})$. Such a quality parameter $q_r^{(k)}$ can be found by optimising
 	\begin{equation}
 	\small
 	q_r^{(k)} = \underset{q \in \mathbb{N}}{argmin}|s(c_m(I_p^{(k)},q)) - s(I_s^{(k)})| \quad \forall s(I_s^{(k)}) \geq s(I_r^{(k)})
@@ -256,8 +254,6 @@ in order to simulate different levels of pre-compression. Each of these combinat
 
 
 \subsection{Full-referenced quality metrics}
-
-
 
 Todo Lefteris:
 \begin{itemize}
@@ -380,12 +376,10 @@ In conclusion, one has to be careful when using pre-compressed data for compress
 \paragraph{In inter-recompression} we cannot observe such behaviour. However, there are trends observeable (\ref{singleAmongBest}, \ref{cureFlattening}) needing further investigation. 
 
 
-
 %TODO TB:
 %\begin{itemize}
 % \item Transform CR's in bpp, compare to \cite{severeCompression}
 %\end{itemize}
-
 
 
 \section{Results}
