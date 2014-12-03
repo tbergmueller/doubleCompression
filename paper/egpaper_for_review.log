@@ -1,21 +1,14 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.8)  3 DEC 2014 21:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2014.7.7)  3 DEC 2014 22:56
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **egpaper_for_review.tex
-(C:\Users\user\Desktop\doubleCompression\paper\egpaper_for_review.tex
+(./egpaper_for_review.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+(/usr/share/texmf/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -29,22 +22,20 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
-(C:\Users\user\Desktop\doubleCompression\paper\icb.sty
-(C:\Users\user\Desktop\doubleCompression\paper\eso-pic.sty
+) (./icb.sty (./eso-pic.sty
 Package: eso-pic 2002/11/16 v1.1b eso-pic (RN)
 
-(C:\Users\user\Desktop\doubleCompression\paper\icb_eso.sty
+(./icb_eso.sty
 
 LaTeX Warning: You have requested package `eso-pic',
                but the package provides `everyshi'.
 
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+) (/usr/share/texmf/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+(/usr/share/texmf/tex/latex/tools/xspace.sty
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
 icb 8.5 x 11-Inch Proceedings Style `icb.sty'.
@@ -60,33 +51,33 @@ icb 8.5 x 11-Inch Proceedings Style `icb.sty'.
 \cv@tot=\count89
 \cv@tmpc@=\count90
 \cv@tmpc=\count91
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\times.sty"
+) (/usr/share/texmf/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/share/texmf/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/share/texmf/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/share/texmf/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/share/texmf/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count92
@@ -97,28 +88,28 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \epsfxsize=\dimen108
 \epsfysize=\dimen109
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+(/usr/share/texmf/tex/latex/oberdiek/epstopdf.sty
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+(/usr/share/texmf/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+(/usr/share/texmf/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+(/usr/share/texmf/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+(/usr/share/texmf/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+(/usr/share/texmf/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+(/usr/share/texmf/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+(/usr/share/texmf/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -127,11 +118,11 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+(/usr/share/texmf/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+(/usr/share/texmf/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -144,25 +135,29 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+
+(/usr/share/texmf/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/share/texmf/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+(/usr/share/texmf/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+(/usr/share/texmf/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen110
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+(/usr/share/texmf/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen111
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+(/usr/share/texmf/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count93
@@ -203,32 +198,32 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+(/usr/share/texmf/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+(/usr/share/texmf/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+(/usr/share/texmf/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+(/usr/share/texmf/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen119
 \extrarowheight=\dimen120
@@ -249,8 +244,9 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-)
-(C:\Users\user\Desktop\doubleCompression\paper\egpaper_for_review.aux)
+) (./egpaper_for_review.aux)
+\openout1 = `egpaper_for_review.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
@@ -265,11 +261,11 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 30.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+(/usr/share/texmf/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ABD: EveryShipout initializing macros
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count106
 \scratchdimen=\dimen121
@@ -286,12 +282,12 @@ ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
 LaTeX Font Info:    Try loading font information for U+msa on input line 56.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+ (/usr/share/texmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 56.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -299,33 +295,23 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 105.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+(/usr/share/texmf/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 120.
-
-
-LaTeX Warning: Citation `BCarneiro11a' on page 1 undefined on input line 120.
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 129.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 129.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
+
+(/usr/share/texmf/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
-) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+) [1{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-
-LaTeX Warning: Citation `BCarneiro11a' on page 2 undefined on input line 131.
-
-
 Underfull \hbox (badness 1152) in paragraph at lines 129--133
 []\OT1/ptm/m/n/10 Two dif-fer-ent types of such ef-fects may be dis-tin-
  []
-
-
-LaTeX Warning: Citation `Kumar11a' on page 2 undefined on input line 137.
 
 
 LaTeX Warning: Reference `section:results' on page 2 undefined on input line 14
@@ -333,7 +319,7 @@ LaTeX Warning: Reference `section:results' on page 2 undefined on input line 14
 
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 153.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+(/usr/share/texmf/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
@@ -362,151 +348,105 @@ OT1/ptm/m/n/10 with
 LaTeX Font Warning: Command \small invalid in math mode on input line 170.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 185.
-
-
-Overfull \hbox (13.09053pt too wide) detected at line 188
-\OML/cmm/m/it/9 q[] \OT1/cmr/m/n/9 = []\OMS/cmsy/m/n/9 j\OML/cmm/m/it/9 s\OT1/c
-mr/m/n/9 (\OML/cmm/m/it/9 c[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 I[]; q\OT1/cmr/m/n
-/9 )) \OMS/cmsy/m/n/9   \OML/cmm/m/it/9 s\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 I[]\OT
-1/cmr/m/n/9 )\OMS/cmsy/m/n/9 j 8\OML/cmm/m/it/9 s\OT1/cmr/m/n/9 (\OML/cmm/m/it/
-9 I[]\OT1/cmr/m/n/9 ) \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 s\OT1/cmr/m/n/9 (\OML/c
-mm/m/it/9 I[]\OT1/cmr/m/n/9 )
+Overfull \hbox (32.07687pt too wide) detected at line 187
+\OML/cmm/m/it/10 q[] \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 s\O
+T1/cmr/m/n/10 (\OML/cmm/m/it/10 c[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 I[]; q\OT1
+/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 s\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 I[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j 8\OML/cmm/m/it/10 s\OT1/cmr/m/n
+/10 (\OML/cmm/m/it/10 I[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^U \OML/cmm/m/it/1
+0 s\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 I[]\OT1/cmr/m/n/10 )
  []
 
-LaTeX Font Info:    Calculating math sizes for size <> on input line 188.
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
-(Font)              size <5> substituted on input line 188.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 188.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 188.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
-(Font)              size <5> substituted on input line 188.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
-(Font)              size <5> substituted on input line 188.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
-(Font)              size <5> substituted on input line 188.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
-(Font)              size <5> substituted on input line 188.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 188.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 188.
-
-<img/comprScheme.png, id=21, 939.51pt x 978.65625pt>
+<img/comprScheme.png, id=22, 939.51pt x 978.65625pt>
 File: img/comprScheme.png Graphic file (type png)
  <use img/comprScheme.png>
-Package pdftex.def Info: img/comprScheme.png used on input line 200.
+Package pdftex.def Info: img/comprScheme.png used on input line 199.
 (pdftex.def)             Requested size: 165.99443pt x 172.91005pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--212
+Underfull \hbox (badness 10000) in paragraph at lines 211--211
 [][]\OT1/ptm/m/n/8 IITD Iris Database ver-sion 1.0,
  []
 
-[3 <C:/Users/user/Desktop/doubleCompression/paper/img/comprScheme.png>]
+[3 <./img/comprScheme.png>]
 Package epstopdf Info: Source file: <img/jpgData.eps>
-(epstopdf)                    date: 2014-12-03 20:43:19
-(epstopdf)                    size: 1610157 bytes
+(epstopdf)                    date: 2014-12-03 22:02:00
+(epstopdf)                    size: 1493383 bytes
 (epstopdf)             Output file: <img/jpgData-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-12-03 20:43:19
+(epstopdf)                    date: 2014-12-03 22:02:00
 (epstopdf)                    size: 1311613 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/jpgData-eps-converted-t
-o.pdf img/jpgData.eps>
-(epstopdf)             \includegraphics on input line 228.
+(epstopdf)             Command: <repstopdf --outfile=img/jpgData-eps-converted-
+to.pdf img/jpgData.eps>
+(epstopdf)             \includegraphics on input line 227.
 Package epstopdf Info: Output file is already uptodate.
 
-<img/jpgData-eps-converted-to.pdf, id=34, 449.68pt x 338.26375pt>
+<img/jpgData-eps-converted-to.pdf, id=32, 449.68pt x 338.26375pt>
 File: img/jpgData-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/jpgData-eps-converted-to.pdf>
 Package pdftex.def Info: img/jpgData-eps-converted-to.pdf used on input line 22
-8.
+7.
 (pdftex.def)             Requested size: 106.71045pt x 80.27136pt.
 Package epstopdf Info: Source file: <img/jxrData.eps>
-(epstopdf)                    date: 2014-12-03 20:43:19
-(epstopdf)                    size: 1610157 bytes
+(epstopdf)                    date: 2014-12-03 22:02:00
+(epstopdf)                    size: 1493383 bytes
 (epstopdf)             Output file: <img/jxrData-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-12-03 20:43:19
+(epstopdf)                    date: 2014-12-03 22:02:00
 (epstopdf)                    size: 1401613 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/jxrData-eps-converted-t
-o.pdf img/jxrData.eps>
-(epstopdf)             \includegraphics on input line 229.
+(epstopdf)             Command: <repstopdf --outfile=img/jxrData-eps-converted-
+to.pdf img/jxrData.eps>
+(epstopdf)             \includegraphics on input line 228.
 Package epstopdf Info: Output file is already uptodate.
 
-<img/jxrData-eps-converted-to.pdf, id=35, 449.68pt x 338.26375pt>
+<img/jxrData-eps-converted-to.pdf, id=33, 449.68pt x 338.26375pt>
 File: img/jxrData-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/jxrData-eps-converted-to.pdf>
 Package pdftex.def Info: img/jxrData-eps-converted-to.pdf used on input line 22
-9.
+8.
 (pdftex.def)             Requested size: 106.71045pt x 80.27136pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 235.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 234.
 
 
 LaTeX Warning: Reference `section:results' on page 4 undefined on input line 25
-4.
+3.
 
 
-Underfull \hbox (badness 7151) in paragraph at lines 254--255
+Underfull \hbox (badness 7151) in paragraph at lines 253--254
 []\OT1/ptm/m/n/10 Besides as-sess-ing the im-age qual-ity with fully-
  []
 
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-
-Underfull \hbox (badness 2221) in paragraph at lines 267--271
-[]\OT1/ptm/m/n/10 VSNR[[]]:Visual Signal-to-Noise Ra-tio, a wavelet
- []
-
-[4 <C:/Users/user/Desktop/doubleCompression/paper/img/jpgData-eps-converted-to.
-pdf> <C:/Users/user/Desktop/doubleCompression/paper/img/jxrData-eps-converted-t
-o.pdf>]
+[4 <./img/jpgData-eps-converted-to.pdf> <./img/jxrData-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <img/new/mssim_jpg.eps>
-(epstopdf)                    date: 2014-12-03 20:07:33
-(epstopdf)                    size: 17140 bytes
+(epstopdf)                    date: 2014-12-03 21:58:39
+(epstopdf)                    size: 16260 bytes
 (epstopdf)             Output file: <img/new/mssim_jpg-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-12-03 20:16:24
+(epstopdf)                    date: 2014-12-03 21:58:39
 (epstopdf)                    size: 6887 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/new/mssim_jpg-eps-conve
-rted-to.pdf img/new/mssim_jpg.eps>
-(epstopdf)             \includegraphics on input line 302.
+(epstopdf)             Command: <repstopdf --outfile=img/new/mssim_jpg-eps-conv
+erted-to.pdf img/new/mssim_jpg.eps>
+(epstopdf)             \includegraphics on input line 301.
 Package epstopdf Info: Output file is already uptodate.
- <img/new/mssim_jpg-eps-converted-to.pdf, id=46, 421.575pt x 317.185pt>
+
+<img/new/mssim_jpg-eps-converted-to.pdf, id=46, 421.575pt x 317.185pt>
 File: img/new/mssim_jpg-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/new/mssim_jpg-eps-converted-to.pdf>
 Package pdftex.def Info: img/new/mssim_jpg-eps-converted-to.pdf used on input l
-ine 302.
+ine 301.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
 Package epstopdf Info: Source file: <img/new/j2k_mssim.eps>
-(epstopdf)                    date: 2014-12-03 20:09:22
-(epstopdf)                    size: 17675 bytes
+(epstopdf)                    date: 2014-12-03 21:58:39
+(epstopdf)                    size: 16771 bytes
 (epstopdf)             Output file: <img/new/j2k_mssim-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-12-03 20:16:26
+(epstopdf)                    date: 2014-12-03 21:58:39
 (epstopdf)                    size: 7029 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/new/j2k_mssim-eps-conve
-rted-to.pdf img/new/j2k_mssim.eps>
-(epstopdf)             \includegraphics on input line 303.
+(epstopdf)             Command: <repstopdf --outfile=img/new/j2k_mssim-eps-conv
+erted-to.pdf img/new/j2k_mssim.eps>
+(epstopdf)             \includegraphics on input line 302.
 Package epstopdf Info: Output file is already uptodate.
 
 <img/new/j2k_mssim-eps-converted-to.pdf, id=47, 421.575pt x 317.185pt>
@@ -514,17 +454,17 @@ File: img/new/j2k_mssim-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/new/j2k_mssim-eps-converted-to.pdf>
 Package pdftex.def Info: img/new/j2k_mssim-eps-converted-to.pdf used on input l
-ine 303.
+ine 302.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
 Package epstopdf Info: Source file: <img/new/rt_jxr.eps>
-(epstopdf)                    date: 2014-12-03 20:35:08
-(epstopdf)                    size: 17536 bytes
+(epstopdf)                    date: 2014-12-03 21:58:39
+(epstopdf)                    size: 16638 bytes
 (epstopdf)             Output file: <img/new/rt_jxr-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-12-03 20:35:48
+(epstopdf)                    date: 2014-12-03 21:58:39
 (epstopdf)                    size: 7039 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/new/rt_jxr-eps-converte
-d-to.pdf img/new/rt_jxr.eps>
-(epstopdf)             \includegraphics on input line 311.
+(epstopdf)             Command: <repstopdf --outfile=img/new/rt_jxr-eps-convert
+ed-to.pdf img/new/rt_jxr.eps>
+(epstopdf)             \includegraphics on input line 310.
 Package epstopdf Info: Output file is already uptodate.
 
 <img/new/rt_jxr-eps-converted-to.pdf, id=48, 421.575pt x 317.185pt>
@@ -532,17 +472,17 @@ File: img/new/rt_jxr-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/new/rt_jxr-eps-converted-to.pdf>
 Package pdftex.def Info: img/new/rt_jxr-eps-converted-to.pdf used on input line
- 311.
+ 310.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
 Package epstopdf Info: Source file: <img/new/jxr_mssim.eps>
-(epstopdf)                    date: 2014-12-03 20:10:59
-(epstopdf)                    size: 17402 bytes
+(epstopdf)                    date: 2014-12-03 21:58:39
+(epstopdf)                    size: 16510 bytes
 (epstopdf)             Output file: <img/new/jxr_mssim-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-12-03 20:13:05
+(epstopdf)                    date: 2014-12-03 21:58:39
 (epstopdf)                    size: 6970 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/new/jxr_mssim-eps-conve
-rted-to.pdf img/new/jxr_mssim.eps>
-(epstopdf)             \includegraphics on input line 312.
+(epstopdf)             Command: <repstopdf --outfile=img/new/jxr_mssim-eps-conv
+erted-to.pdf img/new/jxr_mssim.eps>
+(epstopdf)             \includegraphics on input line 311.
 Package epstopdf Info: Output file is already uptodate.
 
 <img/new/jxr_mssim-eps-converted-to.pdf, id=49, 421.575pt x 317.185pt>
@@ -550,13 +490,13 @@ File: img/new/jxr_mssim-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/new/jxr_mssim-eps-converted-to.pdf>
 Package pdftex.def Info: img/new/jxr_mssim-eps-converted-to.pdf used on input l
-ine 312.
+ine 311.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
 
 <img/segMasks/gt.png, id=50, 321.2pt x 240.9pt>
 File: img/segMasks/gt.png Graphic file (type png)
  <use img/segMasks/gt.png>
-Package pdftex.def Info: img/segMasks/gt.png used on input line 328.
+Package pdftex.def Info: img/segMasks/gt.png used on input line 327.
 (pdftex.def)             Requested size: 71.1415pt x 53.3547pt.
 
 <img/segMasks/jpg_caht_q100_cr5.png, id=51, 321.2pt x 240.9pt>
@@ -564,7 +504,7 @@ File: img/segMasks/jpg_caht_q100_cr5.png Graphic file (type png)
 
 <use img/segMasks/jpg_caht_q100_cr5.png>
 Package pdftex.def Info: img/segMasks/jpg_caht_q100_cr5.png used on input line 
-329.
+328.
 (pdftex.def)             Requested size: 71.1415pt x 53.3547pt.
 
 <img/segMasks/jpg_wahet_q100_cr5.png, id=52, 321.2pt x 240.9pt>
@@ -572,215 +512,182 @@ File: img/segMasks/jpg_wahet_q100_cr5.png Graphic file (type png)
 
 <use img/segMasks/jpg_wahet_q100_cr5.png>
 Package pdftex.def Info: img/segMasks/jpg_wahet_q100_cr5.png used on input line
- 330.
+ 329.
 (pdftex.def)             Requested size: 71.1415pt x 53.3547pt.
+ [5 <./img/new/mssim_jpg-eps-converted-to.pdf> <./img/new/j2k_mssim-eps-convert
+ed-to.pdf> <./img/new/rt_jxr-eps-converted-to.pdf> <./img/new/jxr_mssim-eps-con
+verted-to.pdf> <./img/segMasks/gt.png> <./img/segMasks/jpg_caht_q100_cr5.png (P
+NG copy)> <./img/segMasks/jpg_wahet_q100_cr5.png (PNG copy)>]
 Package epstopdf Info: Source file: <img/new/jpg_wahet.eps>
-(epstopdf)                    date: 2014-12-03 19:03:53
-(epstopdf)                    size: 17436 bytes
+(epstopdf)                    date: 2014-12-03 21:58:39
+(epstopdf)                    size: 16544 bytes
 (epstopdf)             Output file: <img/new/jpg_wahet-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-12-03 19:40:15
+(epstopdf)                    date: 2014-12-03 21:58:39
 (epstopdf)                    size: 6906 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/new/jpg_wahet-eps-conve
-rted-to.pdf img/new/jpg_wahet.eps>
-(epstopdf)             \includegraphics on input line 354.
+(epstopdf)             Command: <repstopdf --outfile=img/new/jpg_wahet-eps-conv
+erted-to.pdf img/new/jpg_wahet.eps>
+(epstopdf)             \includegraphics on input line 353.
 Package epstopdf Info: Output file is already uptodate.
 
-<img/new/jpg_wahet-eps-converted-to.pdf, id=53, 421.575pt x 317.185pt>
+<img/new/jpg_wahet-eps-converted-to.pdf, id=73, 421.575pt x 317.185pt>
 File: img/new/jpg_wahet-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/new/jpg_wahet-eps-converted-to.pdf>
 Package pdftex.def Info: img/new/jpg_wahet-eps-converted-to.pdf used on input l
-ine 354.
+ine 353.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
 Package epstopdf Info: Source file: <img/new/jpg_abs_wahet.eps>
-(epstopdf)                    date: 2014-12-03 19:05:33
-(epstopdf)                    size: 17580 bytes
+(epstopdf)                    date: 2014-12-03 21:58:39
+(epstopdf)                    size: 16682 bytes
 (epstopdf)             Output file: <img/new/jpg_abs_wahet-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2014-12-03 19:40:17
+(epstopdf)                    date: 2014-12-03 21:58:39
 (epstopdf)                    size: 6963 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/new/jpg_abs_wahet-eps-c
-onverted-to.pdf img/new/jpg_abs_wahet.eps>
-(epstopdf)             \includegraphics on input line 355.
+(epstopdf)             Command: <repstopdf --outfile=img/new/jpg_abs_wahet-eps-
+converted-to.pdf img/new/jpg_abs_wahet.eps>
+(epstopdf)             \includegraphics on input line 354.
 Package epstopdf Info: Output file is already uptodate.
 
-<img/new/jpg_abs_wahet-eps-converted-to.pdf, id=54, 421.575pt x 317.185pt>
+<img/new/jpg_abs_wahet-eps-converted-to.pdf, id=74, 421.575pt x 317.185pt>
 File: img/new/jpg_abs_wahet-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/new/jpg_abs_wahet-eps-converted-to.pdf>
 Package pdftex.def Info: img/new/jpg_abs_wahet-eps-converted-to.pdf used on inp
-ut line 355.
+ut line 354.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
 Package epstopdf Info: Source file: <img/new/jpg_caht.eps>
-(epstopdf)                    date: 2014-12-03 19:08:26
-(epstopdf)                    size: 17564 bytes
+(epstopdf)                    date: 2014-12-03 21:58:39
+(epstopdf)                    size: 16666 bytes
 (epstopdf)             Output file: <img/new/jpg_caht-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-12-03 19:40:20
+(epstopdf)                    date: 2014-12-03 21:58:39
 (epstopdf)                    size: 6926 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/new/jpg_caht-eps-conver
-ted-to.pdf img/new/jpg_caht.eps>
-(epstopdf)             \includegraphics on input line 356.
+(epstopdf)             Command: <repstopdf --outfile=img/new/jpg_caht-eps-conve
+rted-to.pdf img/new/jpg_caht.eps>
+(epstopdf)             \includegraphics on input line 355.
 Package epstopdf Info: Output file is already uptodate.
 
-<img/new/jpg_caht-eps-converted-to.pdf, id=55, 421.575pt x 317.185pt>
+<img/new/jpg_caht-eps-converted-to.pdf, id=75, 421.575pt x 317.185pt>
 File: img/new/jpg_caht-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/new/jpg_caht-eps-converted-to.pdf>
 Package pdftex.def Info: img/new/jpg_caht-eps-converted-to.pdf used on input li
-ne 356.
+ne 355.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
 Package epstopdf Info: Source file: <img/new/jpg_abs_caht.eps>
-(epstopdf)                    date: 2014-12-03 19:07:12
-(epstopdf)                    size: 17543 bytes
+(epstopdf)                    date: 2014-12-03 21:58:39
+(epstopdf)                    size: 16645 bytes
 (epstopdf)             Output file: <img/new/jpg_abs_caht-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2014-12-03 19:40:42
+(epstopdf)                    date: 2014-12-03 21:58:39
 (epstopdf)                    size: 6917 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/new/jpg_abs_caht-eps-co
-nverted-to.pdf img/new/jpg_abs_caht.eps>
-(epstopdf)             \includegraphics on input line 357.
+(epstopdf)             Command: <repstopdf --outfile=img/new/jpg_abs_caht-eps-c
+onverted-to.pdf img/new/jpg_abs_caht.eps>
+(epstopdf)             \includegraphics on input line 356.
 Package epstopdf Info: Output file is already uptodate.
 
-<img/new/jpg_abs_caht-eps-converted-to.pdf, id=56, 421.575pt x 317.185pt>
+<img/new/jpg_abs_caht-eps-converted-to.pdf, id=76, 421.575pt x 317.185pt>
 File: img/new/jpg_abs_caht-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/new/jpg_abs_caht-eps-converted-to.pdf>
 Package pdftex.def Info: img/new/jpg_abs_caht-eps-converted-to.pdf used on inpu
-t line 357.
+t line 356.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
 Package epstopdf Info: Source file: <img/new/jxr_caht.eps>
-(epstopdf)                    date: 2014-12-03 19:50:32
-(epstopdf)                    size: 17482 bytes
+(epstopdf)                    date: 2014-12-03 21:58:39
+(epstopdf)                    size: 16590 bytes
 (epstopdf)             Output file: <img/new/jxr_caht-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-12-03 19:54:19
+(epstopdf)                    date: 2014-12-03 21:58:39
 (epstopdf)                    size: 6948 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/new/jxr_caht-eps-conver
-ted-to.pdf img/new/jxr_caht.eps>
-(epstopdf)             \includegraphics on input line 366.
+(epstopdf)             Command: <repstopdf --outfile=img/new/jxr_caht-eps-conve
+rted-to.pdf img/new/jxr_caht.eps>
+(epstopdf)             \includegraphics on input line 365.
 Package epstopdf Info: Output file is already uptodate.
 
-<img/new/jxr_caht-eps-converted-to.pdf, id=57, 421.575pt x 317.185pt>
+<img/new/jxr_caht-eps-converted-to.pdf, id=77, 421.575pt x 317.185pt>
 File: img/new/jxr_caht-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/new/jxr_caht-eps-converted-to.pdf>
 Package pdftex.def Info: img/new/jxr_caht-eps-converted-to.pdf used on input li
-ne 366.
+ne 365.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
 Package epstopdf Info: Source file: <img/new/j2k_abs_wahet.eps>
-(epstopdf)                    date: 2014-12-03 19:53:47
-(epstopdf)                    size: 17896 bytes
+(epstopdf)                    date: 2014-12-03 21:58:39
+(epstopdf)                    size: 16986 bytes
 (epstopdf)             Output file: <img/new/j2k_abs_wahet-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2014-12-03 19:54:21
+(epstopdf)                    date: 2014-12-03 21:58:39
 (epstopdf)                    size: 7092 bytes
-(epstopdf)             Command: <epstopdf --outfile=img/new/j2k_abs_wahet-eps-c
-onverted-to.pdf img/new/j2k_abs_wahet.eps>
-(epstopdf)             \includegraphics on input line 367.
+(epstopdf)             Command: <repstopdf --outfile=img/new/j2k_abs_wahet-eps-
+converted-to.pdf img/new/j2k_abs_wahet.eps>
+(epstopdf)             \includegraphics on input line 366.
 Package epstopdf Info: Output file is already uptodate.
 
-<img/new/j2k_abs_wahet-eps-converted-to.pdf, id=58, 421.575pt x 317.185pt>
+<img/new/j2k_abs_wahet-eps-converted-to.pdf, id=78, 421.575pt x 317.185pt>
 File: img/new/j2k_abs_wahet-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/new/j2k_abs_wahet-eps-converted-to.pdf>
 Package pdftex.def Info: img/new/j2k_abs_wahet-eps-converted-to.pdf used on inp
-ut line 367.
+ut line 366.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
- [5 <C:/Users/user/Desktop/doubleCompression/paper/img/new/mssim_jpg-eps-conver
-ted-to.pdf> <C:/Users/user/Desktop/doubleCompression/paper/img/new/j2k_mssim-ep
-s-converted-to.pdf> <C:/Users/user/Desktop/doubleCompression/paper/img/new/rt_j
-xr-eps-converted-to.pdf> <C:/Users/user/Desktop/doubleCompression/paper/img/new
-/jxr_mssim-eps-converted-to.pdf> <C:/Users/user/Desktop/doubleCompression/paper
-/img/segMasks/gt.png> <C:/Users/user/Desktop/doubleCompression/paper/img/segMas
-ks/jpg_caht_q100_cr5.png (PNG copy)> <C:/Users/user/Desktop/doubleCompression/p
-aper/img/segMasks/jpg_wahet_q100_cr5.png (PNG copy)>]
-Underfull \hbox (badness 1442) in paragraph at lines 381--383
+
+Underfull \hbox (badness 1442) in paragraph at lines 380--382
 \OT1/ptm/m/n/10 Thus us-ing pre-compressed or un-com-pressed
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 396--397
+Underfull \hbox (badness 1033) in paragraph at lines 395--396
 []\OT1/ptm/m/n/10 Data gen-er-ated in a sin-gle com-pres-sion step
  []
 
-[6 <C:/Users/user/Desktop/doubleCompression/paper/img/new/jpg_wahet-eps-convert
-ed-to.pdf> <C:/Users/user/Desktop/doubleCompression/paper/img/new/jpg_abs_wahet
--eps-converted-to.pdf> <C:/Users/user/Desktop/doubleCompression/paper/img/new/j
-pg_caht-eps-converted-to.pdf> <C:/Users/user/Desktop/doubleCompression/paper/im
-g/new/jpg_abs_caht-eps-converted-to.pdf> <C:/Users/user/Desktop/doubleCompressi
-on/paper/img/new/jxr_caht-eps-converted-to.pdf> <C:/Users/user/Desktop/doubleCo
-mpression/paper/img/new/j2k_abs_wahet-eps-converted-to.pdf>]
-Underfull \hbox (badness 1742) in paragraph at lines 414--415
+[6 <./img/new/jpg_wahet-eps-converted-to.pdf> <./img/new/jpg_abs_wahet-eps-conv
+erted-to.pdf> <./img/new/jpg_caht-eps-converted-to.pdf> <./img/new/jpg_abs_caht
+-eps-converted-to.pdf> <./img/new/jxr_caht-eps-converted-to.pdf> <./img/new/j2k
+_abs_wahet-eps-converted-to.pdf>]
+Underfull \hbox (badness 1742) in paragraph at lines 413--414
  \OT1/ptm/b/n/10 In inter-recompression[] \OT1/ptm/m/n/10 we can-not ob-serve s
 uch be-
  []
 
-
-Underfull \hbox (badness 1043) in paragraph at lines 429--432
-[]\OT1/ptm/m/n/10 Table 1[] shows the cor-re-la-tion re-sults for the intra-
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7] (C:\Users\user\Desktop\doubleCompression\paper\egpaper_for_review.bbl
-Underfull \hbox (badness 3312) in paragraph at lines 38--44
+[7] (./egpaper_for_review.bbl
+Underfull \hbox (badness 3312) in paragraph at lines 44--50
 \OT1/ptm/m/n/9 Im-prov-ing com-pressed iris recog-ni-tion ac-cu-racy us-ing
  []
 
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¬ in font ptmr7t!
-Missing character: There is no – in font ptmr7t!
 [8]) [9
 
-] (C:\Users\user\Desktop\doubleCompression\paper\egpaper_for_review.aux)
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 4.5pt have occurred.
-
+] (./egpaper_for_review.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3575 strings out of 493921
- 48164 string characters out of 3147286
- 123764 words of memory out of 3000000
- 6746 multiletter control sequences out of 15000+200000
- 41827 words of font info for 92 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 42i,11n,35p,1356b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
-sbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
-utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_for_review.pdf (9 pages, 3261452 bytes).
+ 3559 strings out of 493315
+ 46404 string characters out of 6145894
+ 124277 words of memory out of 5000000
+ 6887 multiletter control sequences out of 15000+600000
+ 39892 words of font info for 83 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 42i,11n,35p,1356b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/p
+ublic/amsfonts/cm/cmex10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/shar
+e/texmf/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf/fonts/type1/
+public/amsfonts/cm/cmmi7.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/c
+mmi9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr9
+.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
+xmf/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/publ
+ic/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/symbols/msbm7.pfb></us
+r/share/texmf/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf/fonts/type1/
+urw/helvetic/uhvb8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb><
+/usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1
+/urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmri8a.pfb>
+Output written on egpaper_for_review.pdf (9 pages, 3230625 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
+ 184 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

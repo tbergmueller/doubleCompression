@@ -1,10 +1,22 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: egpaper_for_review.aux
+This is BibTeX, Version 0.99d (TeX Live 2013/TeX Live for SUSE Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: egpaper_for_review.aux
 The style file: ieee.bst
 Database file #1: egbib.bib
 Warning--string name "pub-springer" is undefined
---line 273 of file egbib.bib
-Warning--I didn't find a database entry for "BCarneiro11a"
-Warning--I didn't find a database entry for "Kumar11a"
+--line 4 of file egbib.bib
+Warning--I'm ignoring Rathgeb12e's extra "series" field
+--line 27 of file egbib.bib
+I was expecting a `,' or a `}'---line 113 of file egbib.bib
+ :  
+ :  keywords = {JPEG recompression}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 161 of file egbib.bib
+ :  
+ :  KEYWORDS      = {iris segmentation, JPEG recompression, JPEG 2000, UBIRIS}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Too many commas in name 1 of "N. Damera-Venkata, T. D. Kite, W. S. Geisler, B. L. Evans and A. C. Bovik" for entry Dameraa
 while executing---line 1073 of file ieee.bst
 Warning--empty institution in Bowyer_thend-iris-0405
@@ -12,4 +24,45 @@ Warning--empty year in Bowyer_thend-iris-0405
 Warning--empty publisher in BBurge13a
 Too many commas in name 1 of "N. Damera-Venkata, T. D. Kite, W. S. Geisler, B. L. Evans and A. C. Bovik" for entry Dameraa
 while executing---line 1116 of file ieee.bst
-(There were 2 error messages)
+You've used 30 entries,
+            2120 wiz_defined-function locations,
+            690 strings with 8993 characters,
+and the built_in function-call counts, 11064 in all, are:
+= -- 1058
+> -- 516
+< -- 14
++ -- 200
+- -- 166
+* -- 762
+:= -- 1773
+add.period$ -- 93
+call.type$ -- 30
+change.case$ -- 163
+chr.to.int$ -- 0
+cite$ -- 33
+duplicate$ -- 432
+empty$ -- 887
+format.name$ -- 166
+if$ -- 2390
+int.to.chr$ -- 0
+int.to.str$ -- 30
+missing$ -- 29
+newline$ -- 151
+num.names$ -- 71
+pop$ -- 200
+preamble$ -- 1
+purify$ -- 137
+quote$ -- 0
+skip$ -- 331
+stack$ -- 0
+substring$ -- 727
+swap$ -- 131
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 110
+warning$ -- 3
+while$ -- 87
+width$ -- 32
+write$ -- 327
+(There were 4 error messages)

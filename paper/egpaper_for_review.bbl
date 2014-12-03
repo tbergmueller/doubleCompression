@@ -15,6 +15,12 @@ M.~Burge and K.~Bowyer, editors.
 \newblock {\em Handbook of Iris Recognition}.
 \newblock 2013.
 
+\bibitem{BCarneiro11a}
+M.~Carneiro, A.~Veiga, E.~Flores, and G.~Carrijo.
+\newblock Solutions for iris segmentation.
+\newblock In Z.~Riaz, editor, {\em Biometric Systems, Design and Applications},
+  pages 111--128. InTech, 2011.
+
 \bibitem{Chan92a}
 S.~Chan.
 \newblock Recompression of still images.
@@ -64,13 +70,13 @@ K.~Horvath, H.~St\"ogner, and A.~Uhl.
 
 \bibitem{j2k}
 {I.O. for Standardization}.
-\newblock {ISO/IEC IS 15444-1. Information technology â€“ JPEG 2000 image
-  coding system: Core coding system}, {2004}.
+\newblock {ISO/IEC IS 15444-1. Information technology ? JPEG 2000 image coding
+  system: Core coding system}, {2004}.
 
 \bibitem{jxr}
 {I.O. for Standardization}.
-\newblock {ISO/IEC IS 29199-2. Information technology â€“ JPEG XR image coding
-  system â€“ Part 2: Image coding speciï¬?cation}, {2012}.
+\newblock {ISO/IEC IS 29199-2. Information technology ? JPEG XR image coding
+  system ? Part 2: Image coding speci?cation}, {2012}.
 
 \bibitem{BIves10a}
 R.~W. Ives, D.~Bishop, Y.~Du, and C.~Belcher.
@@ -92,12 +98,19 @@ M.~Konrad, H.~St\"ogner, and A.~Uhl.
   International Conference on Biometrics 2009 (ICB'09)}, volume 5558 of {\em
   LNCS}, pages 1091--1101. Springer Verlag, 2009.
 
+\bibitem{Kumar11a}
+B.~Kumar and G.~Karpagam.
+\newblock An empirical analysis of requantization errors for recompressed jpeg
+  images.
+\newblock {\em International Journal of Engineering Science and Technology},
+  3(12):8519--8527, 2011.
+
 \bibitem{Zhanga}
 X.~M. L.~Zhang, L.~Zhang.
 \newblock Rfsim: A feature based image quality asesment metric using riesz
   transforms.
 \newblock {\em Proc. 17th IEEE Int. Conf. on Image Procesing ICIP}, page p.
-  321–324, 2010.
+  321?324, 2010.
 \newblock Hong Kong, China.
 
 \bibitem{Matschitsch07a}
