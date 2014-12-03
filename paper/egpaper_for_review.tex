@@ -377,13 +377,11 @@ The data set described in section \ref{section:exSetup} is used to test the two 
 	
 	\begin{enumerate}
 		\item For small and medium compression ratios ($ cr_t \leq 50 $) no significant difference in segmentation errors of single- and recompressed data is observeable. This implies that for these compression ratios it has no impact whether pre-compressed or uncompressed data is used in experiments. \label{noDiff}
-		\item For large compression ratios ($cr_t > 50$), segmentation errors tend to be lower for single-compressed data compared to recompressed data. Thus using pre-compressed or uncompressed data in experiments matters. \label{yesDiff} 		
-		To be more precise, using recompressed data leads to poorer results as if uncompressed data would have been used. % Marked for deletion
+		\item For large compression ratios ($cr_t > 50$), segmentation errors tend to be lower for single-compressed data compared to recompressed data. Thus using pre-compressed or uncompressed data in experiments matters. \label{yesDiff} 
 		 
 		 \item $mser_{rel}$ and $mser_{abs}$ generally show the similar trends for medium and large compression ratios, i.e. there is a strong correlation of  $mser_{rel}$ and $mser_{abs}$ for $cr_t > 30$. This means, the relative error $mser_{rel}$ suffices to rate performance on iris segmentation here, implying no expert-generated ground truth is needed. \label{gtNoHigh}
 		 
-		 \item However, WAHET segmentation errors reveal that in some cases there can be a difference between $mser_{rel}$ and $mser_{abs}$ for $cr_t \leq 30$. Figure \ref{fig:segResultsJPG} shows here a different behaviour between absolute error $mser_{abs}$ (top-right) and relative error $mser_{rel}$ (top-left). Hence, for low compression ratios a ground truth is required \label{gtForLow}	
-		 to reliably rate a compression method's performace in iris segmentation. 	% marked for deletion
+		 \item However, WAHET segmentation errors reveal that in some cases there can be a difference between $mser_{rel}$ and $mser_{abs}$ for $cr_t \leq 30$. Figure \ref{fig:segResultsJPG} shows here a different behaviour between absolute error $mser_{abs}$ (top-right) and relative error $mser_{rel}$ (top-left). Hence, for low compression ratios a ground truth is required. \label{gtForLow}
 		 
 		 \item In recompression, one might expect a linear relation between used pre-compression quality $q_p$ and ranking of the error rates. Interestingly, when looking at figure \ref{fig:segResultsJPG} at high compression ratios, the poorest performance corresponds to $q_p=75$, while the best is related to $q_p=70$. In contradiction, $q_p=100$ performs significantly better than $q_p=80$ in most settings.   \label{qpConfusion}
 	\end{enumerate}
@@ -405,9 +403,7 @@ From \ref{gtNoHigh} we know that for large compression ratios, i.e. $cr_t > 50$,
 	\item uncompressed data sets rated with relative measures, such as the $mser_{rel}$, for severe compression, i.e. $cr_t > 50$ and
 	\item pre-compressed data sets\footnote{If absolutely necessary because of ground-truth availability, of course uncompressed data is preferred} with absolute measures, such as $mser_{abs}$, for medium and light compression, i.e. $cr_t \leq 50$.
 \end{itemize}
-We were not able to determine, whether or in which way the choice of the pre-compression parameter relates to the level of segmentation error rates (\ref{qpConfusion}). % Marked for deletion
 
-In conclusion, one has to be careful when using pre-compressed data for compression bench-marking, when the pre-compression as well as the bench-marked compression method were the same, i.e. JPEG. % Marked for deletion 
 If this applies to intra-compression with other methods as well needs further investigation.
 
 \paragraph{In inter-recompression} we cannot observe such behaviour. However, there are trends observeable (\ref{singleAmongBest}, \ref{cureFlattening}), which need further investigation. 
@@ -418,11 +414,11 @@ If this applies to intra-compression with other methods as well needs further in
 Besides evaluating the segmentation error rate and the general purpose quality measures independently, their correlation is analysed. Furthermore, we explicitly investigate the correlation between $mser_{rel}$ and $mser_{abs}$ to back up the observations in section \ref{section:ser}.
 For this purpose, we used the Spearman's rank correlation coefficient (SRCC).
 
-\paragraph{Metrics vs. Segmentation Error Rate} In general, all five used general purpose quality metrics show a high linear relationship with a minimum SRCC of $0.852$ to each other. Furthermore, all of these metrics are highly correlating with the segmentation error rate and there are only minor differences between the segmentation algorithms (WAHET and CAHT) and the relative and absolute segmentation error rates. Table \ref{tab:corrJPG} shows the correlation results for the intra-compression (\emph{jpg}) and the CAHT segmentation algorithm. It can be observed that the $mser_{rel}$ shows overall a higher linear relationsship to the quality metrics than the $mser_{abs}$. The reason for this can be seen in Figure \ref{fig:segResultsJPG} (bottom) where the $mser_{rel}$ has a higher slope for small and medium CRs where the $mser_{rel}$ is more flat in this region and is in general more noisy as well.
+In general, all five used general purpose quality metrics show a high linear relationship with a minimum SRCC of $0.852$ to each other. Furthermore, all of these metrics are highly correlating with the segmentation error rate and there are only minor differences between the segmentation algorithms (WAHET and CAHT) and the relative and absolute segmentation error rates. Table \ref{tab:corrJPG} shows the correlation results for the intra-compression (\emph{jpg}) and the CAHT segmentation algorithm. It can be observed that the $mser_{rel}$ shows overall a higher linear relationsship to the quality metrics than the $mser_{abs}$. The reason for this can be seen in Figure \ref{fig:segResultsJPG} (bottom) where the $mser_{rel}$ has a higher slope for small and medium CRs where the $mser_{rel}$ is more flat in this region and is in general more noisy as well.
 Furthermore, it can be seen that for the MSSIM metric ($mser_{rel}$) in case of single compression the SRCC is smaller compared to the other metrics, which is due to the outlier of the MSSIM at $cr_t = 15$ in Figure \ref{fig:mssim}. However, except of this outlier and when looking at the graphs as well, the MSSIM represents best the segmentation error rates in case of the intra-compression, because the single compressed curve gets away from the bundle of the recompressed curves.
 On the other hand, on jp2 compressed data (figure \ref{fig:mssim}) MSSIM shows absolutely no sign of the stagnancy, although there is clear stagnancy in figure \ref{fig:segResultsOther} (left). Hence, MSSIM (among others) cannot be used to predict behaviour of iris segmentation. This could also mean that the segmentation not only depends on the quality of an image, or at least not in a linear relationship.
 
-\begin{table}[h]\footnotesize\centering
+\begin{table}\footnotesize\centering
 \begin{tabular}{ | l || l | l | l | l | l | }
     \hline
     \multicolumn{6}{|c|}{SRCC between the quality metrics and the relative MSER} \\
@@ -453,9 +449,12 @@ On the other hand, on jp2 compressed data (figure \ref{fig:mssim}) MSSIM shows a
 
 %This becomes even more obvious when comparing figure \ref{fig:psnr} with \ref{fig:segResultsOther}, although for pre-compression 85 at least a step from 50-55 can be seen. Pls make similar observations here...
 
-\paragraph{Relative vs. Absolute Segmentation Error Rate} The SRCC between the relative and absolute segmentation error rates confirms that both metrics show in general the same trend as it can be seen in Table \ref{tab:corrMSER}.
+The SRCC between the relative and absolute segmentation error rates confirms that both metrics show in general the same trend as it can be seen in Table \ref{tab:corrMSER}. In case of the WAHET segmentation \emph{jp2} outperforms the other two compression methods. The smaller SRCC values for \emph{jpg} is mainly due to the $mser_{abs}$ at smaller compression ratios where the segmentation error rate is higher for $cr_t = 15$ than for $cr_t = 20$. Also the small ripple at $cr_t = 30$ has an impact on the correlation here.
+The reason for the intermediate SRCC results in case of jxr are mainly due to noise, which can be seen in Figure \ref{fig:segResultsOther}.
 
-\begin{table}[h]\footnotesize\centering
+
+
+\begin{table}\footnotesize\centering
 \begin{tabular}{ | l || l | l | l | l | l | }
     \hline
     \multicolumn{6}{|c|}{WAHET Segmentation} \\
@@ -478,15 +477,12 @@ On the other hand, on jp2 compressed data (figure \ref{fig:mssim}) MSSIM shows a
 \label{tab:corrMSER}
 \end{table}
 
-In case of the WAHET segmentation \emph{jp2} outperforms the other two compression methods. The smaller SRCC values for \emph{jpg} is mainly due to the $mser_{abs}$ at smaller compression ratios where the segmentation error rate is higher for $cr_t = 15$ than for $cr_t = 20$. Also the small ripple at $cr_t = 30$ has an impact on the correlation here.
-The reason for the intermediate SRCC results in case of jxr are mainly due to noise, which can be seen in Figure \ref{fig:segResultsOther}.
-
-
 
 
 \section{Conclusion}
 \label{section:conclusion}
-Iris biometrics compression performance ratings are usually done in experimental setups. Often researchers use JPEG pre-compressed data for such experiments, quite frequently because of ground-truth availability. We investigated whether the outcome of these experiments can be considered reliable by comparing segmentation error and quality metrics of single-compressed and re-compressed data for different compression ratios.  
+Iris biometrics compression performance is usually rated in experimental setups. Often researchers use JPEG pre-compressed data for these experiments, quite frequently because of ground-truth availability. We investigated whether the outcome of such experiments can be considered reliable by comparing segmentation error and quality metrics of single-compressed and re-compressed data for different compression ratios.  
+
 In the segmentation error rate, no tendency is observeable when comparing single-compression and inter-recompressed data. However, there is a clear trend for high compression ratios when comparing the segmentation error in single-compressed and intra-recompressed data, i.e. compressing JPEG pre-compressed data with JPEG once again. Thus results of studies using JPEG compression on JPEG pre-compressed data cannot be considered entirely reliable. We furthermore show that for small compression ratios, a ground truth is indeed necessary for accurate segmentation error rating. Based on these observations, we propose a method to overcome such problems in section \ref{section:ser}. Interestingly, there seems to be no strictly linear relation between image quality, evaluating five different metrics, and segmentation error rate. Quality metrics tend to omit detailed behaviour of the segmentation error in respect to compression ratios. Nevertheless, quality metrics and segmentation error follow the same trends and metrics such as the MSSIM can therefore be used to estimate an iris segmentation algorithms behavior.           
 
 

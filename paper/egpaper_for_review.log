@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2014.7.7)  3 DEC 2014 22:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2014.7.7)  3 DEC 2014 23:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -630,12 +630,12 @@ Package pdftex.def Info: img/new/j2k_abs_wahet-eps-converted-to.pdf used on inp
 ut line 366.
 (pdftex.def)             Requested size: 116.1979pt x 87.42215pt.
 
-Underfull \hbox (badness 1442) in paragraph at lines 380--382
+Underfull \hbox (badness 1442) in paragraph at lines 380--381
 \OT1/ptm/m/n/10 Thus us-ing pre-compressed or un-com-pressed
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 395--396
+Underfull \hbox (badness 1033) in paragraph at lines 393--394
 []\OT1/ptm/m/n/10 Data gen-er-ated in a sin-gle com-pres-sion step
  []
 
@@ -643,12 +643,17 @@ Underfull \hbox (badness 1033) in paragraph at lines 395--396
 erted-to.pdf> <./img/new/jpg_caht-eps-converted-to.pdf> <./img/new/jpg_abs_caht
 -eps-converted-to.pdf> <./img/new/jxr_caht-eps-converted-to.pdf> <./img/new/j2k
 _abs_wahet-eps-converted-to.pdf>]
-Underfull \hbox (badness 1742) in paragraph at lines 413--414
+Underfull \hbox (badness 1742) in paragraph at lines 409--410
  \OT1/ptm/b/n/10 In inter-recompression[] \OT1/ptm/m/n/10 we can-not ob-serve s
 uch be-
  []
 
-[7] (./egpaper_for_review.bbl
+[7]
+Underfull \hbox (badness 1221) in paragraph at lines 486--487
+[]\OT1/ptm/m/n/10 In the seg-men-ta-tion er-ror rate, no ten-dency is ob-
+ []
+
+(./egpaper_for_review.bbl
 Underfull \hbox (badness 3312) in paragraph at lines 44--50
 \OT1/ptm/m/n/9 Im-prov-ing com-pressed iris recog-ni-tion ac-cu-racy us-ing
  []
@@ -663,11 +668,11 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  3559 strings out of 493315
  46404 string characters out of 6145894
- 124277 words of memory out of 5000000
+ 129277 words of memory out of 5000000
  6887 multiletter control sequences out of 15000+600000
  39892 words of font info for 83 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 42i,11n,35p,1356b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,35p,1356b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/p
 ublic/amsfonts/cm/cmex10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/c
 mmi10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/shar
@@ -684,7 +689,7 @@ r/share/texmf/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf/fonts/type1/
 urw/helvetic/uhvb8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb><
 /usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1
 /urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_for_review.pdf (9 pages, 3230625 bytes).
+Output written on egpaper_for_review.pdf (9 pages, 3229786 bytes).
 PDF statistics:
  184 PDF objects out of 1000 (max. 8388607)
  133 compressed objects within 2 object streams
