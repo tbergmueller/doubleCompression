@@ -208,7 +208,7 @@ Using data sets generated with this method, we can investigate the impact of art
 Although there are several iris data sets around, few are available in uncompressed format. We use the IITD Iris data base\footnote{IITD Iris Database version 1.0, www4.comp.polyu.edu.hk/\textasciitilde csajaykr/IITD/Database\_Iris.htm}. The main reason for this is the availability of a segmentation ground truth created by an expert, which was recently introduced by Hofbauer \etal \cite{Hofbauer14b} and used in \cite{severeCompression}. The $k^{th}$ image of this segmentation ground truth data set is subsequently denoted as $SGT^{(k)}$. 
 According to information by the IITD iris data base's authors, the images, stored in a 3-channel uncompressed bitmap format\footnote{We want to point out that storing in 1-channel bitmaps would be more efficient, since the images were captured in near-infrared. However, we use the size information of the 3-channel bitmap in computing compression ratios} are already JPEG-compressed with 100\% quality by the sensor (JIRIS, JPC1000). Since they are stored as bitmaps, all images have an identical file size of $s(I_u)$=230,454 bytes. Despite not being optimal, using the IITD was necessary due to the available ground truth, for reasons becoming obvious in section \ref{section:ser}. Futhermore, the IITD -- contrary to others, e.g. the ND-IRIS-0405 iris image dataset \cite{Bowyer_thend-iris-0405} -- is captured under favorable conditions, which allows for lower segmentation errors. This is necessary to distinguish between noise and recompression-effects. We use the scheme introduced in section \ref{section:comprScheme} to compress obtain data sets with target compression ratios
 \begin{equation}
-	cr_t \in \{15,20,25,30,35,40,45,50,55,60,65,70,75\}.
+	cr_t \in \{15, 20, 25, ..., 70, 75\}.
 \end{equation}
 For each of these target compression ratios $cr_t$, the pre-compression step in recompression mode is carried out with quality parameters
 \begin{equation}
@@ -325,7 +325,7 @@ We investigate the differences of single- and recompression as well as the aspec
   \end{center}
   
   \label{fig:segMasks}
-  \caption{Segmentation masks of the expert ground truth \cite{severeCompression}, relative groundtruth $seg(I_u^{(k)})$ and an actual segmentation result $seg(I_r^{(k)})$ (f.l.t.r)}
+  \caption{Segmentation masks of the expert ground truth \cite{Hofbauer14b}, relative groundtruth $seg(I_u^{(k)})$ and an actual segmentation result $seg(I_r^{(k)})$ (f.l.t.r)}
 \end{figure}
 
 %TODO discuss, why the eye lashes are notmasked in the algos
