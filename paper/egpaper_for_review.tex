@@ -146,12 +146,12 @@ Since it has been pointed out \cite{BPhilips07a} that the CASIA V1.0 dataset exh
 
 \section{Compression scheme}
 \label{section:comprScheme}
-As discussed, we investigate whether it makes a difference if truly uncompressed data or pre-compressed data is used in experiments rating the performance of an iris segmentation system. 
-Using pre-compressed data in such experiments means a pre-compressed image $I_p$ is compressed a second time resulting in an image $I_r$. As discussed, we denote this process as \emph{recompression}. When compressing a truly uncompressed image $I_u$, which was read directly from the sensor, we denote this as \emph{single-compression} with a resulting image $I_s$. Since experiments are typically carried out on a data set with more than one image, we denote $I_u^{(k)}, I_p^{(k)}, I_s^{(k)}, I_r^{(k)} \in \mathbb{R}^{w \times h}$ as the $k^{th}$ image with width $w$ and height $h$ in the particular data sets. Furthermore, we define $s(F) \in \mathbb{N}$ with $F \sim{I \in \mathbb{R}^{w \times h}}$ as a function that returns the file size of the file $F$ storing an image $I \in \mathbb{R}^{w \times h} $. Since common lossy compression algorithms also employ lossless compression methods, e.g. run-length encoding, before writing to a file, $F$ is loosely linked to the pixel data, namely the image, $I$. For simplicity, we denote $s(I)$ as the file size of the file $F$ encoding the pixel values of an image $I$. $c_{m}(I, q)$ with $q \in \mathbb{N}$ describes the process of compressing an image $I$ using a particular method $m$ parametrized with the quality parameter $p$. In terms of this paper we use the values $m \in \{jpg, jxr, j2k\}$, where 
+As discussed, we investigate whether there is a difference in using truly uncompressed data or pre-compressed data in experiments rating the performance of an iris segmentation. 
+Using pre-compressed data in such experiments means a pre-compressed image $I_p$ is compressed a second time, resulting in an recompressed image $I_r$. When compressing a truly uncompressed image $I_u$, the resulting image $I_s$ is generated in a single compression step. Since experiments are typically carried out on a data set with more than one image, we denote $I_u^{(k)}, I_p^{(k)}, I_s^{(k)}, I_r^{(k)} \in \mathbb{R}^{w \times h}$ as the $k^{th}$ image with width $w$ and height $h$. For simplicity, $I_u, I_p, I_r, I_s$ subsequently denote a particular image but unspecified image of a data set. Furthermore, we define $s(F) \in \mathbb{N}$ with $F \sim{I \in \mathbb{R}^{w \times h}}$ as a function that returns the file size of the file $F$ storing an image $I$. Since common lossy compression algorithms also employ lossless compression methods, e.g. run-length encoding, before writing to a file, $F$ is only loosely related to the pixel data, namely the image, $I$. For simplicity, we denote $s(I)$ as the file size of the file $F$ encoding the pixel values of an image $I$. $c_{m}(I, q)$ with $q \in \mathbb{N}$ describes the process of compressing an image $I$ using a particular method $m$ parametrized with the quality parameter $p$. In terms of this paper we use the values $m \in \{jpg, jxr, j2k\}$, where 
 \begin{itemize}
-	\item $jpg$ corresponds to the well-known (ISO/IEC IS 10918-1) DCT-based image compression method \cite{jpg},
-	\item $j2k$ corresponds to the wavelet-based image compression standard (ISO/IEC IS 15444-1), which can operate at higher compression ratios \cite{j2k} and
-	\item $jxr$ corresponds to a compression standard based on Microsoft’s HD Photo, which is specified in (ISO/IEC IS 29199-2) \cite{jxr}.  
+	\item $jpg$ corresponds to the well-known (ISO/IEC IS 10918-1) DCT-based image compression method JPEG \cite{jpg},
+	\item $j2k$ corresponds to the wavelet-based image compression standard JPEG2000 (ISO/IEC IS 15444-1), which can operate at higher compression ratios \cite{j2k} and
+	\item $jxr$ corresponds to a compression standard JPEG-XR based on Microsoft’s HD Photo, which is specified in (ISO/IEC IS 29199-2) \cite{jxr}.  
 \end{itemize}
 
 %TODO: Consider: Do I have to specify which methods we used (Matlab JxrEncApp) to come up with the images? As it is a standard, this shouldn't be necessary, because everything operates the same anyway?!
@@ -161,19 +161,7 @@ For rating an image $I$'s compression effectiveness, we define the compression r
 cr(I_u, I_c) = \frac{s(I_u)}{s(I_c)} \quad \text{with} \quad I_c \in \{I_r, I_s\}
 \end{equation}
 
-For the later described experiments, images are compressed to a target compression ratio $cr_t \in \mathbb{R}$. However, only the \emph{j2k} compression standard \cite{j2k} allows to specify a target compression ratio $cr_t$ directly via parameter $q$. Hence this is the only method where we can control the file size $s(I_c)$ directly. The other two compression methods take a quality parameter $q \in \mathbb{N}$ only, which controls the quality but not the file size of the output image $I_c$. Therefore it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ cannot be achieved exactly in any case. However, parameter optimisation can be done, such that $cr_t \approxeq cr(I_u^{(k)}, I_c^{(k)})$. We propose an algorithm to compress a set of $K$ uncompressed images $I_u$ using a particular method $m$ to achieve a certain compression ratio $cr_t$ in a way that the compression ratio of each image is met as close as possible.
-
-
-\begin{figure}[h]
-	\begin{center}
-		
-		\includegraphics[width=0.7\linewidth]{img/comprScheme}
-	\end{center}
-	\caption{Basic compression principle to obtain two images achieving approximately the same target compression ratio $cr_t$ from an uncompressed image $I_u^{(k)}$ using a particular compression method $m$. One image, $I_s^{(k)}$, is compressed in a single step while the other, $I_r^{(k)}$, uses a pre-compression and a final compression step. Note the pre-compression step is always a $jpg$-compression, while the final compression step uses the same method $m$ as used in the single-compression.}
-	\label{fig:comprScheme}
-	
-\end{figure}
-
+For the later described experiments, images are compressed to a target compression ratio $cr_t \in \mathbb{R}$. However, only the \emph{j2k} compression standard \cite{j2k} allows to specify a target compression ratio $cr_t$ directly via parameter $q$. Hence this is the only method where we can control the file size $s(I_c)$ directly. The other two compression methods take a quality parameter $q \in \mathbb{N}$ only, which controls the quality but not the file size of the output image $I_c$. Therefore it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ cannot be achieved exactly for any of the three methods. Parameter optimisation can be done, such that $cr_t \approxeq cr(I_u^{(k)}, I_c^{(k)})$. We propose an algorithm to compress a set of $K$ uncompressed images $I_u$ using a particular method $m$ to achieve a certain compression ratio $cr_t$ in a way that the compression ratio of each image is met as close as possible. 
 This process, illustrated in Fig. \ref{fig:comprScheme}, employs
 \begin{enumerate}
 	\item Compute the single-compressed image $I_s^{(k)}$ with method $m$ such that $cr(I_u^{(k)}, I_s^{(k)}) \approx cr_t$. The optimal quality parameter $q_s^{(k)}$ is computed for each image separately by
@@ -198,18 +186,30 @@ This process, illustrated in Fig. \ref{fig:comprScheme}, employs
 	\label{equ:recomp}
 	\end{equation}
 	
-	The condition $s(I_s^{(k)}) \geq s(I_r^{(k)})$ is of importance to establish fair conditions, since it is very likely that the file sizes $s(I_s^{(k)}), s(I_r^{(k)})$  cannot be equalized due to the limited universe of the quality parameters of the used compression methods $m$. The recompressed images $I_r^{(k)}$ are then computed from the pre-compressed images $I_p^{(k)}$ with the found optimal parameters $q_r$ as
+	The condition $s(I_s^{(k)}) \geq s(I_r^{(k)})$ is of importance to establish fair conditions, since it is very likely that the file sizes $s(I_s^{(k)}), s(I_r^{(k)})$  cannot be equalized due to the limited universe of the quality parameters $q$. The recompressed images $I_r^{(k)}$ are then computed from the pre-compressed images $I_p^{(k)}$ with the found optimal parameters $q_r$ as
 	\begin{equation}
 	I_r^{(k)} = c_m(I_p^{(k)}, q_r^{(k)})
 	\end{equation}
 \end{enumerate}
 
-Using data sets generated with the described method, we can investigate the impact of recompression artifacts, contained in single compressed images $I_r$, in comparison to images $I_s$  containing artifacts of a single compression only.
+
+\begin{figure}
+	\begin{center}
+		
+		\includegraphics[width=0.7\linewidth]{img/comprScheme}
+	\end{center}
+	\caption{Basic compression principle to obtain two images achieving approximately the same target compression ratio $cr_t$ from an uncompressed image $I_u^{(k)}$ using a particular compression method $m$. One image, $I_s^{(k)}$, is compressed in a single step while the other, $I_r^{(k)}$, uses a pre-compression and a final compression step. Note the pre-compression step is always a $jpg$-compression, while the final compression step uses the same method $m$ as used for single-compression.}
+	\label{fig:comprScheme}
+	
+\end{figure}
+
+
+Using data sets generated with this method, we can investigate the impact of artifacts in an recompressed image $I_r$ in comparison to those in single-images $I_s$. The first one contains artifacts by two compression, while the latter one contains artifacts from one compression step only.
 
 \section{Experimental setup}
 \label{section:exSetup}
-Although there are several iris data sets around, few are available in uncompressed format. We use the IITD Iris data base\footnote{IITD Iris Database version 1.0, www4.comp.polyu.edu.hk/\textasciitilde csajaykr/IITD/Database\_Iris.htm}. The main reason for this is the availability of a segmentation ground truth created by an expert, which was recently introduced by Rathgeb \etal in \cite{severeCompression}. The $k^{th}$ image of this segmentation ground truth data set is subsequently denoted as $SGT^{(k)}$. They also give segmentation error results compareable to those we define in equation (\ref{equ:mserabs}).
-We want to point out that according to information by the IITD iris data base's authors, the images stored in a 3-channel uncompressed bitmap format\footnote{We want to point out that storing in 1-channel bitmaps would be more efficient, since the images were captured in near-infrared. However, we use the size information of the 3-channel bitmap in computing compression ratios} are already JPEG-compressed with 100\% quality by the sensor. Since they are stored as bitmaps, all images have an identical file size of $s(I_u)$=230,454 bytes. Despite these aspects, using the IITD was necessary due to the available ground truth, for reasons discussed in section \ref{section:ser}. Futhermore, the IITD -- contrary to others, e.g. the ND-IRIS-0405 iris image dataset \cite{Bowyer_thend-iris-0405}-- is captured under favourable conditions, which allows for lower segmentation errors. This is necessary to distinguish between noise and recompression-effects. 
+Although there are several iris data sets around, few are available in uncompressed format. We use the IITD Iris data base\footnote{IITD Iris Database version 1.0, www4.comp.polyu.edu.hk/\textasciitilde csajaykr/IITD/Database\_Iris.htm}. The main reason for this is the availability of a segmentation ground truth created by an expert, which was recently introduced by Hofbauer \etal \cite{Hofbauer14b} and used in \cite{severeCompression}. The $k^{th}$ image of this segmentation ground truth data set is subsequently denoted as $SGT^{(k)}$. 
+According to information by the IITD iris data base's authors, the images, stored in a 3-channel uncompressed bitmap format\footnote{We want to point out that storing in 1-channel bitmaps would be more efficient, since the images were captured in near-infrared. However, we use the size information of the 3-channel bitmap in computing compression ratios} are already JPEG-compressed with 100\% quality by the sensor (JIRIS, JPC1000). Since they are stored as bitmaps, all images have an identical file size of $s(I_u)$=230,454 bytes. Despite not being optimal, using the IITD was necessary due to the available ground truth, for reasons becoming obvious in section \ref{section:ser}. Futhermore, the IITD -- contrary to others, e.g. the ND-IRIS-0405 iris image dataset \cite{Bowyer_thend-iris-0405} -- is captured under favorable conditions, which allows for lower segmentation errors. This is necessary to distinguish between noise and recompression-effects. 
 
 We use the scheme introduced in section \ref{section:comprScheme} to compress obtain data sets with target compression ratios
 \begin{equation}
@@ -219,7 +219,7 @@ For each of these target compression ratios $cr_t$, the pre-compression step in 
 \begin{equation}
 	q_p \in \{100, 80, 75, 70\}
 \end{equation} 
-in order to simulate different levels of pre-compression. Each of these combinations is used to compress with the introduced $jpg$, $j2k$ and $jxr$ methods. We start at compression ratio $cr_t=15$, because even a pre-compression with $q_p=100$ achieves - depending on the image's content - already a compression ratio of $cr(I_u, I_p) \approx 10$. For obvious reasons, no smaller compression ratio $cr(I_u, I_r) < cr(I_u, I_p)$ can be achieved in recompression.  This results in a total of 195 data sets with 2240 images each, whose distribution is shown and discussed in fig. \ref{fig:dataDistribution}.
+to simulate different levels of pre-compression. Each of these combinations is used to compress with the introduced $jpg$, $j2k$ and $jxr$ methods. We start at compression ratio $cr_t=15$, because even a pre-compression with $q_p=100$ achieves - depending on the image's content - already a compression ratio of $cr(I_u, I_p) \approx 10$. For obvious reasons, no smaller compression ratio $cr(I_u, I_r) < cr(I_u, I_p)$ can be reached in recompression. This results in a total of 195 data sets with 2240 images each, whose distribution is shown and discussed in fig. \ref{fig:dataDistribution}.
 
 \begin{figure}
 	\begin{small}
@@ -242,7 +242,7 @@ in order to simulate different levels of pre-compression. Each of these combinat
 	
 	\end{small}
 	
-	\caption{Scatter plots of measured compression ratios $cr(I_u, I_s)$ over $cr(I_u, I_r)$ for methods \emph{jpg} (left) and \emph{jxr} (right). The graphs indicate that the $s(I_s^{(k)}) \geq s(I_r^{(k)})$ condition from equ. (\ref{equ:recomp}) is satisfied. While this is indeed true for \emph{j2k} and \emph{jxr}, we observe a violation in 0.13\% of the cases for \emph{jpg} at $cr_t \geq 70$. JPEG is already working at it's boundaries at such high compression ratios. The table below reveals, that in average the aimed $cr_t$ is met with 3.67\% accuracy for single-compressed images $I_s$, while the re-compressed ones $I_r$ only reach 7.8\%. This is due to the limited universe of quality parameters $q, q_p$.}
+	\caption{Scatter plots of measured compression ratios $cr(I_u, I_s)$ over $cr(I_u, I_r)$ for methods \emph{jpg} (left) and \emph{jxr} (right). The graphs indicate that the $s(I_s^{(k)}) \geq s(I_r^{(k)})$ condition from equ. (\ref{equ:recomp}) is satisfied. While this is indeed true for \emph{j2k} and \emph{jxr}, we observe a violation in 0.13\% of the cases for \emph{jpg} at $cr_t \geq 70$, because JPEG is already working at it's boundaries at such high compression ratios. The table below reveals, that in average the aimed $cr_t$ is met with 3.67\% accuracy for single-compressed images $I_s$, while the re-compressed ones $I_r$ only reach 7.8\%. This is due to the limited universe of quality parameters $q, q_p$.}
 	
 	
 	\label{fig:dataDistribution}
@@ -250,11 +250,11 @@ in order to simulate different levels of pre-compression. Each of these combinat
 
 \section{Evaluation}
 \label{section:eval}
- Besides assessing the image quality with fully-referenced metrics, we investigate the behaviour of segmentation error rate and the system's EER in respect to the compression ratio.
+ Besides assessing the image quality with fully-referenced metrics (section \ref{section:fulRef}), we investigate the behaviour of iris segmentation using a segmentation error rate (section \ref{section:ser}).The individual results are then compared in \ref{section:results}.
 
 
 \subsection{Full-referenced quality metrics}
-
+\label{section:fulRef}
 Todo Lefteris:
 \begin{itemize}
  \item Which quality metrics were in the selection
@@ -285,7 +285,8 @@ Todo Lefteris:
 
 \subsection{Segmentation error rates}
 \label{section:ser}
-In iris recognition, the segmentation of an iris image is considered as one of the most critical parts \cite{BDaugman08a, severeCompression}. We investigate the differences of single- and recompression as well as the aspects of using an absolute reference, e.g. a ground truth, or a relative one, e.g. the segmentation of the uncompressed images $I_u$ when computing the error.
+In iris recognition, the segmentation of an iris image is considered as one of the most critical parts \cite{BDaugman08a, severeCompression}. %Marked for deletion
+We investigate the differences of single- and recompression as well as the aspects of which reference to use. We distinguish between using an absolute reference, e.g. a ground truth, and a relative one, e.g. the segmentation of the uncompressed images $I_u$, when computing the error rate.
 
 \begin{figure}
 \begin{center}
@@ -302,16 +303,16 @@ In iris recognition, the segmentation of an iris image is considered as one of t
 %TODO discuss, why the eye lashes are notmasked in the algos
 
 
-The segmentation accuracy is rated by the mean segmentation error rate, which corresponds to the suggested E1 error rate in the Noisy Iris Challenge Evaluation - Part I (NICE.I), also used in \cite{severeCompression}. We define the segmentation error rate $ser$ of a single image $I$ as
+The segmentation accuracy is rated by the mean segmentation error rate, which corresponds to the suggested E1 error rate in the Noisy Iris Challenge Evaluation - Part I (NICE.I). We define the segmentation error rate $ser$ as
 \begin{equation}
 ser(R,S) = \overline{R \oplus S} \in [0,1]\quad with \quad R,S \in \{0,1\}^{w \times h},
-\end{equation} where $R$ is the binarized reference segmentation and $S$ the binarized segmentation result of the same image $I$. The mean value of the pixel-wise exclusive-or is the percentage of pixels different in the segmented image $S$ in respect to the reference $R$. Due to multiple images in a data base, the mean segmentation error $mser$ is computed from $K$ images. In this experiment, we compute error rates for the single- and recompressed images $I_c \in {I_s, I_r}$. We define the absolute mean segmentation error $mser_{abs}$ in respect to the ground truth $SGT$ from \cite{severeCompression} and the relative mean segmentation error $mser_{rel}$ in respect to the segmentation of the uncompressed images $I_u$. By denoting the segmentation process of an image $I$ as $seg(I) \in \{0,1\}^{w \times h}$ we have
+\end{equation} where $R$ is the binarized reference segmentation and $S$ the binarized segmentation result of the same image $I$. The mean value of the pixel-wise exclusive-or is the percentage of pixels different in the segmented image $S$ in respect to the reference $R$. Due to multiple images in a data base, the mean segmentation error $mser$ is computed from $K$ images. We compute the absolute mean segmentation error $mser_{abs}$ in respect to the ground truth $SGT$ and the relative mean segmentation error $mser_{rel}$ in respect to the segmentation of the uncompressed images $I_u$ for single- and recompressed images $I_c \in {I_s, I_r}$. By denoting the segmentation result of an image $I$ as $seg(I) \in \{0,1\}^{w \times h}$ we have
 \begin{eqnarray}
 mser_{abs} = \frac{1}{K}\sum_{k=1}^{K}ser(SGT^{(k)},seg(I_c^{(k)})) \label{equ:mserabs} \\
-mser_{rel} = \frac{1}{K}\sum_{k=1}^{K}ser(seg(I_u^{(k)}),seg(I_c^{(k)})) \label{equ:mserrel} \\
+mser_{rel} = \frac{1}{K}\sum_{k=1}^{K}ser(seg(I_u^{(k)}),seg(I_c^{(k)})) \label{equ:mserrel}
 \end{eqnarray}
 
-The absolute segmentation error rate, hence also the development in respect to compression ratio can be considered to be optimal because of the available ground truth. However, for most data bases no such ground truth is available. Therefore we evaluate if a corresponding conclusion can be withdrawn from the relative segmentation error $mser_{rel}$ as well. The benefit of such a relation is that the $mser_{rel}$ can be computed for any arbitrary data set easily. 
+The absolute segmentation error rate is considered to be optimal because of the available ground truth. However, for most data bases no such ground truth is available. Therefore we evaluate if the same conclusions as from the $mser_{abs}$ can be withdrawn from the $mser_{rel}$. The benefit of such a relation (if it exists) is that the $mser_{rel}$ can be computed for any arbitrary data set. 
 
 \begin{figure}
 	\begin{center}
@@ -335,54 +336,51 @@ The absolute segmentation error rate, hence also the development in respect to c
 \end{figure}
 
 
-
 The data set described in section \ref{section:exSetup} is used to test the two iris segmentation algorithms, Contrast-adjusted Hough Transform (CAHT) and Weighted Adaptive Hough and Ellipsopolar Transform (WAHET), from the USIT Framework v1.0.3\footnote{as available at \url{http://wavelab.at/sources/} \cite{rathgeb}}. From the results we observe the following:
 
 \begin{enumerate}
-	\item The Results for intra-recompression experiments, namely \emph{jpg} on \emph{jpg} pre-compressed data, in figure \ref{fig:segResultsJPG} indicate that  
+	\item Results for intra-recompression experiments, namely \emph{jpg} on \emph{jpg} pre-compressed data, in figure \ref{fig:segResultsJPG} indicate:  
 	
 	
 	\begin{enumerate}
 		\item For small and medium compression ratios ($ cr_t \leq 50 $) no significant difference in segmentation errors of single- and recompressed data is observeable. This implies that for these compression ratios it has no impact whether pre-compressed or uncompressed data is used in experiments. \label{noDiff}
-		\item For large compression ratios ($cr_t > 50$), segmentation errors tend to be lower for single-compressed data $I_s$ compared to recompressed data $I_r$. Thus it makes a difference whether pre-compressed or uncompressed data is used in experiments. To be more precise, using recompressed data leads to poorer results as if uncompressed data would have been used. \label{yesDiff} 
-		 \item $mser_{rel}$ and $mser_{abs}$ generally show the same trends, especially for medium and large compression ratios, i.e. there is a strong correlation of  $mser_{rel}$ and $mser_{abs}$ for $cr_t > 30$. This means, the relative error $mser_{rel}$ suffices to rate performance on iris segmentation here, implying no  expert-generated ground truth is needed. \label{gtNoHigh}
+		\item For large compression ratios ($cr_t > 50$), segmentation errors tend to be lower for single-compressed data compared to recompressed data. Thus using pre-compressed or uncompressed data in experiments matters. \label{yesDiff} 		
+		To be more precise, using recompressed data leads to poorer results as if uncompressed data would have been used. % Marked for deletion
 		 
-		 \item However, WAHET segmentation errors reveal that in some cases there can be a difference between $mser_{rel}$ and $mser_{abs}$ for $cr_t \leq 30$. Figure \ref{fig:segResultsJPG} shows here a different behaviour between absolute error $mser_{abs}$ (top-right) and relative error $mser_{rel}$ (top-left). Hence, for low compression ratios a ground truth is required to reliably rate a compression method's performace in iris segmentation. \label{gtForLow}		
+		 \item $mser_{rel}$ and $mser_{abs}$ generally show the similar trends for medium and large compression ratios, i.e. there is a strong correlation of  $mser_{rel}$ and $mser_{abs}$ for $cr_t > 30$. This means, the relative error $mser_{rel}$ suffices to rate performance on iris segmentation here, implying no expert-generated ground truth is needed. \label{gtNoHigh}
+		 
+		 \item However, WAHET segmentation errors reveal that in some cases there can be a difference between $mser_{rel}$ and $mser_{abs}$ for $cr_t \leq 30$. Figure \ref{fig:segResultsJPG} shows here a different behaviour between absolute error $mser_{abs}$ (top-right) and relative error $mser_{rel}$ (top-left). Hence, for low compression ratios a ground truth is required \label{gtForLow}	
+		 to reliably rate a compression method's performace in iris segmentation. 	% marked for deletion
 		 
 		 \item In recompression, one might expect a linear relation between used pre-compression quality $q_p$ and ranking of the error rates. Interestingly, when looking at figure \ref{fig:segResultsJPG} at high compression ratios, the poorest performance corresponds to $q_p=75$, while the best is related to $q_p=70$. In contradiction, $q_p=100$ performs significantly better than $q_p=80$ in most settings.   \label{qpConfusion}
 	\end{enumerate}
  
  
- \item We were not able to retrieve any trends for inter-recompression experiments, namely \emph{jxr} or \emph{j2k} on \emph{jpg} pre-compressed data. Even so, some interesting observations are made, which are illustrated figure \ref{fig:segResultsOther}:
+ \item There are no clear trends for inter-recompression experiments, namely \emph{jxr} or \emph{j2k} on \emph{jpg} pre-compressed data. Even so, some interesting observations are made, which are illustrated figure \ref{fig:segResultsOther}:
  
  \begin{enumerate}
- 	 	\item Data generated in a single compression step generally tends to result in smaller error rates compared to those computed from re-compressed data. Interestingly, for extreme values, namely very small and very large compression ratios, single-compression performs often worse than recompression. \label{singleAmongBest}
+ 	 	\item Data generated in a single compression step generally tends to result in smaller error rates compared to those computed from recompressed data. Interestingly, for extreme values, namely very small and very large compression ratios, single-compression performs often poorer. \label{singleAmongBest}
  	 	
- 	 	\item For all experiments carried out with \emph{jxr} and \emph{jp2}, the error rate stagnates for medium compression ratios, i.e. $45 \leq cr_t \leq 70$. Exemplarily this can be seen in the $mser_{abs}$ for \emph{jp2}-method (figure \ref{fig:segResultsOther} left). The characteristics of a curve's stagnancy vary depending on the pre-compression quality $q_p$. Since stagnancy can be seen in single- as well as recompressed data, we conclude the effect is generally related to the used methods \emph{jxr} and \emph{jp2}. However, the characteristics of the stagnancy seem be controlled by the pre-compression quality $q_p$ in a way that the lower the pre-compression quality is, the longer the curve stagnates. \label{cureFlattening}
+ 	 	\item For all experiments carried out with \emph{jxr} and \emph{jp2}, the error rate stagnates in some way for medium compression ratios, i.e. $45 \leq cr_t \leq 70$. Exemplarily this can be seen in the $mser_{abs}$ for \emph{jp2}-method (figure \ref{fig:segResultsOther} left). The characteristics of a curve's stagnancy vary depending on the pre-compression quality $q_p$. Since stagnancy can be seen in single- as well as recompressed data, we conclude the effect is generally related to the used methods \emph{jxr} and \emph{jp2}. However, the characteristics of the stagnancy seem be controlled by the pre-compression quality $q_p$ in a way that the lower the pre-compression quality is, the clearer the curve stagnates. \label{cureFlattening}
 \end{enumerate}  
   \end{enumerate}
  
-\paragraph{In intra-recompression,} recompression effects have a strong impact on experimental results for large compression ratios, i.e. $cr_t > 50$ (\ref{noDiff}, \ref{yesDiff}). Many studies in this field resort back to precompressed data sets for the sake of ground truth availability. Results for compression ratios of $cr_t > 50$, e.g. \cite{BDaugman08a, severeCompression}, can therefore not be considered entirely reliable. However, we have seen that recompression effects have negative influence on segmentation error rates, hence by using uncompressed data for the same experiments, better results may be achieved. If this behaviour is related to intra-recompression in general or for \emph{jpg}-recompression only, is topic to further research.
+\paragraph{In intra-recompression,} recompression effects have a strong impact on experimental results for large compression ratios, i.e. $cr_t > 50$ (\ref{noDiff}, \ref{yesDiff}). Researchers are often forced to use precompressed data sets for the sake of ground truth availability. Results for compression ratios of $cr_t > 50$ can therefore not be considered entirely reliable (\ref{yesDiff}). However, recompression effects have negative influence on segmentation error rates, hence by using uncompressed data for the same experiments, better results may be achieved. If this behaviour is related to intra-recompression in general or for \emph{jpg}-recompression only, is topic to further research.
 
 From \ref{gtNoHigh} we know that for large compression ratios, i.e. $cr_t > 50$, there is no difference in the progress of $mser_{rel}$ and $mser_{abs}$. Since this is (from \ref{yesDiff}) exactly the range, where using single- or recompressed data does have an impact, we propose - based on observations \ref{gtForLow} and \ref{gtNoHigh} - to bench-mark compression algorithms in respect to iris segmentation by using 
 \begin{itemize}
-	\item uncompressed data sets rated with relative measures, such as the $mser_{rel}$, equ. (\ref{equ:mserrel}), for severe compression, i.e. $cr_t > 50$ and
-	\item pre-compressed data sets\footnote{If absolutely necessary because of ground-truth availability, of course uncompressed data is preferred} with absolute measures, such as $mser_{abs}$, equ. (\ref{equ:mserabs}), for medium and light compression, i.e. $cr_t \leq 50$.
+	\item uncompressed data sets rated with relative measures, such as the $mser_{rel}$, for severe compression, i.e. $cr_t > 50$ and
+	\item pre-compressed data sets\footnote{If absolutely necessary because of ground-truth availability, of course uncompressed data is preferred} with absolute measures, such as $mser_{abs}$, for medium and light compression, i.e. $cr_t \leq 50$.
 \end{itemize}
-We were not able to determine, whether or in which way the choice of the pre-compression parameter relates to the level of segmentation error rates (\ref{qpConfusion}). 
+We were not able to determine, whether or in which way the choice of the pre-compression parameter relates to the level of segmentation error rates (\ref{qpConfusion}). % Marked for deletion
 
-In conclusion, one has to be careful when using pre-compressed data for compression bench-marking, when the pre-compression as well as the bench-marked compression method were the same, i.e. JPEG. If this applies to intra-compression with other methods as well needs further investigation.
+In conclusion, one has to be careful when using pre-compressed data for compression bench-marking, when the pre-compression as well as the bench-marked compression method were the same, i.e. JPEG. % Marked for deletion 
+If this applies to intra-compression with other methods as well needs further investigation.
 
-\paragraph{In inter-recompression} we cannot observe such behaviour. However, there are trends observeable (\ref{singleAmongBest}, \ref{cureFlattening}) needing further investigation. 
-
-
-%TODO TB:
-%\begin{itemize}
-% \item Transform CR's in bpp, compare to \cite{severeCompression}
-%\end{itemize}
+\paragraph{In inter-recompression} we cannot observe such behaviour. However, there are trends observeable (\ref{singleAmongBest}, \ref{cureFlattening}), which need further investigation. 
 
 
-\section{Results}
+\section{Comparison}
 \label{section:results}
 Besides evaluating the segmentation error rate and the general purpose quality measures independently, their correlation is analyzed. Furthermore, we explicitly investigate the correlation between $mser_{rel}$ and $mser_{abs}$ to back up the observations in section \ref{section:ser}.
 Since our standard choice, the Spearman’s rank correlation coefficient, did not well represent the subjective opinions of the paper’s authors for different graphs of the dataset, we used Dynamic Time Warping (DTW) as a second correlation metric.
@@ -406,14 +404,14 @@ Although the spearman’s rank correlation coefficient is a standard and powerfu
 Note by TB: Probably show that correlation between all quality metrics is given?!
 
 
-\subsubsection{Quality metrics vs. segmentation error}
+\subsection{Quality metrics vs. segmentation error}
 
 \textbf{Note by TB}: Although MSSIM (figure \ref{fig:mssim}) shows a strong correlation to jpg related segmentation error rates, because also the single compressed curve gets away from the bundle of the other curves, MSSIM on jp2 compressed data (figure \ref{fig:mssim})  shows absolutely no sign of the stagnancy, although there is clear stagnancy in figure \ref{fig:segResultsOther} (left). Hence, MSSIM (among others) cannot be used to predict behaviour of iris segmentation. This could also mean that the segmentation NOT ONLY depends on the quality of an image, or at least not in a linear relationship.
 
 This becomes even more obvious when comparing figure \ref{fig:psnr} with \ref{fig:segResultsOther}, although for pre-compression 85 at least a step from 50-55 can be seen. Pls make similar observations here...
 
 
-\subsubsection{Segmentation error: relative vs. absolute}
+\subsection{Segmentation error: relative vs. absolute}
 TODO: Martin
 
 
