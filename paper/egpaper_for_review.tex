@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{url}
 \usepackage{amssymb}
+\usepackage[table]{xcolor} % for color coding in correlation Tables
 
 \DeclareMathOperator*{\argmin}{arg\,min}
 
@@ -381,43 +382,88 @@ If this applies to intra-compression with other methods as well needs further in
 
 
 \section{Comparison}
-\label{section:results}
-Besides evaluating the segmentation error rate and the general purpose quality measures independently, their correlation is analyzed. Furthermore, we explicitly investigate the correlation between $mser_{rel}$ and $mser_{abs}$ to back up the observations in section \ref{section:ser}.
-Since our standard choice, the Spearman’s rank correlation coefficient, did not well represent the subjective opinions of the paper’s authors for different graphs of the dataset, we used Dynamic Time Warping (DTW) as a second correlation metric.
-
-
-Although the spearman’s rank correlation coefficient is a standard and powerful tool in order to determine the correlation between two graphs, this coefficient especially points out the overall trend of two graphs by using a monotonic function. Figure \ref{fig:corrSRCCproblem} shows one specific example of our dataset where the SRCC results in a high linear relationship since both graphs are close to monotonic functions. However, clearly both graphs are showing a significant difference in terms of a point-wise comparison (e.g. the Euclidean distance).
-
-% Make a bit smaller, grid lines, B/W graph. Probably there are better examples, I'd give one hear that correlates really good, althoug spearman is bad and an opposite example. I suggest a few from our test data later.
-\begin{figure}[h]
-	\begin{center}
-		
-	\includegraphics[width=1\linewidth]{img/corrSRCCproblem}
-\end{center}
-	\caption{PSNR vs. EER (CAHT) for jpeg single compression: SRCC = 0.88 and ED = 0.53 . Note that both graphs were normalized to the interval [0,1] and PSNR additionally inverted.}
-	\label{fig:corrSRCCproblem}
-	
-\end{figure}
+\label{section:comparison}
+Besides evaluating the segmentation error rate and the general purpose quality measures independently, their correlation is analysed. Furthermore, we explicitly investigate the correlation between $mser_{rel}$ and $mser_{abs}$ to back up the observations in section \ref{section:ser}.
+For this purpose, we used the Spearman's rank correlation coefficient (SRCC).
 
 \subsection{Correlation of Evaluation methods}
+\label{section:correlation}
 
-Note by TB: Probably show that correlation between all quality metrics is given?!
+\subsubsection{Quality Metrics vs. Segmentation Error Rate}
+
+In general, all five used general purpose quality metrics show a high linear relationship with a minimum SRCC of $0.852$ to each other. Furthermore, all of these metrics are highly correlating with the segmentation error rate and there are only minor differences between the segmentation algorithms (WAHET and CAHT) and the relative and absolute segmentation error rates.
+
+Table \ref{tab:corrJPG} shows the correlation results for the intra-compression (\emph{jpg}) and the CAHT segmentation algorithm. It can be observed that the $mser_{rel}$ shows overall a higher linear relationsship to the quality metrics than the $mser_{abs}$. The reason for this can be seen in Figure \ref{fig:segResultsJPG} (bottom) where the $mser_{rel}$ has a higher slope for small and medium CRs where the $mser_{rel}$ is more flat in this region and is in general more noisy as well.
+Furthermore, it can be seen that for the MSSIM metric ($mser_{rel}$) in case of single compression the SRCC is smaller compared to the other metrics, which is due to the outlier of the MSSIM at $cr_t = 15$ in Figure \ref{fig:mssim}. However, except of this outlier and when looking at the graphs as well, the MSSIM represents best the segmentation error rates in case of the intra-compression, because the single compressed curve gets away from the bundle of the recompressed curves.
+On the other hand, on jp2 compressed data (figure \ref{fig:mssim}) MSSIM shows absolutely no sign of the stagnancy, although there is clear stagnancy in figure \ref{fig:segResultsOther} (left). Hence, MSSIM (among others) cannot be used to predict behaviour of iris segmentation. This could also mean that the segmentation not only depends on the quality of an image, or at least not in a linear relationship.
+
+\begin{table}[h]\footnotesize\centering
+\begin{tabular}{ | l || l | l | l | l | l | }
+    \hline
+    \multicolumn{6}{|c|}{SRCC between the quality metrics and the relative MSER} \\
+    \hline
+    & \emph{single} & \emph{rec.70} & \emph{rec.75} & \emph{rec.80} & \emph{rec.100} \\ \hline
+    \emph{PSNR} & -0.995 \cellcolor[rgb]{0,0.5,0} & -0.995 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \emph{MSSIM} & -0.912 \cellcolor[rgb]{0,0.5,0} & -0.995 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \emph{NQM} & -0.995 \cellcolor[rgb]{0,0.5,0} & -0.995 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \emph{VSNR} & -0.995 \cellcolor[rgb]{0,0.5,0} & -0.995 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \emph{RFSI} & -0.995 \cellcolor[rgb]{0,0.5,0} & -0.995 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} & -1.0 \cellcolor[rgb]{0,0.5,0} & -0.995 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \hline
+    
+    \multicolumn{6}{|c|}{SRCC between the quality metrics and the absolute MSER} \\
+    \hline
+    & \emph{single} & \emph{rec.70} & \emph{rec.75} & \emph{rec.80} & \emph{rec.100} \\ \hline
+    \emph{PSNR} & -0.857 \cellcolor[rgb]{0,0.5,0} & -0.863 \cellcolor[rgb]{0,0.5,0} & -0.929 \cellcolor[rgb]{0,0.5,0} & -0.868 \cellcolor[rgb]{0,0.5,0} & -0.841 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \emph{MSSIM} & -0.923 \cellcolor[rgb]{0,0.5,0} & -0.863 \cellcolor[rgb]{0,0.5,0} & -0.929 \cellcolor[rgb]{0,0.5,0} & -0.868 \cellcolor[rgb]{0,0.5,0} & -0.841 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \emph{NQM} & -0.857 \cellcolor[rgb]{0,0.5,0} & -0.863 \cellcolor[rgb]{0,0.5,0} & -0.929 \cellcolor[rgb]{0,0.5,0} & -0.868 \cellcolor[rgb]{0,0.5,0} & -0.841 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \emph{VSNR} & -0.857 \cellcolor[rgb]{0,0.5,0} & -0.863 \cellcolor[rgb]{0,0.5,0} & -0.929 \cellcolor[rgb]{0,0.5,0} & -0.868 \cellcolor[rgb]{0,0.5,0} & -0.841 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \emph{RFSI} & -0.857 \cellcolor[rgb]{0,0.5,0} & -0.863 \cellcolor[rgb]{0,0.5,0} & -0.929 \cellcolor[rgb]{0,0.5,0} & -0.868 \cellcolor[rgb]{0,0.5,0} & -0.846 \cellcolor[rgb]{0,0.5,0} \\ \hline
+
+\end{tabular}
+\caption{Spearman Rank Correlation Coefficient between the quality metrics and the $mser_{rel}$ (above) as well as the $mser_{abs}$ (below) for intra-compression (\emph{jpg}) and the CAHT segmentation algorithm.}
+\label{tab:corrJPG}
+\end{table}
+
+%\textbf{Note by TB}: Although MSSIM (figure \ref{fig:mssim}) shows a strong correlation to jpg related segmentation error rates, because also the single compressed curve gets away from the bundle of the other curves, MSSIM on jp2 compressed data (figure \ref{fig:mssim})  shows absolutely no sign of the stagnancy, although there is clear stagnancy in figure \ref{fig:segResultsOther} (left). Hence, MSSIM (among others) cannot be used to predict behaviour of iris segmentation. This could also mean that the segmentation NOT ONLY depends on the quality of an image, or at least not in a linear relationship.
+
+%This becomes even more obvious when comparing figure \ref{fig:psnr} with \ref{fig:segResultsOther}, although for pre-compression 85 at least a step from 50-55 can be seen. Pls make similar observations here...
+
+\subsubsection{Relative vs. Absolute Segmentation Error Rate}
+
+The SRCC between the relative and absolute segmentation error rates confirms that both metrics show in general the same trend as it can be seen in Table \ref{tab:corrMSER}.
+
+\begin{table}[h]\footnotesize\centering
+\begin{tabular}{ | l || l | l | l | l | l | }
+    \hline
+    \multicolumn{6}{|c|}{WAHET Segmentation} \\
+    \hline
+    & \emph{single} & \emph{rec.70} & \emph{rec.75} & \emph{rec.80} & \emph{rec.100} \\ \hline
+    \emph{jpg} & 0.703 \cellcolor[rgb]{0,0.8,0} & 0.835 \cellcolor[rgb]{0,0.5,0} & 0.890 \cellcolor[rgb]{0,0.5,0} & 0.786 \cellcolor[rgb]{0,0.8,0} & 0.863 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \emph{j2k} & 0.978 \cellcolor[rgb]{0,0.5,0} & 0.962 \cellcolor[rgb]{0,0.5,0} & 0.978 \cellcolor[rgb]{0,0.5,0} & 0.923 \cellcolor[rgb]{0,0.5,0} & 0.978 \cellcolor[rgb]{0,0.5,0} \\ \hline
+    \emph{jxr} & 0.742 \cellcolor[rgb]{0,0.8,0} & 0.956 \cellcolor[rgb]{0,0.5,0} & 0.423 \cellcolor{orange} & 0.544 \cellcolor[rgb]{0,0.8,0} & 0.412 \cellcolor{orange} \\ \hline
+    \hline
+    
+    \multicolumn{6}{|c|}{CAHT Segmentation} \\
+    \hline
+    & \emph{single} & \emph{rec.70} & \emph{rec.75} & \emph{rec.80} & \emph{rec.100} \\ \hline
+    \emph{jpg} & \cellcolor[rgb]{0,0.5,0} 0.863 & \cellcolor[rgb]{0,0.5,0} 0.802 & \cellcolor[rgb]{0,0.5,0} 0.928 & \cellcolor[rgb]{0,0.5,0} 0.868 & \cellcolor[rgb]{0,0.5,0} 0.841 \\ \hline
+    \emph{j2k} & \cellcolor[rgb]{0,0.5,0} 0.984 & \cellcolor[rgb]{0,0.5,0} 1.0 & \cellcolor[rgb]{0,0.5,0} 0.995 & \cellcolor[rgb]{0,0.5,0} 1.0 & \cellcolor[rgb]{0,0.5,0} 1.0 \\ \hline
+    \emph{jxr} & \cellcolor[rgb]{0,0.5,0} 0.978 & \cellcolor[rgb]{0,0.5,0} 0.973 & \cellcolor[rgb]{0,0.5,0} 0.967 & \cellcolor[rgb]{0,0.5,0} 0.918 & \cellcolor[rgb]{0,0.5,0} 0.978 \\ \hline
+
+\end{tabular}
+\caption{SRCC between $mser_{rel}$ and $mser_{abs}$ for all three methods and both WAHET segmentation (above) and CAHT segmentation (below).}
+\label{tab:corrMSER}
+\end{table}
+
+In case of the WAHET segmentation \emph{jp2} outperforms the other two compression methods. The smaller SRCC values for \emph{jpg} is mainly due to the $mser_{abs}$ at smaller compression ratios where the segmentation error rate is higher for $cr_t = 15$ than for $cr_t = 20$. Also the small ripple at $cr_t = 30$ has an impact on the correlation here.
+The reason for the intermediate SRCC results in case of jxr are mainly due to noise, which can be seen in Figure \ref{fig:segResultsOther}.
 
 
-\subsection{Quality metrics vs. segmentation error}
-
-\textbf{Note by TB}: Although MSSIM (figure \ref{fig:mssim}) shows a strong correlation to jpg related segmentation error rates, because also the single compressed curve gets away from the bundle of the other curves, MSSIM on jp2 compressed data (figure \ref{fig:mssim})  shows absolutely no sign of the stagnancy, although there is clear stagnancy in figure \ref{fig:segResultsOther} (left). Hence, MSSIM (among others) cannot be used to predict behaviour of iris segmentation. This could also mean that the segmentation NOT ONLY depends on the quality of an image, or at least not in a linear relationship.
-
-This becomes even more obvious when comparing figure \ref{fig:psnr} with \ref{fig:segResultsOther}, although for pre-compression 85 at least a step from 50-55 can be seen. Pls make similar observations here...
-
-
-\subsection{Segmentation error: relative vs. absolute}
-TODO: Martin
 
 
 \section{Conclusion}
 \label{section:conclusion}
-TODO: Martin 
+
 
 {\small
 \bibliographystyle{ieee}
