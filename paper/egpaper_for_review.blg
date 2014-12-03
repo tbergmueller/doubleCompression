@@ -2,20 +2,14 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: egpaper_for_review.au
 The style file: ieee.bst
 Database file #1: egbib.bib
 Warning--string name "pub-springer" is undefined
---line 4 of file egbib.bib
-Warning--I'm ignoring Rathgeb12e's extra "series" field
---line 27 of file egbib.bib
-I was expecting a `,' or a `}'---line 98 of file egbib.bib
- :  
- :  keywords = {JPEG recompression}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 146 of file egbib.bib
- :  
- :  KEYWORDS      = {iris segmentation, JPEG recompression, JPEG 2000, UBIRIS}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
+--line 273 of file egbib.bib
+Warning--I didn't find a database entry for "BCarneiro11a"
+Warning--I didn't find a database entry for "Kumar11a"
+Too many commas in name 1 of "N. Damera-Venkata, T. D. Kite, W. S. Geisler, B. L. Evans and A. C. Bovik" for entry Dameraa
+while executing---line 1073 of file ieee.bst
 Warning--empty institution in Bowyer_thend-iris-0405
 Warning--empty year in Bowyer_thend-iris-0405
 Warning--empty publisher in BBurge13a
+Too many commas in name 1 of "N. Damera-Venkata, T. D. Kite, W. S. Geisler, B. L. Evans and A. C. Bovik" for entry Dameraa
+while executing---line 1116 of file ieee.bst
 (There were 2 error messages)

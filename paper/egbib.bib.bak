@@ -31,7 +31,10 @@
   Journal                  = {IEEE Transactions on Image Processing},
   Year                     = {2007},
   Pages                    = {pp. 2284-2298},
-  Volume                   = {vol. 16, no. 9}
+  Volume                   = {vol. 16, no. 9},
+
+  Owner                    = {user},
+  Timestamp                = {2014.12.03}
 }
 
 @Article{BDaugman08a,
@@ -148,7 +151,10 @@ on Pattern Recognition (ICPR'14)},
   Journal                  = {Proc. 17th IEEE Int. Conf. on Image Procesing ICIP},
   Year                     = {2010},
   Note                     = {Hong Kong, China},
-  Pages                    = {p. 321–324}
+  Pages                    = {p. 321–324},
+
+  Owner                    = {user},
+  Timestamp                = {2014.12.03}
 }
 
 @InProceedings{Matschitsch07a,
@@ -167,7 +173,10 @@ on Pattern Recognition (ICPR'14)},
   Title                    = {Image Quality Assessment on a Degradation Model},
   Author                   = {N. Damera-Venkata, T. D. Kite, W. S. Geisler, B. L. Evans and A. C. Bovik},
   Journal                  = {IEEE Transactions on Image Processing, vol. 9, no. 4, pp. 636-649},
-  Year                     = {2000}
+  Year                     = {2000},
+
+  Owner                    = {user},
+  Timestamp                = {2014.12.03}
 }
 
 @Article{BPardamean12a,
@@ -264,7 +273,10 @@ on Pattern Recognition (ICPR'14)},
   Title                    = {Multi-Scale Structural Similarity for Image Quality Assessment},
   Author                   = {Z. Wang, E. P. Simoncelli and A. C. Bovik},
   Journal                  = {IEEE Asiloma Conference on Signal, Systems and Computers},
-  Year                     = {2003}
+  Year                     = {2003},
+
+  Owner                    = {user},
+  Timestamp                = {2014.12.03}
 }
 
 @Book{BBurge13a,

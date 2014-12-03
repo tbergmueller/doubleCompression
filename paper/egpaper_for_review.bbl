@@ -15,17 +15,18 @@ M.~Burge and K.~Bowyer, editors.
 \newblock {\em Handbook of Iris Recognition}.
 \newblock 2013.
 
-\bibitem{BCarneiro11a}
-M.~Carneiro, A.~Veiga, E.~Flores, and G.~Carrijo.
-\newblock Solutions for iris segmentation.
-\newblock In Z.~Riaz, editor, {\em Biometric Systems, Design and Applications},
-  pages 111--128. InTech, 2011.
-
 \bibitem{Chan92a}
 S.~Chan.
 \newblock Recompression of still images.
 \newblock Technical Report 21068, Computing Laboratory, University of Kent, UK,
   1992.
+
+\bibitem{Chandlera}
+D.~M. Chandler and S.~Hemami.
+\newblock Vsnr: A wavelet-based visual signal-to-noise ratio for natural
+  images.
+\newblock {\em IEEE Transactions on Image Processing}, vol. 16, no. 9:pp.
+  2284--2298, 2007.
 
 \bibitem{BDaugman08a}
 J.~Daugman and C.~Downing.
@@ -40,6 +41,12 @@ J.~H\"ammerle-Uhl, C.~Pr\"ahauser, T.~Starzacher, and A.~Uhl.
 \newblock In M.~Tistarelli and M.~Nixon, editors, {\em Proceedings of the 3rd
   International Conference on Biometrics 2009 (ICB'09)}, volume 5558 of {\em
   LNCS}, pages 1102--1111. Springer Verlag, 2009.
+
+\bibitem{Hofbauer14b}
+H.~Hofbauer, F.~Alonso-Fernandez, P.~Wild, J.~Bigun, and A.~Uhl.
+\newblock A ground truth for iris segmentation.
+\newblock In {\em Proceedings of the 22th International Conference on Pattern
+  Recognition (ICPR'14)}, page 6pp., Stockholm, Sweden, 2014.
 
 \bibitem{Horvath11b}
 K.~Horvath, H.~St\"ogner, and A.~Uhl.
@@ -63,7 +70,7 @@ K.~Horvath, H.~St\"ogner, and A.~Uhl.
 \bibitem{jxr}
 {I.O. for Standardization}.
 \newblock {ISO/IEC IS 29199-2. Information technology – JPEG XR image coding
-  system – Part 2: Image coding speciﬁcation}, {2012}.
+  system – Part 2: Image coding speci�?cation}, {2012}.
 
 \bibitem{BIves10a}
 R.~W. Ives, D.~Bishop, Y.~Du, and C.~Belcher.
@@ -85,12 +92,13 @@ M.~Konrad, H.~St\"ogner, and A.~Uhl.
   International Conference on Biometrics 2009 (ICB'09)}, volume 5558 of {\em
   LNCS}, pages 1091--1101. Springer Verlag, 2009.
 
-\bibitem{Kumar11a}
-B.~Kumar and G.~Karpagam.
-\newblock An empirical analysis of requantization errors for recompressed jpeg
-  images.
-\newblock {\em International Journal of Engineering Science and Technology},
-  3(12):8519--8527, 2011.
+\bibitem{Zhanga}
+X.~M. L.~Zhang, L.~Zhang.
+\newblock Rfsim: A feature based image quality asesment metric using riesz
+  transforms.
+\newblock {\em Proc. 17th IEEE Int. Conf. on Image Procesing ICIP}, page p.
+  321�324, 2010.
+\newblock Hong Kong, China.
 
 \bibitem{Matschitsch07a}
 S.~Matschitsch, M.~Tschinder, and A.~Uhl.
@@ -99,6 +107,12 @@ S.~Matschitsch, M.~Tschinder, and A.~Uhl.
 \newblock In S.-W. Lee and S.~Li, editors, {\em Proceedings of the 2nd
   International Conference on Biometrics 2007 (ICB'07)}, volume 4642 of {\em
   LNCS}, pages 232--241. Springer Verlag, 2007.
+
+\bibitem{Dameraa}
+W.~S. G. B. L.~E. N.~Damera-Venkata, T. D.~Kite and A.~C. Bovik.
+\newblock Image quality assessment on a degradation model.
+\newblock {\em IEEE Transactions on Image Processing, vol. 9, no. 4, pp.
+  636-649}, 2000.
 
 \bibitem{BPardamean12a}
 B.~Pardamean and I.~Christiani.
@@ -152,5 +166,10 @@ A.~Tuba, J.~Arezina, and R.~Jovanovic.
   recognition.
 \newblock In {\em Applied Mathematics in Electrical and Computer Engineering},
   pages 417--422, 2012.
+
+\bibitem{Wangsa}
+E.~P.~S. Z.~Wang and A.~C. Bovik.
+\newblock Multi-scale structural similarity for image quality assessment.
+\newblock {\em IEEE Asiloma Conference on Signal, Systems and Computers}, 2003.
 
 \end{thebibliography}
