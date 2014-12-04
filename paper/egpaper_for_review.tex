@@ -253,31 +253,28 @@ Evaluating the quality of the compressed images in respect to the original an as
  
 \end{itemize}
 
-Applying these quality metrics \emph{jpg}, \emph{j2k} and \emph{jxr} resulted in the following observation in fig. 3 \& 4 :
+Applying these quality metrics \emph{jpg}, \emph{j2k} and \emph{jxr} resulted in the following observations in fig. 3 \& 4. It is observed that:
 \begin{enumerate}
 	\item For \emph{jpg} :
-	\begin{enumerate}
+	
 		 	 
-		 \item For  $cr_t>15 $ single compressed images were of higher quality compared to re-compressed
-		 \item At $cr_t$=15 the single compressed images were of the lowest quality as shown in fig. 3 for MSSIM
-		 \item The quality of the re-compressed images followed the trend that the higher the $q_p$ the better the quality of the image
-		 \item Previous observation was unanimous for all metrics
-	\end{enumerate}
+		 For $cr_t>15 $ single compressed images were of higher quality compared to re-compressed and
+		 at $cr_t$=15 the single compressed images were of the lowest quality as shown in fig. 3 for MSSIM.
+		 The quality of the re-compressed images followed the trend that the higher the $q_p$ the better the quality of the image. Previous observation of metrics for jpg was unanimous for all metrics.
+	
 	\item For \emph{jk2}:
-   \begin{enumerate}
-			\item   For all compression ratios and all the metrics The quality of the re-compressed images followed the trend that the higher the $q_p$ the better the quality of the image
-			\item  Single compressed images were of the highest quality compared to re-compressed data, for all metrics and compression ratios as shown for MSSIM in fig. 3 	 
+   
+			For all compression ratios and all metrics, the quality of the re-compressed images followed the trend that the higher the $q_p$ the better the quality of the image. Single compressed images were of the highest quality compared to re-compressed data, which was valid for all metrics and compression ratios as shown for MSSIM in fig. 3 	 
 			  
-	\end{enumerate}
+	
 		\item For \emph{jxr}:
-   \begin{enumerate}
-        \item For $15\leq{cr_t}\leq{40}$ single compressed images were of the lowest quality compared to re-compressed data for MSSIM and VSNR. Then the latter followed the trend of the higher the $q_p$ the better the quality of the image fig. 4		 
-        \item For $45\leq{cr_t}\leq{75}$ images of single compression became of the highest quality and  re-compressed data continued the same trend for MSSIM and VSNR.
-        \item NQM showed the same behaviour, but at ${cr_t}$=50 as a changing point
-        \item RFSIM showed a different trend from the previous, here single compressed data was always of best quality and re-compressed data followed in quality. 
+   
+        For $15\leq{cr_t}\leq{40}$ single compressed images were of the lowest quality compared to re-compressed data for MSSIM and VSNR. The latter followed the trend of the higher the $q_p$ the better the quality of the image fig.4		 
+        For $45\leq{cr_t}\leq{75}$ images of single compression became of the highest quality and  re-compressed data continued the same trend for MSSIM and VSNR metrics.
+        NQM showed the same behaviour, but ${cr_t}$=50 was observed to be the changing point in this case. RFSIM showed a different trend from the previous; single compressed data were always of the best quality compared to re-compressed data which followed in terms of quality measurement. 
    
    
-   \end{enumerate}
+   
 \end{enumerate}
 
 \begin{figure}[!h]
@@ -289,7 +286,7 @@ Applying these quality metrics \emph{jpg}, \emph{j2k} and \emph{jxr} resulted in
 \end{figure}
 
 
-\begin{figure}[!t]
+\begin{figure}[!h]
 	\includegraphics[width=0.49\linewidth]{img/new/rt_jxr.eps} %jxr_psnr.eps
 	\includegraphics[width=0.49\linewidth]{img/new/jxr_mssim.eps}	
 	

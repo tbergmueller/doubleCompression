@@ -20,11 +20,11 @@
 \citation{Rathgeb12e}
 \citation{BPardamean12a}
 \citation{BIves08a}
-\@writefile{toc}{\contentsline {section}{\numberline {1}\hskip -1em.\nobreakspace  {}Introduction}{1}}
 \citation{Horvath11b}
 \citation{BCarneiro11a}
 \citation{BTuba12a}
 \citation{Rathgeb12e}
+\@writefile{toc}{\contentsline {section}{\numberline {1}\hskip -1em.\nobreakspace  {}Introduction}{1}}
 \citation{Pennebaker93a}
 \citation{Chan92a}
 \citation{Kumar11a}
@@ -32,18 +32,13 @@
 \citation{Sencar12a}
 \citation{severeCompression}
 \citation{BDaugman08a}
-\citation{jpg}
-\citation{j2k}
-\citation{jxr}
-\citation{j2k}
 \@writefile{toc}{\contentsline {section}{\numberline {2}\hskip -1em.\nobreakspace  {}Compression scheme}{2}}
 \newlabel{section:comprScheme}{{2}{2}}
-\citation{jpg}
 \citation{Hofbauer14b}
 \citation{severeCompression}
 \citation{Bowyer_thend-iris-0405}
-\newlabel{equ:recomp}{{6}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Basic compression principle to obtain two images achieving approximately the same target compression ratio $cr_t$ from an uncompressed image $I_u^{(k)}$ using a particular compression method $m$. One image, $I_s^{(k)}$, is compressed in a single step while the other, $I_r^{(k)}$, uses a pre-compression and a final compression step. Note the pre-compression step is always a $jpg$-compression, while the final compression step uses the same method $m$ as used for single-compression.}}{3}}
+\newlabel{equ:recomp}{{7}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Compression principle to obtain two images achieving approximately the same target compression ratio $cr_t$ from an uncompressed image $I_u^{(k)}$ using a particular compression method $m$. One image, $I_s^{(k)}$, is compressed in a single step while the other, $I_r^{(k)}$, uses a pre-compression and a final compression step. The pre-compression step is always a $jpg$-compression, while the final one uses the same method $m$ as used in single-compression.}}{3}}
 \newlabel{fig:comprScheme}{{1}{3}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}\hskip -1em.\nobreakspace  {}Experimental setup}{3}}
 \newlabel{section:exSetup}{{3}{3}}
@@ -51,7 +46,7 @@
 \citation{Dameraa}
 \citation{Zhanga}
 \citation{Chandlera}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Scatter plots of measured compression ratios $cr(I_u, I_s)$ over $cr(I_u, I_r)$ for methods \emph  {jpg} (left) and \emph  {jxr} (right). The graphs indicate that the $s(I_s^{(k)}) \geq s(I_r^{(k)})$ condition from equ. (6\hbox {}) is satisfied. While this is indeed true for \emph  {j2k} and \emph  {jxr}, we observe a violation in 0.13\% of the cases for \emph  {jpg} at $cr_t \geq 70$, because JPEG is already working at it's boundaries at such high compression ratios. The table below reveals, that in average the aimed $cr_t$ is met with 3.67\% accuracy for single-compressed images $I_s$, while the re-compressed ones $I_r$ only reach 7.8\%. This is due to the limited universe of quality parameters $q, q_p$.}}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Scatter plots of measured compression ratios $cr(I_u, I_s)$ over $cr(I_u, I_r)$ for methods \emph  {jpg} (left) and \emph  {jxr} (right). The graphs indicate that the $s(I_s^{(k)}) \geq s(I_r^{(k)})$ condition from equ. (7\hbox {}) is satisfied. While this is indeed true for \emph  {j2k} and \emph  {jxr}, we observe a violation in 0.13\% of the cases for \emph  {jpg} at $cr_t \geq 70$, because JPEG is already working at it's boundaries at such high compression ratios. The table below reveals, that in average the aimed $cr_t$ is met with 3.67\% accuracy for single-compressed images $I_s$, while the re-compressed ones $I_r$ only reach 7.8\%. This is due to the limited universe of quality parameters $q, q_p$.}}{4}}
 \newlabel{fig:dataDistribution}{{2}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}\hskip -1em.\nobreakspace  {}Evaluation}{4}}
 \newlabel{section:eval}{{4}{4}}
@@ -59,38 +54,40 @@
 \newlabel{section:fulRef}{{4.1}{4}}
 \citation{BDaugman08a}
 \citation{severeCompression}
+\citation{Hofbauer14b}
+\citation{Hofbauer14b}
 \citation{severeCompression}
 \citation{severeCompression}
+\citation{Rathgeb12e}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Left: MSSIM of \emph  {jpg} single- and recompressed data. Right: MSSIM of \emph  {jp2} single- and recompressed data}}{5}}
 \newlabel{fig:mssim}{{3}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}\hskip -1em.\nobreakspace  {}Segmentation error rates}{5}}
-\newlabel{section:ser}{{4.2}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Left: RFSIM of \emph  {jxr} single- and recompressed data. Right: MSSIM of \emph  {jxr} single- and recompressed data}}{5}}
 \newlabel{fig:psnr}{{4}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}\hskip -1em.\nobreakspace  {}Segmentation error rates}{5}}
+\newlabel{section:ser}{{4.2}{5}}
 \newlabel{fig:segMasks}{{4.2}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Segmentation masks of the expert ground truth \cite  {severeCompression}, relative groundtruth $seg(I_u^{(k)})$ and an actual segmentation result $seg(I_r^{(k)})$ (f.l.t.r)}}{5}}
-\newlabel{equ:mserabs}{{11}{5}}
-\newlabel{equ:mserrel}{{12}{5}}
-\citation{severeCompression}
-\citation{severeCompression}
-\citation{rathgeb}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Segmentation masks of the expert ground truth \cite  {Hofbauer14b}, relative groundtruth $seg(I_u^{(k)})$ and an actual segmentation result $seg(I_r^{(k)})$ (f.l.t.r)}}{5}}
+\newlabel{equ:mserabs}{{12}{5}}
+\newlabel{equ:mserrel}{{13}{5}}
+\newlabel{noDiff}{{1a}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Relative and absolute segmentation error $mser_{rel}$ (left) and $mser_{abs}$ (right) with WAHET (top) and CAHT (bottom) segmentation on $jpg$-compressed data. Note that the $mser_{abs}$ is generally higher than $mser_{rel}$, because the tested algorithms ignore eyelids, yet they are considered in the expert ground truth \cite  {severeCompression}.}}{6}}
 \newlabel{fig:segResultsJPG}{{6}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Relative CAHT segmentation error rate $mser_{rel}$ for \emph  {jxr}-compressed data (left) and absolute WAHET segmentation error rate $mser_{abs}$ for \emph  {jp2}-compressed data (right)}}{6}}
 \newlabel{fig:segResultsOther}{{7}{6}}
-\newlabel{noDiff}{{1a}{6}}
 \newlabel{yesDiff}{{1b}{6}}
 \newlabel{gtNoHigh}{{1c}{6}}
 \newlabel{gtForLow}{{1d}{6}}
 \newlabel{qpConfusion}{{1e}{6}}
 \newlabel{singleAmongBest}{{2a}{6}}
 \newlabel{cureFlattening}{{2b}{6}}
-\@writefile{toc}{\contentsline {paragraph}{In intra-recompression,}{7}}
+\@writefile{toc}{\contentsline {paragraph}{In (jpg) intra-recompression,}{6}}
 \@writefile{toc}{\contentsline {paragraph}{In inter-recompression}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}\hskip -1em.\nobreakspace  {}Comparison}{7}}
 \newlabel{section:comparison}{{5}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Spearman Rank Correlation Coefficient between the quality metrics and the $mser_{rel}$ (above) as well as the $mser_{abs}$ (below) for intra-compression (\emph  {jpg}) and the CAHT segmentation algorithm.}}{7}}
 \newlabel{tab:corrJPG}{{1}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces SRCC between $mser_{rel}$ and $mser_{abs}$ for all three methods and both WAHET segmentation (above) and CAHT segmentation (below).}}{7}}
+\newlabel{tab:corrMSER}{{2}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}\hskip -1em.\nobreakspace  {}Conclusion}{7}}
 \newlabel{section:conclusion}{{6}{7}}
 \bibstyle{ieee}
@@ -114,8 +111,6 @@
 \bibcite{Kumar11a}{17}
 \bibcite{Zhanga}{18}
 \bibcite{Matschitsch07a}{19}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces SRCC between $mser_{rel}$ and $mser_{abs}$ for all three methods and both WAHET segmentation (above) and CAHT segmentation (below).}}{8}}
-\newlabel{tab:corrMSER}{{2}{8}}
 \bibcite{Dameraa}{20}
 \bibcite{BPardamean12a}{21}
 \bibcite{Pennebaker93a}{22}
