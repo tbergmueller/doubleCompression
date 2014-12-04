@@ -9,3 +9,8 @@ paper/egpaper_for_review.blg
 paper/egpaper_for_review.bbl
 paper/egpaper_for_review.aux
 paper/texput.log
+paper/*.log
+paper/*.aux
+paper/*.pdf
+paper/*.bbl
+paper/*.blg
