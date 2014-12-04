@@ -57,9 +57,9 @@ First line of institution2 address\\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-	Iris biometrics data is nowadays usually stored in raw image form. In large scale data bases, e.g.  
-	the Aadhaar project, the need for lossy compression emerges to achieve efficient storage. Operating with compressed data impacts
-	on the overall performance of an iris recognition system, especially on iris segmentation. Rating a compression algorithm's
+	%Iris biometrics data is nowadays usually stored in raw image form. In large scale data bases, e.g. the Aadhaar project, the need for lossy compression emerges to achieve efficient storage. Operating with compressed data impacts 	on the overall performance of an iris recognition system, especially on iris segmentation.
+	
+	Rating a compression algorithm's
 	performance is usually done in experimental studies, where researchers have frequently used JPEG pre-compressed data. It is not clear yet,
 	whether results of such compression experiments are reliable if conducted from pre-compressed data. 
 	To investigate this issue, we study the impact of using pre-compressed data on iris segmentation and evaluate the relation between iris segmentation 
@@ -94,19 +94,7 @@ Furthermore, the application of low-powered mobile sensors
 for image acquisition, e.g. mobile phones, raises the need for
 reducing the amount of transmitted data.
 
-The certainly most relevant standard for compressing
-image data relevant in biometric systems is the ISO/IEC
-19794 standard on Biometric Data Interchange Formats,
-where in the most recently published version (ISO/IEC FDIS
-19794-6), only JPEG2000 is included for lossy compression.
-JPEG2000 has also been recommended for various
-application scenarios and standardised iris images (IREX
-records) by the NIST Iris Exchange\footnote{IREX
-\url{http://iris.nist.gov/irex/}} program. The ANSI/NIST-ITL
-1-2011 standard on ``Data Format for the Interchange of
-Fingerprint, Facial \& Other Biometric Information'' (former
-ANSI/NIST-ITL 1-2007) also supports only JPEG2000 for
-applications tolerating lossy compression.
+%The certainly most relevant standard for compressing image data relevant in biometric systems is the ISO/IEC 19794 standard on Biometric Data Interchange Formats, where in the most recently published version (ISO/IEC FDIS 19794-6), only JPEG2000 is included for lossy compression. JPEG2000 has also been recommended for various application scenarios and standardised iris images (IREX records) by the NIST Iris Exchange\footnote{IREX \url{http://iris.nist.gov/irex/}} program. The ANSI/NIST-ITL 1-2011 standard on ``Data Format for the Interchange of Fingerprint, Facial \& Other Biometric Information'' (former ANSI/NIST-ITL 1-2007) also supports only JPEG2000 for applications tolerating lossy compression.
 
 As a consequence, according to the importance of this issue, many studies comparing and optimising lossy compression techniques for iris imagery 
 may be found in the literature. Since the CASIA iris datasets have been very popular among researchers ever since their establishment,
@@ -141,7 +129,7 @@ Since it has been pointed out \cite{BPhilips07a} that the CASIA V1.0 dataset exh
 	Taking all these facts together, it gets clear that recompression artifacts may impact experimental results with respect to biometric recognition
 	performance, an issue, that has been neglected so far. As discussed, ISO/IEC FDIS 19794-6 requires storing biometric data as raw images, hence all components of a biometric system are affected when operating with compressed data. As we investigate the recompression issue by studying impact on an iris recognition system, the influence on segmentation and texture extraction as well as feature extraction, i.e. iris code computation, has to be evaluated. \cite{severeCompression, BDaugman08a} suggest that data reduction has the highest impact on the iris segmentation. Since segmentation is also the first step in the pipeline, this potentially effects the performance of later steps as well and is therefore of particular importance. 
 	
-We systematically investigate eventual intra- and inter-recompression effects in an experimental study for iris segmentation. Given the importance of JPEG (as the CASIA V3.0/V4.0 and UBIRIS.v1 datasets are only available in this format), we focus on JPEG pre-compressed data. In our experiments, we compare iris segmentation and general purpose image quality metrics applied	to single compressed vs. recompressed (i.e. JPEG pre-compressed) iris image data. Section \ref{section:comprScheme} discusses relevant aspects on generating single- and recompressed data. The used data sets and methods are described in section \ref{section:exSetup}. Section \ref{section:eval} introduces several experiments and lists their results, which are then compared in section \ref{section:comparison}. From the experiments' individual and comparison results, we withdraw a conclusion in section \ref{section:conclusion}.
+We systematically investigate eventual intra- and inter-recompression effects in an experimental study for iris segmentation. Given the importance of JPEG (as the CASIA V3.0/V4.0 and UBIRIS.v1 datasets are only available in this format), we focus on JPEG pre-compressed data. In our experiments, we compare iris segmentation and general purpose image quality metrics applied	to single compressed vs. recompressed (i.e. JPEG pre-compressed) iris image data. Section \ref{section:comprScheme} discusses relevant aspects on generating single- and recompressed data. The used data sets and methods are described in section \ref{section:exSetup}. Section \ref{section:eval} introduces several experiments and lists their results, which are then compared in section \ref{section:comparison}. From the experiments' individual and comparison results, we draw conclusions in section \ref{section:conclusion}.
 	
 
 \section{Compression scheme}
@@ -149,9 +137,10 @@ We systematically investigate eventual intra- and inter-recompression effects in
 As discussed, we investigate whether there is a difference in using truly uncompressed data or pre-compressed data in experiments rating the performance of an iris segmentation. 
 Using pre-compressed data in such experiments means a pre-compressed image $I_p$ is compressed a second time, resulting in an recompressed image $I_r$. When compressing a truly uncompressed image $I_u$, the resulting image $I_s$ is generated in a single compression step. Since experiments are typically carried out on a data set with more than one image, we denote $I_u^{(k)}, I_p^{(k)}, I_s^{(k)}, I_r^{(k)} \in \mathbb{R}^{w \times h}$ as the $k^{th}$ image with width $w$ and height $h$. For simplicity, $I_u, I_p, I_r, I_s$ subsequently denote a particular image but unspecified image of a data set. Furthermore, we define $s(F) \in \mathbb{N}$ with $F \sim{I \in \mathbb{R}^{w \times h}}$ as a function that returns the file size of the file $F$ storing an image $I$. Since common lossy compression algorithms also employ lossless compression methods, e.g. run-length encoding, before writing to a file, $F$ is only loosely related to the pixel data, namely the image, $I$. For simplicity, we denote $s(I)$ as the file size of the file $F$ encoding the pixel values of an image $I$. $c_{m}(I, q)$ with $q \in \mathbb{N}$ describes the process of compressing an image $I$ using a particular method $m$ parametrized with the quality parameter $p$. In terms of this paper we use the values $m \in \{jpg, jxr, j2k\}$, where 
 \begin{itemize}
-	\item $jpg$ corresponds to the well-known (ISO/IEC IS 10918-1) DCT-based image compression method JPEG \cite{jpg},
-	\item $j2k$ corresponds to the wavelet-based image compression standard JPEG2000 (ISO/IEC IS 15444-1), which can operate at higher compression ratios \cite{j2k} and
-	\item $jxr$ corresponds to a compression standard JPEG-XR based on Microsoft’s HD Photo, which is specified in (ISO/IEC IS 29199-2) \cite{jxr}.  
+	\item $jpg$ corresponds to the well-known (ISO/IEC IS 10918-1) DCT-based image compression method JPEG, % \cite{jpg},
+	\item $j2k$ corresponds to the wavelet-based image compression standard JPEG2000 (ISO/IEC IS 15444-1), which can operate at higher compression ratios %\cite{j2k}
+	and
+	\item $jxr$ corresponds to a compression standard JPEG-XR based on Microsoft’s HD Photo, which is specified in (ISO/IEC IS 29199-2). % \cite{jxr}.  
 \end{itemize}
 
 For rating an image $I$'s compression effectiveness, we define the compression ratio $cr$ between an uncompressed image $I_u$ and a compressed image $I_c$ as 
@@ -159,7 +148,7 @@ For rating an image $I$'s compression effectiveness, we define the compression r
 cr(I_u, I_c) = \frac{s(I_u)}{s(I_c)} \quad \text{with} \quad I_c \in \{I_r, I_s\}
 \end{equation}
 
-For the later described experiments, images are compressed to a target compression ratio $cr_t \in \mathbb{R}$. However, only the \emph{j2k} compression standard \cite{j2k} allows to specify a target compression ratio $cr_t$ directly via parameter $q$. Hence this is the only method where we can control the file size $s(I_c)$ directly. The other two compression methods take a quality parameter $q \in \mathbb{N}$ only, which controls the quality but not the file size of the output image $I_c$. Therefore it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ cannot be achieved exactly for any of the three methods. Parameter optimisation can be done, such that $cr_t \approxeq cr(I_u^{(k)}, I_c^{(k)})$. We propose an algorithm to compress a set of $K$ uncompressed images $I_u$ using a particular method $m$ to achieve a certain compression ratio $cr_t$ in a way that the compression ratio of each image is met as close as possible. 
+For the later described experiments, images are compressed to a target compression ratio $cr_t \in \mathbb{R}$. However, only the \emph{j2k} compression standard allows to specify a target compression ratio $cr_t$ directly via parameter $q$. Hence this is the only method where we can control the file size $s(I_c)$ directly. The other two compression methods take a quality parameter $q \in \mathbb{N}$ only, which controls the quality but not the file size of the output image $I_c$. Therefore it is not possible to set this parameter in a way to meet a certain target compression ratio $cr_t$. Due to the limited universe of the quality parameters, the target compression ratio $cr_t$ cannot be achieved exactly for any of the three methods. Parameter optimisation can be done, such that $cr_t \approxeq cr(I_u^{(k)}, I_c^{(k)})$. We propose an algorithm to compress a set of $K$ uncompressed images $I_u$ using a particular method $m$ to achieve a certain compression ratio $cr_t$ in a way that the compression ratio of each image is met as close as possible. 
 This process, illustrated in Fig. \ref{fig:comprScheme}, employs
 \begin{enumerate}
 	\item Compute the single-compressed image $I_s^{(k)}$ with method $m$ such that $cr(I_u^{(k)}, I_s^{(k)}) \approx cr_t$. The optimal quality parameter $q_s^{(k)}$ is computed for each image separately by
@@ -171,7 +160,7 @@ This process, illustrated in Fig. \ref{fig:comprScheme}, employs
 	I_s^{(k)} = c_m(I_u^{(k)}, q_s^{(k)})
 	\end{equation}
 	
-	\item Compute a pre-compressed image $I_p^{(k)}$ using $jpg$-method \cite{jpg} with an arbitrary but fixed quality parameter $q_p$, i.e. 
+	\item Compute a pre-compressed image $I_p^{(k)}$ using $jpg$-method with an arbitrary but fixed quality parameter $q_p$, i.e. 
 	\begin{equation}
 		I_p^{(k)} = c_{jpg}(I_u^{(k)}, q_p)
 	\end{equation}
@@ -340,7 +329,7 @@ mser_{abs} = \frac{1}{K}\sum_{k=1}^{K}ser(SGT^{(k)},seg(I_c^{(k)})) \label{equ:m
 mser_{rel} = \frac{1}{K}\sum_{k=1}^{K}ser(seg(I_u^{(k)}),seg(I_c^{(k)})) \label{equ:mserrel}
 \end{eqnarray}
 
-The absolute segmentation error rate is considered to be optimal because of the available ground truth. However, for most data bases no such ground truth is available. Therefore we evaluate if the same conclusions as from the $mser_{abs}$ can be withdrawn from the $mser_{rel}$. The benefit of such a relation (if it exists) is that the $mser_{rel}$ can be computed for any arbitrary data set. 
+The absolute segmentation error rate is considered to be optimal because of the available ground truth. However, for most data bases no such ground truth is available. Therefore we evaluate if the same conclusions as from the $mser_{abs}$ can be drawn from the $mser_{rel}$. The benefit of such a relation (if it exists) is that the $mser_{rel}$ can be computed for any arbitrary data set. 
 
 \begin{figure}
 	\begin{center}
@@ -391,7 +380,7 @@ The data set described in section \ref{section:exSetup} is used to test the two 
 \end{enumerate}  
   \end{enumerate}
  
-\paragraph{In intra-recompression,} recompression effects have a strong impact on experimental results for large compression ratios, i.e. $cr_t > 50$ (\ref{noDiff}, \ref{yesDiff}). Researchers are often forced to use precompressed data sets for the sake of ground truth availability. Results for compression ratios of $cr_t > 50$ can therefore not be considered entirely reliable (\ref{yesDiff}). However, recompression effects have negative influence on segmentation error rates, hence by using uncompressed data for the same experiments, better results may be achieved. If this behaviour is related to intra-recompression in general or for \emph{jpg}-recompression only, is topic to further research.
+\paragraph{In (jpg) intra-recompression,} recompression effects have a strong impact on experimental results for large compression ratios, i.e. $cr_t > 50$ (\ref{noDiff}, \ref{yesDiff}). Researchers are often forced to use precompressed data sets for the sake of ground truth availability. Results for compression ratios of $cr_t > 50$ can therefore not be considered entirely reliable (\ref{yesDiff}). However, recompression effects have negative influence on segmentation error rates, hence by using uncompressed data for the same experiments, better results may be achieved. If this behaviour is related to intra-recompression in general or for \emph{jpg}-recompression only, is topic to further research.
 
 From \ref{gtNoHigh} we know that for large compression ratios, i.e. $cr_t > 50$, there is no difference in the progress of $mser_{rel}$ and $mser_{abs}$. Since this is (from \ref{yesDiff}) exactly the range, where using single- or recompressed data does have an impact, we propose - based on observations \ref{gtForLow} and \ref{gtNoHigh} - to bench-mark compression algorithms in respect to iris segmentation by using 
 \begin{itemize}
