@@ -253,11 +253,11 @@ Applying these quality metrics \emph{jpg}, \emph{j2k} and \emph{jxr} resulted in
 		 at $cr_t$=15 the single compressed images were of the lowest quality as shown in figure 3 for MSSIM.
 		 The quality of the recompressed images followed the trend that the higher the $q_p$ the better the quality of the image. Previous observation of metrics for jpg was unanimous for all metrics.
 	
-	\item For \emph{jk2} in all compression ratios and all metrics, the quality of the re-compressed images followed the trend that the higher the $q_p$ the better the quality of the image. Single compressed images were of the highest quality compared to re-compressed data, which was valid for all metrics and compression ratios as shown for MSSIM in fig. 3.
+	\item For \emph{jk2} in all compression ratios and all metrics, the quality of the recompressed images followed the trend that the higher the $q_p$ the better the quality of the image. Single compressed images were of the highest quality compared to recompressed data, which was valid for all metrics and compression ratios as shown for MSSIM in fig. 3.
 			  
 	
 		\item For \emph{jxr} and $15\leq{cr_t}\leq{40}$ single compressed images were of the lowest quality compared to recompressed data for MSSIM and VSNR. The latter followed the trend of the higher the $q_p$ the better the quality of the image (fig. 4).	 
-        For $45\leq{cr_t}\leq{75}$ images of single compression became of the highest quality and  re-compressed data continued the same trend for MSSIM and VSNR metrics.
+        For $45\leq{cr_t}\leq{75}$ images of single compression became of the highest quality and  recompressed data continued the same trend for MSSIM and VSNR metrics.
         NQM showed the same behaviour, but ${cr_t}$=50 was observed to be the changing point in this case. RFSIM showed a different trend from the previous; single compressed data were always of the best quality compared to recompressed data which followed in terms of quality measurement. 
    
    
@@ -268,7 +268,7 @@ Applying these quality metrics \emph{jpg}, \emph{j2k} and \emph{jxr} resulted in
 	\includegraphics[width=0.49\linewidth]{img/new/mssim_jpg.eps}
 	\includegraphics[width=0.49\linewidth]{img/new/j2k_mssim.eps}	
 	
-	\caption{Left: MSSIM of \emph{jpg} single- and recompressed data. Right: MSSIM of \emph{jp2} single- and recompressed data}
+	\caption{Left: MSSIM of \emph{jpg} single- and recompressed data. Right: MSSIM of \emph{j2k} single- and recompressed data}
 	\label{fig:mssim}
 \end{figure}
 
@@ -331,7 +331,7 @@ The absolute segmentation error rate is considered to be optimal because of the 
 \begin{figure}
 	\includegraphics[width=0.49\linewidth]{img/new/jxr_caht.eps}
 	\includegraphics[width=0.49\linewidth]{img/new/j2k_abs_wahet.eps}	
-	\caption{Relative CAHT segmentation error rate $mser_{rel}$ for \emph{jxr}-compressed data (left) and absolute WAHET segmentation error rate $mser_{abs}$ for \emph{jp2}-compressed data (right)}
+	\caption{Relative CAHT segmentation error rate $mser_{rel}$ for \emph{jxr}-compressed data (left) and absolute WAHET segmentation error rate $mser_{abs}$ for \emph{j2k}-compressed data (right)}
 	\label{fig:segResultsOther}
 \end{figure}
 
@@ -359,7 +359,7 @@ The data set described in section \ref{section:exSetup} is used to test the two 
  \begin{enumerate}
  	 	\item Data generated in a single compression step generally tends to result in smaller error rates compared to those computed from recompressed data. Interestingly, for extreme values, namely very small and very large compression ratios, single-compression performs often poorer. \label{singleAmongBest}
  	 	
- 	 	\item For all experiments carried out with \emph{jxr} and \emph{jp2}, the error rate stagnates in some way for medium compression ratios, i.e. $45 \leq cr_t \leq 70$. Exemplarily this can be seen in the $mser_{abs}$ for \emph{jp2}-method (figure \ref{fig:segResultsOther} left). The characteristics of a curve's stagnancy vary depending on the pre-compression quality $q_p$. Since stagnancy can be seen in single- as well as recompressed data, we conclude the effect is generally related to the used methods \emph{jxr} and \emph{jp2}. However, the characteristics of the stagnancy seem be controlled by the pre-compression quality $q_p$ in a way that the lower the pre-compression quality is, the clearer the curve stagnates. \label{cureFlattening}
+ 	 	\item For all experiments carried out with \emph{jxr} and \emph{j2k}, the error rate stagnates in some way for medium compression ratios, i.e. $45 \leq cr_t \leq 70$. Exemplarily this can be seen in the $mser_{abs}$ for \emph{j2k}-method (figure \ref{fig:segResultsOther} left). The characteristics of a curve's stagnancy vary depending on the pre-compression quality $q_p$. Since stagnancy can be seen in single- as well as recompressed data, we conclude the effect is generally related to the used methods \emph{jxr} and \emph{j2k}. However, the characteristics of the stagnancy seem be controlled by the pre-compression quality $q_p$ in a way that the lower the pre-compression quality is, the clearer the curve stagnates. \label{cureFlattening}
 \end{enumerate}  
   \end{enumerate}
  
