@@ -15,8 +15,8 @@
 \newcommand{\superscript}[1]{\ensuremath{^{\textrm{#1}}}}
 \def\sharedaffiliation{\end{tabular}\newline\begin{tabular}{c}}
 
-\def\wu{\superscript{*}}
-\def\wg{\superscript{\dag}}
+\def\wu{\superscript{\dag}}
+\def\wg{\superscript{\S}}
 
 
 
@@ -39,7 +39,9 @@
 \begin{document}
 
 %%%%%%%%% TITLE
-\title{Recompression effects in iris segmentation}
+\title{Recompression effects in iris segmentation
+\thanks{This work has been partially supported by the Austrian Science Fund FWF, project no. P26630.}
+}
 
 \author{Thomas Bergmueller\wg\wu, Eleftherios Christopoulos\wu, Martin Schnoell\wu and Andreas Uhl\wu \\
 \wu University of Salzburg, Austria \\
@@ -105,9 +107,7 @@ many papers dealing with compression have been relying on the (extended) CASIA V
 Since it has been pointed out \cite{BPhilips07a} that the CASIA V1.0 dataset exhibits manipulated pupil areas and should therefore not be used any further in experimentation, compression researchers moved to other (and more recent, more challenging etc.) datasets, e.g. 
 	the CASIA V3.0 \cite{Horvath11b,Rathgeb12e}, 
 	the CASIA V4.0 \cite{BTuba12a}, the Bath \cite{BIves08a,BPardamean12a}, and the UBIRIS.v1 \cite{Haemmerle09a,BCarneiro11a} datasets.
-	While the images of CASIA V1.0 and ICE 2005 are given in uncompressed format, images in CASIA V3.0, CASIA V4.0, UBIRIS and Bath datasets are provided as JPEG (the first three) or JPEG2000 (the latter) lossy compressed data. Therefore, any compression experiments conducted on these datasets operate on pre-compressed data. 
-	
-	This fact has not been ignored entirely -- for example, in \cite{Rathgeb12e}, preparatory JPEG compression experiments with uncompressed data reveal that 
+	While the images of CASIA V1.0 and ICE 2005 are given in uncompressed format, images in CASIA V3.0, CASIA V4.0, UBIRIS and Bath datasets are provided as JPEG (the first three) or JPEG2000 (the latter) lossy compressed data. Therefore, any compression experiments conducted on these datasets operate on pre-compressed data. This fact has not been ignored entirely -- for example, in \cite{Rathgeb12e}, preparatory JPEG compression experiments with uncompressed data reveal that 
 	slightly pre-compressed data leads to better recognition performance due to denoising effects. Thus experiments with pre-compressed data are assessed to
 	be unproblematic. The same argument is used for JPEG2000 pre-compressed data \cite{BPardamean12a} based on the results in \cite{BIves08a}.
 	However, eventual artifacts resulting from recompression effects are not accounted for in these considerations. Recompression artifacts arise in cases where	data is compressed twice (or multiple times) with lossy compression schemes, i.e. where artifacts from the first compression step (termed pre-compression)
@@ -116,16 +116,11 @@ Since it has been pointed out \cite{BPhilips07a} that the CASIA V1.0 dataset exh
 	Two different types of such effects may be distinguished: First, \emph{intra-recompression}, where the same compression scheme is used several times, whereas
 	in \emph{inter-recompression} different methods are used in the different compression steps. For example, using JPEG pre-compressed data and applying
 	JPEG XR and JPEG2000 \cite{Horvath11b} or JPEG2000 and fractal compression \cite{BCarneiro11a} is eventually prone to inter-recompression
-	artifacts, while the application of JPEG to JPEG pre-compressed data \cite{BTuba12a,Rathgeb12e} can be prone to intra-recompression artifacts.
-	
-	While next to nothing can be found on the issue of inter-recompression artifacts in the general compression literature, 
-	intra-recompression artifacts are better investigated, at least in the case of lossy JPEG compression. Soon after the establishment of
+	artifacts, while the application of JPEG to JPEG pre-compressed data \cite{BTuba12a,Rathgeb12e} can be prone to intra-recompression artifacts. While next to nothing can be found on the issue of inter-recompression artifacts in the general compression literature, intra-recompression artifacts are better investigated, at least in the case of lossy JPEG compression. Soon after the establishment of
 	the JPEG standard \cite{Pennebaker93a}, it was found that JPEG recompression artifacts arise and do not follow a linear behaviour \cite{Chan92a}.
 	Extensive experiments in this direction can also  be found in \cite{Kumar11a}, and following these obversations, requantisation-based schemes have been
 	suggested for JPEG, reducing recompression artifacts considerably \cite{Bauschke03a}. Recently, the identification of images which underwent 
-	JPEG double compression (i.e. JPEG intra-recompression) has been a hot topic in image forensics \cite{Sencar12a}.
-	
-	Taking all these facts together, it gets clear that recompression artifacts may impact experimental results with respect to biometric recognition
+	JPEG double compression (i.e. JPEG intra-recompression) has been a hot topic in image forensics \cite{Sencar12a}. Taking all these facts together, it gets clear that recompression artifacts may impact experimental results with respect to biometric recognition
 	performance, an issue, that has been neglected so far. As discussed, ISO/IEC FDIS 19794-6 requires storing biometric data as raw images, hence all components of a biometric system are affected when operating with compressed data. As we investigate the recompression issue by studying impact on an iris recognition system, the influence on segmentation and texture extraction as well as feature extraction, i.e. iris code computation, has to be evaluated. \cite{severeCompression, BDaugman08a} suggest that data reduction has the highest impact on the iris segmentation. Since segmentation is also the first step in the pipeline, this potentially effects the performance of later steps as well and is therefore of particular importance. 
 	
 We systematically investigate eventual intra- and inter-recompression effects in an experimental study for iris segmentation. Given the importance of JPEG (as the CASIA V3.0/V4.0 and UBIRIS.v1 datasets are only available in this format), we focus on JPEG pre-compressed data. In our experiments, we compare iris segmentation and general purpose image quality metrics applied	to single compressed vs. recompressed (i.e. JPEG pre-compressed) iris image data. Section \ref{section:comprScheme} discusses relevant aspects on generating single- and recompressed data. The used data sets and methods are described in section \ref{section:exSetup}. Section \ref{section:eval} introduces several experiments and lists their results, which are then compared in section \ref{section:comparison}. From the experiments' individual and comparison results, we draw conclusions in section \ref{section:conclusion}.
@@ -360,7 +355,7 @@ From the results we observe the following:
  \begin{enumerate}
  	 	\item Data generated in a single compression step generally tends to result in smaller error rates compared to those computed from recompressed data. Interestingly, for extreme values, namely very small and very large compression ratios, single-compression performs often poorer. \label{singleAmongBest}
  	 	
- 	 	\item For all experiments carried out with \emph{jxr} and \emph{j2k}, the error rate stagnates in some way for medium compression ratios, i.e. $45 \leq cr_t \leq 70$. As an example this can be seen in the $mser_{abs}$ for \emph{j2k}-method (figure \ref{fig:segResultsOther} left). The characteristics of a curve's stagnancy vary depending on the pre-compression quality $q_p$. Since stagnancy can be seen in single- as well as recompressed data, we conclude the effect is generally related to the used methods \emph{jxr} and \emph{j2k}. However, the characteristics of the stagnancy seem be controlled by the pre-compression quality $q_p$ in a way that the lower the pre-compression quality is, the clearer the curve stagnates. \label{cureFlattening}
+ 	 	\item For all experiments carried out with \emph{jxr} and \emph{j2k}, the error rate flattens in some way for medium compression ratios, i.e. $45 \leq cr_t \leq 70$. As an example this can be seen in the $mser_{abs}$ for \emph{j2k}-method (figure \ref{fig:segResultsOther} left). The characteristics of a curve's flattening vary depending on the pre-compression quality $q_p$. Since flattening can be seen in single- as well as recompressed data, we conclude the effect is generally related to the used methods \emph{jxr} and \emph{j2k}. However, the characteristics of the flattening seem be controlled by the pre-compression quality $q_p$ in a way that the lower the pre-compression quality is, the clearer the curve stagnates. \label{cureFlattening}
 \end{enumerate}  
   \end{enumerate}
  
@@ -451,7 +446,7 @@ The reason for the intermediate SRCC results in case of jxr are mainly due to no
 
 \section{Conclusion}
 \label{section:conclusion}
-Often researchers use JPEG pre-compressed data for iris biometrics compression performance testing in experimental experiments, mostly because of ground-truth availability. We investigated whether the outcome of such experiments can be considered reliable by comparing segmentation error and quality metrics of single-compressed and re-compressed data.  In the segmentation error rate, no tendency is observeable when comparing single-compression and inter-recompressed data. However, using intra-recompressed data, i.e. compressing JPEG pre-compressed data with JPEG again, a different behaviour is observed for high compression ratios compared to single-compressed data sets. Thus results of studies using JPEG compression on JPEG pre-compressed data cannot be considered entirely reliable. We showed for small compression ratios, a ground truth is indeed necessary for accurate segmentation error rating. Furthermore, we propose a method to overcome such problems in section \ref{section:ser}. Interestingly, there seems to be no strictly linear relation between image quality and segmentation error rate. Quality metrics tend to omit detailed behaviour of the segmentation error in respect to compression ratios. Nevertheless, quality metrics and segmentation error follow the same trends and metrics such as the MSSIM can therefore be used to estimate an iris segmentation algorithms behavior. 
+Often researchers use JPEG pre-compressed data for iris biometrics compression performance testing in experimental experiments, mostly because of ground-truth availability. We investigated whether the outcome of such experiments can be considered reliable by comparing segmentation error and quality metrics of single-compressed and re-compressed data.  In the segmentation error rate, no tendency is observeable when comparing single-compression and inter-recompressed data. However, using intra-recompressed data, i.e. compressing JPEG pre-compressed data with JPEG again, a different behaviour is observed for high compression ratios compared to single-compressed data sets. Thus results of studies using JPEG compression on JPEG pre-compressed data cannot be considered entirely reliable. We showed for small compression ratios, a ground truth is indeed necessary for accurate segmentation error rating. We also propose a method to overcome such problems in section \ref{section:ser}. Interestingly, there is no strictly linear relation between image quality and segmentation error rate. Quality metrics tend to omit detailed behavior of the segmentation error in respect to compression ratios. Nevertheless, quality metrics and segmentation error follow the same trends and quality metrics can therefore be used to estimate an iris segmentation algorithms behavior. 
 
 So far only the impact on two iris segmentation algorithms has been considered. Recompression artifacts potentially influence different algorithms and other parts of an iris recognition system as well. This is topic to further research.           
 
