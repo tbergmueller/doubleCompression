@@ -1,0 +1,18 @@
+y \in Y \quad with \quad y \in \begin{Bmatrix}
+0,1
+\end{Bmatrix}
+\\
+
+f(a,b) = \left\{\begin{matrix}
+1 & a=b\\ 
+0 & a \neq b
+\end{matrix}\right. \\
+\\
+segErrRate(Y,Y_0)=\frac{1}{WH}\sum_{x=0}^{W-1}\sum_{y=0}^{H}f(Y(x,y),Y_0(x,y)))
+
+
+
+
+Formula for xor
+
+segErrRate(Y,Y_0) = \overline{Y \oplus Y_0} 
