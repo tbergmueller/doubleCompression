@@ -23,7 +23,11 @@ def excerptCSVs(folderFrom, folderTo):
             if filename.endswith('.csv') and not filename.endswith('.dist.csv'):
                fullFilename = os.path.join(dirname, filename)
                fullTarget = fullFilename.replace(folderFrom, folderTo)
-               print(fullFilename + '\t->\t' + fullTarget)
+
+               with open(fullFilename) as f:
+                 nrLines=sum(1 for _ in f)
+
+               print(str(nrLines) + '\t' + fullFilename + '\t->\t' + fullTarget)
 
                try:
 
@@ -31,6 +35,7 @@ def excerptCSVs(folderFrom, folderTo):
                        os.makedirs(fullTarget.replace(filename, ''))
 
                    copyfile(fullFilename, fullTarget)
+
 
                except OSError as exc:
                    if exc.errno == errno.EEXIST and os.path.isdir(fullTarget):

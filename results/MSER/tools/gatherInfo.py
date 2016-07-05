@@ -5,7 +5,7 @@ __author__ = 'tbergmueller'
 from excerptCSVs import excerptCSVs
 
 
-skimThrough='/home/tbergmueller/DEV/doubleCompression/doubleCompression/results/mser/rawResults/'
+skimThrough='/home/tbergmueller/DEV/doubleCompression/doubleCompression/results/MSER/rawResults/'
 putTo = '/tmp/test/'
 
 
